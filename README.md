@@ -9,4 +9,4 @@
 
 ## Senior:
 
-Banyik Nándor
+- Banyik Nándor
