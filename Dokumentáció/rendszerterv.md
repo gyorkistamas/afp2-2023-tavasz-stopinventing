@@ -1,120 +1,118 @@
-# Rendszerterv
-## 1. A rendszer célja
+# System Specification
+## 1. Goal of the System
 
-## 2. Projektterv
+## 2. Project Plan
 
-### 2.1 Projektszerepkörök, felelőségek:
+### 2.1 Project Roles
    * Scrum masters:
-   * Product owner: 
-   * Üzleti szereplő:
+   * Product owner:
+   * Business Participants:
      
-### 2.2 Projektmunkások és felelőségek:
+### 2.2 Project Staff:
    * Frontend:
    * Backend:
-   * Tesztelés:
+   * Testing: 
      
-### 2.3 Ütemterv:
+### 2.3 Schedule:
 
-|Funkció                  | Feladat                                | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Becsült idő (nap) |
+|Function                  | Task                                | Priority | Estimation (in days) | Actual estimation (in days) | Time elapsed (in days) | Estimated time (in days) |
 |-------------------------|----------------------------------------|-----------|---------------|------------------------|------------------|---------------------|
-|Követelmény specifikáció |Megírás                                 |         1 |             1 |                      1 |                1 |                   1 |             
-|Funkcionális specifikáció|Megírás                                 |         1 |             1 |                      1 |                1 |                   1 |
-|Rendszerterv             |Megírás                                 |         1 |             1 |                      1 |                1 |                   1 |
-|Program                  |Képernyőtervek elkészítése              |         2 |             1 |                      1 |                1 |                   1 |
-|Program                  |Prototípus elkészítése                  |         3 |             8 |                      8 |                8 |                   8 |
-|Program                  |Alapfunkciók elkészítése                |         3 |             8 |                      8 |                8 |                   8 |
-|Program                  |Tesztelés                               |         4 |             2 |                      2 |                2 |                   2 |
+|Requirement Specification |Ellaboration                         |         1 |             1 |                      1 |                1 |                   1 |             
+|Functional Specification  |Ellaboration                                 |         1 |             1 |                      1 |                1 |                   1 |
+|System Specification      |Ellaboration                                 |         1 |             1 |                      1 |                1 |                   1 |
+|Application               |Creation of Screenplans              |         2 |             1 |                      1 |                1 |                   1 |
+|Application               |Creation of Prototype                 |         3 |             8 |                      8 |                8 |                   8 |
+|Application               |Creation of Basic Functionality                |         3 |             8 |                      8 |                8 |                   8 |
+|Application               |Testing                               |         4 |             2 |                      2 |                2 |                   2 |
 
-### 2.4 Mérföldkövek:
-   * Prototípus átadása
+### 2.4 Milestones:
+   * conveyance of Prototype
 
-## 3. Üzleti folyamatok modellje
+## 3. Model of Business Processes
 
-### 3.1 Üzleti szereplők
+### 3.1 Business Participants
 
-### 3.2 Üzleti folyamatok
+### 3.2 Business Processes
 
-## 4. Követelmények
+## 4. Requirements
 
-### Funkcionális követelmények
+### Functional Requirements
 
-| ID | Megnevezés | Leírás |
+| ID | Name | Description |
 | --- | --- | --- |
-| K1 | ... | ... |
+| R1 | ... | ... |
 
-### Nemfunkcionális követelmények
+### Non-Functional Requirements
 
-| ID | Megnevezés | Leírás |
+| ID | Name | Description |
 | --- | --- | --- |
-| K4 | ... | ... |
+| R4 | ... | ... |
 
-### Támogatott eszközök
+### Supported Devices
 
-## 5. Funkcionális terv
+## 5. Plan of Functionality
 
-### 5.1 Rendszerszereplők
+### 5.1 System Participants
 
-### 5.2 Menühierarchiák
+### 5.2 Menu hierachies
 
-## 6. Fizikai környezet
+## 6. Physical Environment
 
-### Vásárolt softwarekomponensek és külső rendszerek
+### Purchased Softwarecomponents and other Third Party Softwares
 
-### Hardver topológia
+### Hardware Topology
 
-### Fizikai alrendszerek
+### Physical Subsystems
 
-### Fejlesztő eszközök
+### Development Tools
 
 
-## 8. Architekturális terv
+## 8. Architectural Plan
 
-### Webszerver
+### Webserver
 
-### Adatbázis rendszer
+### Database System
 
-### A program elérése, kezelése
+### Accessibility of the Program, Ease of Use
 
-## 9. Adatbázis terv
+## 9. Database Plan
 
-## 10. Implementációs terv
+## 10. Plan of Implementation
 
-## 11. Tesztterv
+## 11. Testing Plan
 
-A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata,
-ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifikálása.
-A teszteléseket a fejlesztői csapat minden tagja elvégzi.
-Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
+Purpose of planning is putting the system and its components under full examination 
+And checking the implemented verification of business services by the system.
+Testing must be done by each member of the development team.
+Results of tests should be documented in separated files by members.
 
-### Tesztesetek
+### Test Cases
 
- | Teszteset | Elvárt eredmény | 
+ | Case | Expected result | 
  |-----------|-----------------| 
  | ... | ... |
 
-### A tesztelési jegyzőkönyv kitöltésére egy sablon:
+**Tester:** Firstname Lastname
 
-**Tesztelő:** Vezetéknév Keresztnév
+**Date of Testing:** Year.Month.Day
 
-**Tesztelés dátuma:** Év.Hónap.Nap
-
-Tesztszám | Rövid leírás | Várt eredmény | Eredmény | Megjegyzés
+Test No. | Short Description | Expected Result | Actual Result | Note
 ----------|--------------|---------------|----------|-----------
-például. Teszt #01 | Regisztráció | A felhasználó az adatok megadásával sikeresen regisztrálni tud  | A felhasználó sikeresen regisztrált | Nem találtam problémát.
+e.g. Test No.1 | Sign Up | User is successfully able to sign up with given credentials  | Succesful registration | There were no problems found.
 ... | ... | ... | ... | ...
 
-## 12. Telepítési terv
+## 12. Installation Plan
 
-Fizikai telepítési terv: 
+Physical Installation Plan: 
 
-Szoftver telepítési terv: 
+Software Installation Plan: 
 
-## 13. Karbantartási terv
+## 13. Maintenance Plan
 
-Fontos ellenőrizni:
+Important to check:
 ...
 
-Figyelembe kell venni a felhasználó által jött visszajelzést is a programmal kapcsolatban.
-Ha hibát talált, mielőbb orvosolni kell, lehet az:
-*	Működéssel kapcsolatos
-*	Kinézet, dizájnnal kapcsolatos
+Feedbacks by the user regarding the application must be taken into account.
+Errors should be remedied post-haste when they found, even if they were:
+*	regarding Functionality
+*	regarding GUI
