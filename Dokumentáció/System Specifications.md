@@ -16,8 +16,8 @@ According to our schemes, this project is gonna be a dynamic web application wri
      
 ### 2.2 Project Staff:
 
-   * Frontend: Balázs Karácsony, Tamás Györkis, Gergő Tamás Birinyi, József Imre Tabajdi
-   * Backend: Balázs Karácsony, Tamás Györkis, Gergő Tamás Birinyi, József Imre Tabajdi
+   * Frontend: Balázs Karácsony, József Imre Tabajdi
+   * Backend: Tamás Györkis, Gergő Tamás Birinyi
    * Testing: Balázs Karácsony, Tamás Györkis, Gergő Tamás Birinyi, József Imre Tabajdi
      
 ### 2.3 Schedule:
@@ -26,7 +26,7 @@ According to our schemes, this project is gonna be a dynamic web application wri
 |-------------------------|----------------------------------------|-----------|---------------|------------------------|------------------|---------------------|
 | Requirement Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |             
 | Functional Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |
-| System Specification |Ellaboration | 1 | 1 | 1 | 1 | 1 |
+| System Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |
 | Application | Creation of Screenplans | 2 | 1 | 1 | 1 | 1 |
 | Application | Creation of Prototype | 3 | 8 | 8 | 8 | 8 |
 | Application | Creation of Basic Functionality | 3 | 8 | 8 | 8 | 8 |
