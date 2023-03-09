@@ -21,3 +21,6 @@ The buyer currently uses Google calendar system to organise the meetings, and to
 | K1 | ... | ... | ... |
 
 ## 7. Glossary
+
+- scrum: a framework for project management commonly used in software development
+- ecosystem: a collection of tools, programs, devices designed to co-operate with each other
