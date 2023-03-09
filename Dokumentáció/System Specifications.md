@@ -2,13 +2,17 @@
 
 ## 1. Goal of the System
 
+The purpose of the system lies within creating and editing scrum meetings, albeit it doesn't despise tracking them as well.  
+We might attempt to ease the hardships of scrum masters related to arranging scrum meetings for the other members of a development team.  
+According to our schemes, this project is gonna be a dynamic web application written in PHP programming language using Laravel framework alongside with a database system of free choice.
+
 ## 2. Project Plan
 
 ### 2.1 Project Roles
 
    * Scrum masters: Nándor Banyik
    * Product owner: Nándor Banyik
-   * Business Participant: Nándor Banyik
+   * Business participant: Nándor Banyik
      
 ### 2.2 Project Staff:
 
