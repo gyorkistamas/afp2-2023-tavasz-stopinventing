@@ -6,6 +6,8 @@ Our team was tasked with creating a web-based application that allows the buyer 
 
 ## 2. Current situation
 
+The buyer currently uses Google calendar system to organise the meetings, and to send out invitations to these. This poses some problem, mainly that not everyone uses the Google ecosystem, and they sometimes experience bugs and problems with these invites. Also, they have no reliable way to see who acknowledged the invite, or if they've seen the invite at all. On top of these, the meeting organizer has to find all the participant's email address, and type them in one by one. This takes a long time to do every day.
+
 ## 3. Objectives
 
 ## 4. Model of current business processes
