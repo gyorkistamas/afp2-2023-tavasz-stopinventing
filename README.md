@@ -1,6 +1,6 @@
 # Alkalmazások fejlesztése projekt labor 2 - 2023 Tavasz - StopInventing csapat
 
-## Csapattagok:
+## Team members:
 
 - Birinyi Gergő
 - Györkis Tamás
@@ -10,3 +10,7 @@
 ## Senior:
 
 - Banyik Nándor
+
+## Project
+
+Our project is to create a scrum meeting planner using Laravel, which is a PHP framework.
