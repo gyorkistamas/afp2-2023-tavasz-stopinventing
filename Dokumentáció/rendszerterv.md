@@ -1,4 +1,4 @@
-# System Specification
+# System Specifications
 ## 1. Goal of the System
 
 ## 2. Project Plan
@@ -6,7 +6,7 @@
 ### 2.1 Project Roles
    * Scrum masters:
    * Product owner:
-   * Business Participants:
+   * Business Participant:
      
 ### 2.2 Project Staff:
    * Frontend:
