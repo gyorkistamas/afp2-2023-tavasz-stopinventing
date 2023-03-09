@@ -6,15 +6,15 @@
 
 ### 2.1 Project Roles
 
-   * Scrum masters:
-   * Product owner:
-   * Business Participant:
+   * Scrum masters: Nándor Banyik
+   * Product owner: Nándor Banyik
+   * Business Participant: Nándor Banyik
      
 ### 2.2 Project Staff:
 
-   * Frontend:
-   * Backend:
-   * Testing: 
+   * Frontend: Balázs Karácsony, Tamás Györkis, Gergő Tamás Birinyi, József Imre Tabajdi
+   * Backend: Balázs Karácsony, Tamás Györkis, Gergő Tamás Birinyi, József Imre Tabajdi
+   * Testing: Balázs Karácsony, Tamás Györkis, Gergő Tamás Birinyi, József Imre Tabajdi
      
 ### 2.3 Schedule:
 
