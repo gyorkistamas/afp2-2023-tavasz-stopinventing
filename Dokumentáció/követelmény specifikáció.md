@@ -1,19 +1,19 @@
-# Követelmény specifikáció
+# Requirement specification
 
-## 1. Áttekintés
+## 1. Overview
 
-## 2. A jelenlegi helyzet leírása
+## 2. Current situation
 
-## 3. Vágyálomrendszer
+## 3. Objectives
 
-## 4. Jelenlegi üzleti folyamatok modellje
+## 4. Model of current business processes
 
-## 5. Igényelt üzleti folyamatok modellje
+## 5. Model of demanded business processes
 
-## 6. Követelménylista
+## 6. Request list
 
 | Id | Modul | Név | Leírás |
 | :---: | --- | --- | --- |
 | K1 | ... | ... | ... |
 
-## 7. Fogalomtár
+## 7. Glossary
