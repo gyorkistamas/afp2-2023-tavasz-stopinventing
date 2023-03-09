@@ -1,14 +1,17 @@
 # System Specifications
+
 ## 1. Goal of the System
 
 ## 2. Project Plan
 
 ### 2.1 Project Roles
+
    * Scrum masters:
    * Product owner:
    * Business Participant:
      
 ### 2.2 Project Staff:
+
    * Frontend:
    * Backend:
    * Testing: 
@@ -26,6 +29,7 @@
 |Application               |Testing                               |         4 |             2 |                      2 |                2 |                   2 |
 
 ### 2.4 Milestones:
+   
    * conveyance of Prototype
 
 ## 3. Model of Business Processes
@@ -65,7 +69,6 @@
 ### Physical Subsystems
 
 ### Development Tools
-
 
 ## 8. Architectural Plan
 
