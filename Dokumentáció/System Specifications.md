@@ -18,15 +18,15 @@
      
 ### 2.3 Schedule:
 
-|Function                  | Task                                | Priority | Estimation (in days) | Actual estimation (in days) | Time elapsed (in days) | Estimated time (in days) |
+| Function | Task | Priority | Estimation (in days) | Actual estimation (in days) | Time elapsed (in days) | Estimated time (in days) |
 |-------------------------|----------------------------------------|-----------|---------------|------------------------|------------------|---------------------|
-|Requirement Specification |Ellaboration                         |         1 |             1 |                      1 |                1 |                   1 |             
-|Functional Specification  |Ellaboration                                 |         1 |             1 |                      1 |                1 |                   1 |
-|System Specification      |Ellaboration                                 |         1 |             1 |                      1 |                1 |                   1 |
-|Application               |Creation of Screenplans              |         2 |             1 |                      1 |                1 |                   1 |
-|Application               |Creation of Prototype                 |         3 |             8 |                      8 |                8 |                   8 |
-|Application               |Creation of Basic Functionality                |         3 |             8 |                      8 |                8 |                   8 |
-|Application               |Testing                               |         4 |             2 |                      2 |                2 |                   2 |
+| Requirement Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |             
+| Functional Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |
+| System Specification |Ellaboration | 1 | 1 | 1 | 1 | 1 |
+| Application | Creation of Screenplans | 2 | 1 | 1 | 1 | 1 |
+| Application | Creation of Prototype | 3 | 8 | 8 | 8 | 8 |
+| Application | Creation of Basic Functionality | 3 | 8 | 8 | 8 | 8 |
+| Application | Testing | 4 | 2 | 2 | 2 | 2 |
 
 ### 2.4 Milestones:
    
