@@ -1,4 +1,5 @@
-# Funkcionális specifikáció
+# Functional specification
+
 ## 1. Jelenlegi helyzet leírása
 
 ## 2. Vágyálomrendszer leírása
