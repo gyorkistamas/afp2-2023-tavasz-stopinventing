@@ -10,6 +10,9 @@ The buyer currently uses Google calendar system to organise the meetings, and to
 
 ## 3. Objectives
 
+The project goal a website/webapplication, witch is a compact team management application package for the buyer. The system was aviable webbrowser and mobile webbrowser. During the registration the user may decide what role play in the team. The application clean and simple design for the easy usage. The system provides an opportunity to make online scrum meetings and synchronized plan calendar whit the team. In another tab, site or submenu has a tast tracker just like Trello, and progress monitoring whit different possibilities. 
+The team leader can add or remove team members in the application.
+
 ## 4. Model of current business processes
 
 ## 5. Model of demanded business processes
