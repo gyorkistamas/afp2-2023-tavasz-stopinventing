@@ -27,10 +27,10 @@ According to our schemes, this project is gonna be a dynamic web application wri
 | Requirement Specification | Ellaboration | 1 | 3 | 3 | 2 | 3 |             
 | Functional Specification | Ellaboration | 1 | 3 | 2 | 3 | 2 |
 | System Specification | Ellaboration | 1 | 2 | 3 | 3 | 3 |
-| Application | Creating Screenplans | 2 | 2 | 3 | 2 | 2 |
-| Application | Creating Prototype | 3 | 8 | 8 | 8 | 8 |
-| Application | Creating the Basic Functionality | 3 | 8 | 8 | 8 | 8 |
-| Application | Testing | 4 | 2 | 2 | 2 | 2 |
+| Application | Creating Screenplans | 2 | 3 | 3 | - | 2 |
+| Application | Creating the Basic Functionality | 3 | 8 | 8 | - | 8 |
+| Application | Creating Prototype | 3 | 8 | 8 | - | 8 |
+| Application | Testing | 4 | 2 | 2 | - | 2 |
 
 ### 2.4 Milestones:
 
