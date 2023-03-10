@@ -24,17 +24,26 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 | Function | Task | Priority | Estimation (in days) | Actual estimation (in days) | Time elapsed (in days) | Estimated time (in days) |
 |-------------------------|----------------------------------------|-----------|---------------|------------------------|------------------|---------------------|
-| Requirement Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |             
-| Functional Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |
-| System Specification | Ellaboration | 1 | 1 | 1 | 1 | 1 |
-| Application | Creation of Screenplans | 2 | 1 | 1 | 1 | 1 |
-| Application | Creation of Prototype | 3 | 8 | 8 | 8 | 8 |
-| Application | Creation of Basic Functionality | 3 | 8 | 8 | 8 | 8 |
+| Requirement Specification | Ellaboration | 1 | 3 | 3 | 2 | 3 |             
+| Functional Specification | Ellaboration | 1 | 3 | 2 | 3 | 2 |
+| System Specification | Ellaboration | 1 | 2 | 3 | 3 | 3 |
+| Application | Creating Screenplans | 2 | 2 | 3 | 2 | 2 |
+| Application | Creating Prototype | 3 | 8 | 8 | 8 | 8 |
+| Application | Creating the Basic Functionality | 3 | 8 | 8 | 8 | 8 |
 | Application | Testing | 4 | 2 | 2 | 2 | 2 |
 
 ### 2.4 Milestones:
-   
+
+   * writing of Requirement Specification
+   * writing of Functional Specification
+   * writing of System Specification
+   * designing screenplans
+   * demonstration of screenplans
+   * preparation of the base app skeleton by Laravel framework
+   * starting to code the basic functions
+   * completion of basic functionalities
    * conveyance of Prototype
+   * fixing errors of Prototype (if there are any)
 
 ## 3. Model of Business Processes
 
