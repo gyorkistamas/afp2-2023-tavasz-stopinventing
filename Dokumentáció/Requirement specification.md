@@ -14,6 +14,15 @@ The project goal is a website/web application, which is a compact team managemen
 
 ## 4. Model of current business processes
 
+- The scrum master retrieves the team member's email addresses.
+- They open Google Calendar and create a new meeting.
+- They specify a time and date, and enter the participant's email addresses.
+- They send out the invites.
+- The participants respond by email if they can't attend.
+- The scrum master then re-schedules the meeting, if they have to.
+- They might need to send out another notification about the changes.
+- The last three point might repeat numerous times.
+
 ## 5. Model of demanded business processes
 
 ## 6. Request list
