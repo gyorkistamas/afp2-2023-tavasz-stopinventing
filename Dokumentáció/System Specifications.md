@@ -176,7 +176,7 @@ Software Installation Plan:
 Important to check:
 ...
 
-Feedbacks by the user regarding the application must be taken into account.
+Feedbacks by the user regarding the application must be taken into account.  
 Errors should be remedied post-haste when they found, even if they were:
 *	regarding Functionality
 *	regarding GUI
