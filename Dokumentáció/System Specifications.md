@@ -173,10 +173,9 @@ Software Installation Plan:
 
 ## 13. Maintenance Plan
 
-Important to check:
-...
-
-Feedbacks by the user regarding the application must be taken into account.  
-Errors should be remedied post-haste when they found, even if they were:
-*	regarding Functionality
-*	regarding GUI
+- Feedbacks of users and buyer: All feedbacks must be reviewed carefully and if necessarry, changes made to the application.
+- Updates
+  - Laravel updates checked every 6 months.
+  - Composer packages updated every 2-3 months
+- Bugs: all reported and discovered bugs must be fixed as soon as possible. The bugs must be tracked on the Github repository.
+- New features: all new required features during the life cycle of the software must be discussed with the team, implemented and tested.
