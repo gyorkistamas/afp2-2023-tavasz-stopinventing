@@ -46,4 +46,5 @@ The project goal is a website/web application, which is a compact team managemen
 ## 7. Glossary
 
 - scrum: a framework for project management commonly used in software development
+- scrum master: a person who is responsible for managing the problems of the team and help their workflow.
 - ecosystem: a collection of tools, programs, devices designed to co-operate with each other
