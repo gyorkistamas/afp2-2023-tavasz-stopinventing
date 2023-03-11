@@ -55,6 +55,34 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ### 3.2 Business Processes
 
+   - __Basic capabilities:__
+     - Creating account with properly given credentials (**Sign Up**), such as Email, Full Name and Password
+     - Being able to select the account type (*Normal User* or *Scrum Master*) in the process of Sign Up
+     - Logging into an existing account (**Sign In**) with Email and Password
+     - Logging out of an account (**Sign Out**)
+     - Having a 'Full Name' for simple identification for other users
+     - Being able to check the details of your profile
+     - Changing password or other user credentials
+     - Other means of uploading data to database
+
+   - __Normal User:__
+     - Being able to check their upcoming meetings in a calendar-like view
+     - Opportunity to book meetings in their calendar
+     - Leaving a comment on designated section of a specific meeting
+     - Chatting to other members of a specific meeting  
+
+   - __Scrum Master:__
+     - Creating meetings, determining their appointments
+     - Deleting meetings created by them
+     - Inviting others to join created meetings
+     - Removing participants from meetings if necessary
+     - Being able to take their part in conversations on message boards of meetings as well
+
+   - __Administrator:__
+     - Banning users whose behaviour go beyond what is appropriate 
+     - Being able to access all of the meetings on the website
+     - Creating user accounts  
+
 ## 4. Requirements
 
 ### Functional Requirements
