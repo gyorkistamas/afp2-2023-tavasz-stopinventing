@@ -157,7 +157,7 @@ Our software requires a server to work. The server must be connected to a networ
 
 Software Installation Plan:
 
-- Our software can run on Windows Server or any other Linux-based operating system.
+- Our software can run on Windows Server or any other Unix-based operating system.
 - It requires a software capapble of serving websites to customers (e.g.: IIS, Apache, nginx)
 - A databse server must also be configured and made available (e.g.: MySQL server (recommended), PostgreSQL, Oracle SQL, etc.)
 - The website must be uploaded to the webserver.
