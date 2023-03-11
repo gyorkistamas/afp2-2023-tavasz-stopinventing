@@ -79,7 +79,7 @@ According to our schemes, this project is gonna be a dynamic web application wri
      - Being able to take their part in conversations on message boards of meetings as well
 
    - __Administrator:__
-     - Banning users whose behaviour go beyond what is appropriate 
+     - Putting a limit on users', whose behaviour is beyond appropiate, access to certain parts of the app (e.g. writing comments) along with notifying HR about the case
      - Being able to access all of the meetings on the website
      - Creating user accounts  
 
