@@ -1,33 +1,35 @@
 # Functional specification
 
-## 1. Jelenlegi helyzet leírása
+## 1. Current situation
 
-## 2. Vágyálomrendszer leírása
+## 2. Objectives
 
-## 3. Jelenlegi üzleti folyamatok modellje
+## 3. Current business processes
 
-## 4. Igényelt üzleti folyamatok modellje
+## 4. Requested business processes
 
-## 5. Követelménylista
+## 5. Request list
 
-| Id | Modul | Név | Leírás |
+| Id | Module | Name | Description |
 | :---: | --- | --- | --- |
 | K1 | ...| ... | ... |
 
-## 6. Használati esetek
+## 6. Use Cases
 
-## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
+The administrator can use all functions in the application, to check trouble-proof operation of the system. They have access to the user list, to moderate and manage them.
 
-## 8. Képernyőtervek
+## 7. Complience
+
+## 8. Screen plan
 
 ![képnév](gitlink ahol a kép van)
 
-## 9. Forgatókönyvek
+## 9. Scenarios
 
-## 10. Funkció - követelmény megfeleltetése
+## 10. Functionality
 
-| Id | Követelmény | Funkció |
+| Id | Requirement | Functionality |
 | :---: | --- | --- |
-| K4 | ... | ... |
+| K99 | ... | ... |
 
-## 11 Fogalomszótár
+## 11 Glossary
