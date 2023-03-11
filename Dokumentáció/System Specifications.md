@@ -157,6 +157,20 @@ Our software requires a server to work. The server must be connected to a networ
 
 Software Installation Plan:
 
+- Our software can run on Windows Server or any other Linux-based operating system.
+- It requires a software capapble of serving websites to customers (e.g.: IIS, Apache, nginx)
+- A databse server must also be configured and made available (e.g.: MySQL server (recommended), PostgreSQL, Oracle SQL, etc.)
+- The website must be uploaded to the webserver.
+- In the main folder, a '.env' file must be created and configured with at least the following settings:
+  - The username, password, address and database name of the database server.
+  - The mail provider settings.
+  - The app name and url
+- The application composer is also required to be installed
+- "The composer install" command must be run before first using the application, so the necessary components can be installed and updated.
+- After these, the "php artisan migrate --seed" command should be executed, which will create the database and seed it with some basic information.
+- Optional: set up a domain name to be used with the website.
+- The application is ready to be used.
+
 ## 13. Maintenance Plan
 
 Important to check:
