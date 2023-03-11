@@ -39,7 +39,7 @@ The project goal is a website/web application, which is a compact team managemen
 | K8 | Interface | Calendar | Users can track the event here. |
 | K9 | Interface | Online meeting | The "Team"/"Group" holds meetings. |
 | K10 | Interface | Task list | User can manage their tasks here and request or decline another task. |
-| K11 | Interface | Progresson | Users can track the progression here. |
+| K11 | Interface | Progression | Users can track the progression here. |
 | K12 | Interface | Login | Users can log in here to the application. |
 | K13 | Interface | Messages | Users can send messages to each other. And the notifications messages arrive here too. |
 
