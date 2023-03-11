@@ -49,6 +49,10 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ### 3.1 Business Participants
 
+   * Normal User (A.K.A. User)
+   * Scrum Master
+   * Administrator
+
 ### 3.2 Business Processes
 
 ## 4. Requirements
