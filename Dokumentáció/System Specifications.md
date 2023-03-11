@@ -153,7 +153,9 @@ e.g. Test No.1 | Sign Up | User is successfully able to sign up with given crede
 
 Physical Installation Plan: 
 
-Software Installation Plan: 
+Our software requires a server to work. The server must be connected to a network so it can be reached, preferably with a gigabit ethernet LAN port. The server components depends on the number of people that's going to use our product.
+
+Software Installation Plan:
 
 ## 13. Maintenance Plan
 
