@@ -22,14 +22,14 @@ The project goal is a website/web application, which is a compact team managemen
 | :---: | --- | --- | --- |
 | K1 | Access | Login Screen | The user's email address/username and password are required to log in. If the email address/username or password is not correct, the user will receive an error message. |
 | K2 | Access | Registration | The user enters their username, email address, and password to register. The password is stored encrypted in the database. If any of this information is missing, does not meet the requirements, or is already registered with it once the username or/and the email, the system will notify the user. |
-| K3 | Access | Access levels | - Normal user<br> - Srum master<br> - Administrator |
+| K3 | Access | Access levels | - Normal user<br> - Scrum master<br> - Administrator |
 | K4 | Modification | User modify | The user can change their username. |
 | K5 | Modification | Password modify | The user can change their password. To do this, the old and new passwords must be needed, and confirm the new ones. |
 | K6 | Modification | Email modify | The user can change their email address. |
 | K7 | Modification | Forgot your username or password | If the user has forgotten their username or password then the user requests an automated email with in the instructions. |
 | K8 | Interface | Calendar | Users can track the event here. |
 | K9 | Interface | Online meeting | The "Team"/"Group" holds meetings. |
-| K10 | Interface | Tast list | User can manage their tasks here and request or decline another task. |
+| K10 | Interface | Task list | User can manage their tasks here and request or decline another task. |
 | K11 | Interface | Progresson | Users can track the progression here. |
 | K12 | Interface | Login | Users can log in here to the application. |
 | K13 | Interface | Messages | Users can send messages to each other. And the notifications messages arrive here too. |
