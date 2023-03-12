@@ -6,7 +6,7 @@ The buyer currently uses Google calendar system to organise the meetings, and to
 
 ## 2. Objectives
 
-
+The project goal is a website/web application, which is a compact team management application package for the client. The system was available in web browser and mobile web browser. During the registration, the user may decide what role to play in the team. The application is designed to be clean and simple for easy usage. The system provides an opportunity to make online scrum meetings and synchronized plan calendar with the team. In another tab, the site or submenu has a task tracker just like Trello, and progress monitoring with different circumstances. Only the team leader can add or remove team members in the application.
 
 ## 3. Current business processes
 
