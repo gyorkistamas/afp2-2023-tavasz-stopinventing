@@ -54,3 +54,5 @@ They can also give feedback whether or not they can attend to conferences.
 - scrum: a framework for project management commonly used in software development
 - scrum master: a person who is responsible for managing the problems of the team and help their workflow.
 - ecosystem: a collection of tools, programs, devices designed to co-operate with each other
+- feedback: a message or a note expressing opinion. In this context, it can represent wether a specific feature is up to standard and work correctly, or not.
+- centralized: controlled by one main system
