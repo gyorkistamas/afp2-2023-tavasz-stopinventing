@@ -131,10 +131,9 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ## 11. Testing Plan
 
-Purpose of planning is putting the system and its components under full examination 
-And checking the implemented verification of business services by the system.
-Testing must be done by each member of the development team.
-Results of tests should be documented in separated files by members.
+We plan to utilize automatic UI testing. This allows us the periodically test the user interface after each change. This will be done using Cypress, which is an open-source tool designed to test front end web applications.
+
+Every week, the team gathers to check that all task done during the previous week is up to standard and it is completed.
 
 ### Test Cases
 
