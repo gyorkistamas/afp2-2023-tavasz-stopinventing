@@ -10,6 +10,8 @@ The project goal is a website/web application, which is a compact team managemen
 
 ## 3. Current business processes
 
+
+
 ## 4. Requested business processes
 
 ## 5. Request list
@@ -34,15 +36,15 @@ The project goal is a website/web application, which is a compact team managemen
 
 ### Administrator
 
- + The administrator can use all functions in the application, to check trouble-proof operation of the system. They have access to the user list, to moderate and manage them. They can send message to each users and global message to everyone, which everyone get the same time.
+ + The administrator can use all functions in the application, to check trouble-proof operation of the system. They have access to the user list, to moderate and manage them. They can send message to each users and global message to everyone, which they get at the same time.
 
 ### Scrum master
 
- + The Scrum master after the registration has a unique interface, where create and manage our teams/groups. They only can message or group messages to users, in our team/group. In the project tab (work place) shares the same interface by users, but he/she has more options. The calendar can only be edited by the scrum master.
+ + The Scrum master after the registration has a unique interface, where he/she creates and manages our teams/groups. They only can send messages or group messages to users, in our team/group. The project tab (work place) shares the same interface by users, but he/she has more options. The calendar can only be edited by the scrum master.
 
 ### Normal user (Worker)
 
- + They have the fewest options, just enough to get the job done. Users only see the teams they are in. And a more simplified interface than the other role, because of easyer usage.
+ + They have the fewest options, just enough to get the job done. Users only see the teams they are in. And a more simplified interface than the other role, because of easier usage.
 
 ## 7. Compliances
 
