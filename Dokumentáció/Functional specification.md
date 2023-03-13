@@ -10,7 +10,7 @@ The project goal is a website/web application, which is a compact team managemen
 
 ## 3. Current business processes
 
-
+Nowadays there are few capable websites or web applications for team management and team organization. Company's search or trying to develop team managing application/service to they have overview our teams. Some teams use multiple applications or trial versions of services, but it's not a long-lasting option. Some members of the team hate switching applications or services. Our team goal is to collect these services and application good benefits to one web application.
 
 ## 4. Requested business processes
 
