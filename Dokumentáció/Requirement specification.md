@@ -25,6 +25,12 @@ The project goal is a website/web application, which is a compact team managemen
 
 ## 5. Model of demanded business processes
 
+Our system tries to centralize all the things which are important for managing teams.  
+We provide opportunities for scrum masters to organize meetings at ease and send the others invitations, which the members of the development team can accept the latter one and easly join in the former one.  
+As for the development team, our application also comes up with options such as after accepting the invite, they will be put to a view, where they check the details of the meeting and the date of it will also be booked into the calendar view.  
+Plus, they can leave a comment below the details.
+They can also give feedback whether or not they can attend to conferences.
+
 ## 6. Request list
 
 | Id | Module | Name | Description |
