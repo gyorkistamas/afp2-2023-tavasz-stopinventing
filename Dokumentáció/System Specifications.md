@@ -129,6 +129,11 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ## 10. Plan of Implementation
 
+Our team agreed to using the PHP framework Laravel in the development of the web application due to the fact that it provides a simpler method for creating database tables.  
+Moreover it makes the work with them facile.  
+The program is going to be developed in specific file structure, where each component has its own directory.  
+Our members strive to use English language in the code along with entries in documentations, not the mention the messages and notifications that appears on the site.
+
 ## 11. Testing Plan
 
 We plan to utilize automatic UI testing. This allows us the periodically test the user interface after each change. This will be done using Cypress, which is an open-source tool designed to test front end web applications.
