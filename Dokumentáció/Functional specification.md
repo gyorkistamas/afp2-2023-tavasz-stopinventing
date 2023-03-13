@@ -61,3 +61,10 @@ Nowadays there are few capable websites or web applications for team management 
 | K99 | ... | ... |
 
 ## 11 Glossary
+
+- Scrum meeting: A certain type of meeting where participants only discuss their thoughts in 15 minutes or less.  
+Main gist of the meeting is about the following 3 questions:
+  - What did you do yesterday?
+  - What will you do today?
+  - Are there any impediments in your way?
+- Scrum master: Person responsible for arranging meetings, presenting advices for the development team and remedying the impediments.
