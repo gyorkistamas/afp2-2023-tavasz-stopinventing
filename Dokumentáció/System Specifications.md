@@ -125,6 +125,8 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ## 9. Database Plan
 
+![Database](Pictures/database.png)
+
 ## 10. Plan of Implementation
 
 ## 11. Testing Plan
