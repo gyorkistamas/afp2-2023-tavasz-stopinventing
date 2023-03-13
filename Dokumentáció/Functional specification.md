@@ -54,6 +54,15 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 9. Scenarios
 
+### Online meeting:
+
+ + The scrum master create the meeting and set the date, when start and which day. After this set up the system put the date in the participants calendar.
+ + The participants can respond to the scrum master whether they can or can't participate.
+
+### Task system:
+
+### Calendar:
+
 ## 10. Functionality
 
 | Id | Requirement | Functionality |
