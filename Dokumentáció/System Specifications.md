@@ -131,25 +131,20 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ## 11. Testing Plan
 
-Purpose of planning is putting the system and its components under full examination 
-And checking the implemented verification of business services by the system.
-Testing must be done by each member of the development team.
-Results of tests should be documented in separated files by members.
+We plan to utilize automatic UI testing. This allows us the periodically test the user interface after each change. This will be done using Cypress, which is an open-source tool designed to test front end web applications.
+
+Every week, the team gathers to check that all task done during the previous week is up to standard and it is completed.
 
 ### Test Cases
 
- | Case | Expected result | 
- |-----------|-----------------| 
- | ... | ... |
+Below you can see some **example** test cases:
 
-**Tester:** Firstname Lastname
-
-**Date of Testing:** Year.Month.Day
-
-Test No. | Short Description | Expected Result | Actual Result | Note
-----------|--------------|---------------|----------|-----------
-e.g. Test No.1 | Sign Up | User is successfully able to sign up with given credentials  | Succesful registration | There were no problems found.
-... | ... | ... | ... | ...
+Test No. | Short Description | Expected Result
+----------|--------------|---------------|
+No.1 | Sign Up | User is successfully able to sign up with given credentials
+No. 2 | Login | The user is able to login with correct credentials.
+| No. 3 | Create team | A team can be created and people can be added to it by a scrum master
+| No. 4 | Create meeting | A meeting is created and user can be invited to it.
 
 ## 12. Installation Plan
 
