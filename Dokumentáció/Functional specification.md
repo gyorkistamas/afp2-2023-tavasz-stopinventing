@@ -32,13 +32,23 @@ The project goal is a website/web application, which is a compact team managemen
 
 ## 6. Use Cases
 
-The administrator can use all functions in the application, to check trouble-proof operation of the system. They have access to the user list, to moderate and manage them.
+### Administrator
 
-## 7. Complience
+ + The administrator can use all functions in the application, to check trouble-proof operation of the system. They have access to the user list, to moderate and manage them. They can send message to each users and global message to everyone, which everyone get the same time.
+
+### Scrum master
+
+ + The Scrum master after the registration has a unique interface, where create and manage our teams/groups. They only can message or group messages to users, in our team/group. In the project tab (work place) shares the same interface by users, but he/she has more options. The calendar can only be edited by the scrum master.
+
+### Normal user (Worker)
+
+ + They have the fewest options, just enough to get the job done. Users only see the teams they are in. And a more simplified interface than the other role, because of easyer usage.
+
+## 7. Compliances
 
 ## 8. Screen plan
 
-![képnév](gitlink ahol a kép van)
+![picturename](gitlink, where the picture exist)
 
 ## 9. Scenarios
 
