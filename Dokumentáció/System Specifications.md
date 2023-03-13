@@ -139,12 +139,12 @@ Every week, the team gathers to check that all task done during the previous wee
 
 Below you can see some **example** test cases:
 
-Test No. | Short Description | Expected Result | Actual Result | Note
-----------|--------------|---------------|----------|-----------
-No.1 | Sign Up | User is successfully able to sign up with given credentials  | Succesful registration | There were no problems found.
-No. 2 | Login | The user is able to login with correct credentials. | Successful login | No problems found
-| No. 3 | Create team | A team can be created and people can be added to it by a scrum master | The team is created, the users are added. | No problems found
-| No. 4 | Create meeting | A meeting is created and user can be invited to it. | The creation happens and the people are invited. | No problems found.
+Test No. | Short Description | Expected Result
+----------|--------------|---------------|
+No.1 | Sign Up | User is successfully able to sign up with given credentials
+No. 2 | Login | The user is able to login with correct credentials.
+| No. 3 | Create team | A team can be created and people can be added to it by a scrum master
+| No. 4 | Create meeting | A meeting is created and user can be invited to it.
 
 ## 12. Installation Plan
 
