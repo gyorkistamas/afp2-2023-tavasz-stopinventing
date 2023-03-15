@@ -50,7 +50,7 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 8. Screen plan
 
-![picturename](gitlink, where the picture exist)
+![Business_modell](Pictures/Business modell.png)
 
 ## 9. Scenarios
 
