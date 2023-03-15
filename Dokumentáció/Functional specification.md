@@ -52,6 +52,11 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 8. Screen plan
 
+### My profile
+![My profile](Pictures/Screen%20plans/my_profile.png)
+
+### Meeting page
+![Meeting](Pictures/Screen%20plans/meeting.png)
 
 
 ## 9. Scenarios
