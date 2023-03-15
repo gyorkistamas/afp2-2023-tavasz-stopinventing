@@ -129,6 +129,13 @@ The App is supported for all of the devices used nowadays with a properly workin
 ## 5. Plan of Functionality
 
 ### 5.1 System Participants
+- Worker (Normal user)
+  - They can join meetings, and leave a comment
+- Scrum master
+  - They can create or delete meetings, remove participants if necessary.
+- Administrator
+  - They can create users, and removing their ability to comment too. 
+  They have access to all meetings
 
 ### 5.2 Menu hierachies
 
