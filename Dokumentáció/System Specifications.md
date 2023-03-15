@@ -95,7 +95,11 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 | ID | Name | Description |
 | --- | --- | --- |
-| R4 | ... | ... |
+| NR1 | Authorization | Distinguishing Normal User role from Scrum Master or Administrator role. |
+| NR2 | Modern Interface | Providing an interface which fulfils today's expectations and needs. |
+| NR3 | Responsive Design | Making the design apt for resolution size of most of the devices. |
+| NR4 | User Management | Creating users and selecting their role (Normal User or Scrum Master) in the process of registration. Making users possess options to change data related to them through the app. |
+| NR5 | Data Management | Storing essential informations about crucial parts of the web application (such as Users, Meetings, etc.) in database tables in order to sustain the connections among them. |
 
 ### Supported Devices
 
