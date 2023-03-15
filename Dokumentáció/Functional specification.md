@@ -63,13 +63,19 @@ Nowadays there are few capable websites or web applications for team management 
 
 ### Online meeting:
 
- + The scrum master create the meeting and set the date, when start and which day. After this set up the system put the date in the participants calendar.
+ + The scrum master creates the meeting and sets the date, when it start and on which day. After this set up, the system puts the date in the participants calendar.
  + The participants can respond to the scrum master whether they can or can't participate.
 
 ### Calendar:
 
  + Users can keep track of their events or deadlines.
  + Near one of the events or deadlines, the user will receive a notification e-mail.
+
+### Teams:
+
+ + The scrum master can create Teams.
+ + Users can only join a team if they have a invitation.
+ + The scrum master can invite a whole team to the meeting.
 
 ## 10. Functionality
 
