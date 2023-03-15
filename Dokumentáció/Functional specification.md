@@ -66,9 +66,10 @@ Nowadays there are few capable websites or web applications for team management 
  + The scrum master create the meeting and set the date, when start and which day. After this set up the system put the date in the participants calendar.
  + The participants can respond to the scrum master whether they can or can't participate.
 
-### Task system:
-
 ### Calendar:
+
+ + Users can keep track of their events or deadlines.
+ + Near one of the events or deadlines, the user will receive a notification e-mail.
 
 ## 10. Functionality
 
