@@ -87,9 +87,30 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ### Functional Requirements
 
-| ID | Name | Description |
-| --- | --- | --- |
-| R1 | ... | ... |
+| ID | Module | Name | Description |
+| --- | --- | --- | --- |
+| FR1 | **Sign In** | Sign In 'Controller' | Code behind Sign In process. |
+| FR2 | **Sign In** | Sign In 'View' | GUI part of Sign In. |
+| FR3 | **Sign In** | Sign In 'Validator' | Form and other validations on the GUI. |
+| FR4 | **Sign Up** | Sign Up 'Controller' | Code executing the process of Sign Up. |
+| FR5 | **Sign Up** | Sign Up 'View' | Form of Sign Up. |
+| FR6 | **Sign Up** | Sign Up 'Validator' | Validations of Sign Up. |
+| FR7 | **Meetings** | Manage Meetings | View where users can check their upcoming meetings. |
+| FR8 | **Meetings** | Meeting 'View' | View where users can take a look at the details of a specific meeting. Scrum Master can modify them, if necessary. |
+| FR9 | **Meetings** | Edit Meeting | View for Scrum Masters to rework the details of aforementioned Meeting 'View'. |
+| FR10 | **Meetings** | Edit Meeting 'Validator' | Form validations of 'Edit Meeting'. |
+| FR11 | **Meetings** | Edit Meeting 'Controller' | Working code of process of 'Edit Meeting'. |
+| FR12 | **Meeting 'View'** | Message Board | Users can discuss their opinions and nuisances related to details of a specific meeting. |
+| FR13 | **User Management** | My Profile View | View where users can have a look at their infos. |
+| FR14 | **User Management** | My Profile Edit 'View' | Form where users can change their infos. |
+| FR15 | **User Management** | My Profile Edit 'Validator' | Form validations of the Edit form. |
+| FR16 | **User Management** | My Profile Edit 'Controller' | Code behind the Profile Editing process. |
+| FR17 | **Meetings** | Create Meeting | Form where Scrum master can create a meeting, send Normal Users invites in order for them to join it. |
+| FR18 | **Meetings** | Create Meeting 'Validator' | Form validations of 'Create Meeting'. |
+| FR19 | **Meetings** | Create Meeting 'Controller' | Lines of code behind 'Create Meeting'. |
+| FR20 | **Users** | List of Users | View for Administrator to check the registered Users. |
+| FR21 | **Teams** | Create Teams | View where Scrum Masters can assemble Normal Users into a group. |
+| FR22 | **Teams** | Manage Teams | View where Scrum Masters can redraft circumstances of their own existing teams. Administrator is able to check all of the existing teams. |
 
 ### Non-Functional Requirements
 
