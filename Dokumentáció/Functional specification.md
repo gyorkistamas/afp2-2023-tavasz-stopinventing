@@ -14,6 +14,8 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 4. Requested business processes
 
+![Business_modell](Pictures/Businessmodell.png)
+
 ## 5. Request list
 
 | Id | Module | Name | Description |
@@ -50,7 +52,7 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 8. Screen plan
 
-![Business_modell](Pictures/Business modell.png)
+
 
 ## 9. Scenarios
 
