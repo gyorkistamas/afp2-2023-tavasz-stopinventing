@@ -103,6 +103,8 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 ### Supported Devices
 
+The App is supported for all of the devices used nowadays with a properly working webbrowser app and access to Internet.
+
 ## 5. Plan of Functionality
 
 ### 5.1 System Participants
