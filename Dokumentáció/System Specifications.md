@@ -149,7 +149,7 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 ### Development Tools
 
-## 8. Architectural Plan
+## 7. Architectural Plan
 
 ### Webserver
 
@@ -157,18 +157,18 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 ### Accessibility of the Program, Ease of Use
 
-## 9. Database Plan
+## 8. Database Plan
 
 ![Database](Pictures/database.png)
 
-## 10. Plan of Implementation
+## 9. Plan of Implementation
 
 Our team agreed to using the PHP framework Laravel in the development of the web application due to the fact that it provides a simpler method for creating database tables.  
 Moreover it makes the work with them facile.  
 The program is going to be developed in specific file structure, where each component has its own directory.  
 Our members strive to use English language in the code along with entries in documentations, not the mention the messages and notifications that appears on the site.
 
-## 11. Testing Plan
+## 10. Testing Plan
 
 We plan to utilize automatic UI testing. This allows us the periodically test the user interface after each change. This will be done using Cypress, which is an open-source tool designed to test front end web applications.
 
@@ -185,7 +185,7 @@ No. 2 | Login | The user is able to login with correct credentials.
 | No. 3 | Create team | A team can be created and people can be added to it by a scrum master
 | No. 4 | Create meeting | A meeting is created and user can be invited to it.
 
-## 12. Installation Plan
+## 11. Installation Plan
 
 Physical Installation Plan: 
 
@@ -207,7 +207,7 @@ Software Installation Plan:
 - Optional: set up a domain name to be used with the website.
 - The application is ready to be used.
 
-## 13. Maintenance Plan
+## 12. Maintenance Plan
 
 - Feedbacks of users and buyer: All feedbacks must be reviewed carefully and if necessarry, changes made to the application.
 - Updates
