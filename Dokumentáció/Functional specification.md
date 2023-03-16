@@ -50,6 +50,13 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 7. Compliances
 
+| ID | Complliances | References |
+| --- | --- | --- |
+| C1 | User administration | [K1, K2, K4, K5, K6, K7, K12](#5-request-list) and Logout |
+| C2 | Meeting organisation | [K8, K9](#5-request-list), Scrum master can manage the meetings, and users only join or decline the invitation |
+| C3 | Calendar | [K8, K10](#5-request-list), Selected event give a pop-up tab with more information |
+| C4 | Message system | [K13](#5-request-list), Users get message from the system and other users independently from roles([K3](#5-request-list)) |
+
 ## 8. Screen plan
 
 ### My profile
