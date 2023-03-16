@@ -13,7 +13,7 @@ According to our schemes, this project is gonna be a dynamic web application wri
    * Scrum masters: Nándor Banyik
    * Product owner: Nándor Banyik
    * Business participant: Nándor Banyik
-     
+
 ### 2.2 Project Staff:
 
    * Frontend: Balázs Karácsony, József Imre Tabajdi
@@ -24,7 +24,7 @@ According to our schemes, this project is gonna be a dynamic web application wri
 
 | Function | Task | Priority | Estimation (in days) | Actual estimation (in days) | Time elapsed (in days) | Estimated time (in days) |
 |-------------------------|----------------------------------------|-----------|---------------|------------------------|------------------|---------------------|
-| Requirement Specification | Ellaboration | 1 | 3 | 3 | 2 | 3 |             
+| Requirement Specification | Ellaboration | 1 | 3 | 3 | 2 | 3 |
 | Functional Specification | Ellaboration | 1 | 3 | 2 | 3 | 2 |
 | System Specification | Ellaboration | 1 | 2 | 3 | 3 | 3 |
 | Application | Creating Screenplans | 2 | 3 | 3 | - | 2 |
@@ -176,9 +176,17 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 ### Webserver
 
++ Apache webserver
++ NGINX webserver
++ Featured web server provided by Laravel
+
 ### Database System
 
++ MySql based database
+
 ### Accessibility of the Program, Ease of Use
+
++ Our application does not need to install, only needs a web browser.
 
 ## 8. Database Plan
 
