@@ -134,7 +134,7 @@ The App is supported for all of the devices used nowadays with a properly workin
 - Scrum master
   - They can create or delete meetings, remove participants if necessary.
 - Administrator
-  - They can create users, and removing their ability to comment too. 
+  - They can create users, and removing their ability to comment too.
   They have access to all meetings
 
 ### 5.2 Menu hierachies
@@ -143,11 +143,34 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 ### Purchased Softwarecomponents and other Third Party Softwares
 
+1. Laravel
+2. mySql
+
 ### Hardware Topology
 
-### Physical Subsystems
++ Server with website services functions and server database services.
 
 ### Development Tools
+
+1. Programing languages:
+   1. PHP
+   2. CSS
+   3. HTML
+   4. JavaScript
+2. Framework:
+   1. Laravel
+   2. BootStrap
+3. Developing enviroment:
+   1. VS Code
+   2. Notepad++
+   3. Linux nano and MidnightCommander
+4. Test enviroment
+   1. Web browsers
+      1. Google Chrome
+      2. Opera/Opera GX
+      3. Mozila Firefox
+      4. Microsoft Edge
+      5. Safari
 
 ## 7. Architectural Plan
 
