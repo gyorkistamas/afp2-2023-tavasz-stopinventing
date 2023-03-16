@@ -65,6 +65,12 @@ Nowadays there are few capable websites or web applications for team management 
 ### Meeting page
 ![Meeting](Pictures/Screen%20plans/meeting.png)
 
+### Users
+![Users](Pictures/Screen%20plans/users.png)
+
+## Manage teams
+![Manage teams](Pictures/Screen%20plans/manage%20teams.png)
+
 
 ## 9. Scenarios
 
