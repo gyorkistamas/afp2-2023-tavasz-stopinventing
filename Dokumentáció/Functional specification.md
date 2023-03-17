@@ -80,7 +80,7 @@ Nowadays there are few capable websites or web applications for team management 
 ### Users
 ![Users](Pictures/Screen%20plans/users.png)
 
-## Manage teams
+### Manage teams
 ![Manage teams](Pictures/Screen%20plans/manage%20teams.png)
 
 ### Meeting reminder email
