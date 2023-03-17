@@ -159,7 +159,7 @@ Nowadays there are few capable websites or web applications for team management 
 | I30 | R9 | FR11 |
 | I31 | R10 | FR12 |
 
-## 11 Glossary
+## 11. Glossary
 
 - Scrum meeting: A certain type of meeting where participants only discuss their thoughts in 15 minutes or less.  
 Main gist of the meeting is about the following 3 questions:
@@ -167,3 +167,4 @@ Main gist of the meeting is about the following 3 questions:
   - What will you do today?
   - Are there any impediments in your way?
 - Scrum master: Person responsible for arranging meetings, presenting advices for the development team and remedying the impediments.
+- Task tracker: It's a single place or an application where you and your team can organize and prioritize every single task or item that needs to get done.
