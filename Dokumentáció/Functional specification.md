@@ -59,6 +59,9 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 8. Screen plan
 
+### Sign Up
+![Sign Up](Pictures/Screen%20plans/sign_up.png)
+
 ### Sign In
 ![Sign In](Pictures/Screen%20plans/sign_in.png)
 
