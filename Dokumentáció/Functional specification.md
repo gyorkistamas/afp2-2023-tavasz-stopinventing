@@ -74,6 +74,9 @@ Nowadays there are few capable websites or web applications for team management 
 ### My meetings (list view)
 ![My meetings list view](Pictures/Screen%20plans/my_meetings_list.drawio.png)
 
+### Meeting invites
+![Meeting invites](Pictures/Screen%20plans/meeting_invites.drawio.png)
+
 ### Meeting page
 ![Meeting](Pictures/Screen%20plans/meeting.png)
 
