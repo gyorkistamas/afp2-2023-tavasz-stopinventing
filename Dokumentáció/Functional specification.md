@@ -80,6 +80,9 @@ Nowadays there are few capable websites or web applications for team management 
 ### Manage meetings (in scrum master's point of view)
 ![Manage meeting scrum master view](Pictures/Screen%20plans/manage_meetings_scrum_master_view.drawio.png)
 
+### Manage meetings (in admin's point of view)
+![Manage meeting admin view](Pictures/Screen%20plans/manage_meetings_admin_view.drawio.png)
+
 ### Meeting page
 ![Meeting](Pictures/Screen%20plans/meeting.png)
 
