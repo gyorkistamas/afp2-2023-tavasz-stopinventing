@@ -141,14 +141,14 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 ## 6. Physical Environment
 
-### Purchased Softwarecomponents and other Third Party Softwares
+### Purchased Software components and other Third Party Softwares
 
 1. Laravel
 2. mySql
 
 ### Hardware Topology
 
-+ Server with website services functions and server database services.
++ Server with website services, functions and server database services.
 
 ### Development Tools
 
@@ -165,7 +165,7 @@ The App is supported for all of the devices used nowadays with a properly workin
    2. Notepad++
    3. Linux nano and midnight commander
 4. Test environment
-   1. Web browsers
+    + Web browsers:
       1. Google Chrome
       2. Opera/Opera GX
       3. Mozila Firefox
