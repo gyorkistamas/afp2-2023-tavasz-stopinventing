@@ -80,6 +80,9 @@ Nowadays there are few capable websites or web applications for team management 
 ### Users
 ![Users](Pictures/Screen%20plans/users.png)
 
+### Create team
+![Create team](Pictures/Screen%20plans/create_team.drawio.png)
+
 ### Manage teams
 ![Manage teams](Pictures/Screen%20plans/manage%20teams.png)
 
