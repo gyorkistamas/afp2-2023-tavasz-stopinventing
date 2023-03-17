@@ -77,6 +77,9 @@ Nowadays there are few capable websites or web applications for team management 
 ### Meeting invites
 ![Meeting invites](Pictures/Screen%20plans/meeting_invites.drawio.png)
 
+### Manage meetings (in scrum master's point of view)
+![Manage meeting scrum master view](Pictures/Screen%20plans/manage_meetings_scrum_master_view.drawio.png)
+
 ### Meeting page
 ![Meeting](Pictures/Screen%20plans/meeting.png)
 
