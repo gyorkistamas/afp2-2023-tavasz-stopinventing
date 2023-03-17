@@ -83,6 +83,9 @@ Nowadays there are few capable websites or web applications for team management 
 ## Manage teams
 ![Manage teams](Pictures/Screen%20plans/manage%20teams.png)
 
+### Meeting reminder email
+![Meeting reminder](Pictures/Screen%20plans/meeting_reminder_email.drawio.png)
+
 
 ## 9. Scenarios
 
