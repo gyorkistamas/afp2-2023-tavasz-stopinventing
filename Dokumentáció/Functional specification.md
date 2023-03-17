@@ -98,6 +98,12 @@ Nowadays there are few capable websites or web applications for team management 
 ### Meeting reminder email
 ![Meeting reminder](Pictures/Screen%20plans/meeting_reminder_email.drawio.png)
 
+### Invite received
+![Invite received](Pictures/Screen%20plans/invite_received.png)
+
+### Create meeting
+![Create meeting](Pictures/Screen%20plans/create_meeting.png)
+
 
 ## 9. Scenarios
 
