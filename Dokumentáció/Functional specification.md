@@ -20,19 +20,19 @@ Nowadays there are few capable websites or web applications for team management 
 
 | Id | Module | Name | Description |
 | :---: | --- | --- | --- |
-| K1 | Access | Login screen | Login form page |
-| K2 | Access | Registration | Registration form page |
-| K3 | Access | Access Levels | - Normal user<br> - Srum master<br> - Administrator |
-| K4 | Modification | User modify | Change username |
-| K5 | Modification | Password modify | Change password |
-| K6 | Modification | Email modify | Change email |
-| K7 | Modification | Forgot your username or password | In case of forgetting your username or password, you can fill in a form. After filling it in, an automated email will be sent. |
-| K8 | Interface | Calendar | Adding events. |
-| K9 | Interface | Online meeting | The "Team"/"Group" holds meetings. |
-| K10 | Interface | Task list | List for tasks. |
-| K11 | Interface | Progression | Page for tracking progression. |
-| K12 | Interface | Login | Users can log in here to the application. |
-| K13 | Interface | Messages | Page for incoming messages. |
+| R1 | Access | Login screen | Login form page |
+| R2 | Access | Registration | Registration form page |
+| R3 | Access | Access Levels | - Normal user<br> - Srum master<br> - Administrator |
+| R4 | Modification | User modify | Change username |
+| R5 | Modification | Password modify | Change password |
+| R6 | Modification | Email modify | Change email |
+| R7 | Modification | Forgot your username or password | In case of forgetting your username or password, you can fill in a form. After filling it in, an automated email will be sent. |
+| R8 | Interface | Calendar | Adding events. |
+| R9 | Interface | Online meeting | The "Team"/"Group" holds meetings. |
+| R10 | Interface | Task list | List for tasks. |
+| R11 | Interface | Progression | Page for tracking progression. |
+| R12 | Interface | Login | Users can log in here to the application. |
+| R13 | Interface | Messages | Page for incoming messages. |
 
 ## 6. Use Cases
 
@@ -93,9 +93,37 @@ Nowadays there are few capable websites or web applications for team management 
 ## 10. Functionality
 
 | Id | Requirement | Functionality |
-| :---: | --- | --- |
-| K99 | ... | ... |
-
+| I1 | R1 | FR1 |
+| I2 | R1 | FR2 |
+| I3 | R1 | FR3 |
+| I4 | R2 | FR4 |
+| I5 | R2 | FR5 |
+| I6 | R2 | FR6 |
+| I7 | R1 | FR1 |
+| I8 | R1 | FR2 |
+| I9 | R1 | FR3 |
+| I10 | R2 | FR4 |
+| I11 | R2 | FR5 |
+| I12 | R2 | FR6 |
+| I13 | R3 | FR20 |
+| I14 | R4 | FR14 |
+| I15 | R5 | FR14 |
+| I16 | R6 | FR14 |
+| I17 | R4 | FR15 |
+| I18 | R5 | FR15 |
+| I19 | R6 | FR15 |
+| I20 | R4 | FR16 |
+| I21 | R5 | FR16 |
+| I22 | R6 | FR16 |
+| I23 | R8 | FR17 |
+| I24 | R8 | FR18 |
+| I25 | R8 | FR19 |
+| I26 | R9 | FR7 |
+| I27 | R9 | FR8 |
+| I28 | R9 | FR9 |
+| I29 | R9 | FR10 |
+| I30 | R9 | FR11 |
+| I31 | R10 | FR12 |
 ## 11 Glossary
 
 - Scrum meeting: A certain type of meeting where participants only discuss their thoughts in 15 minutes or less.  
