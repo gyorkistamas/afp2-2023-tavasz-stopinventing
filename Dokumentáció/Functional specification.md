@@ -158,6 +158,7 @@ Nowadays there are few capable websites or web applications for team management 
 | I29 | R9 | FR10 |
 | I30 | R9 | FR11 |
 | I31 | R10 | FR12 |
+
 ## 11 Glossary
 
 - Scrum meeting: A certain type of meeting where participants only discuss their thoughts in 15 minutes or less.  
