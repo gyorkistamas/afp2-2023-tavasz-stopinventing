@@ -71,6 +71,9 @@ Nowadays there are few capable websites or web applications for team management 
 ### My meetings (calendar view)
 ![My meetings calendar view](Pictures/Screen%20plans/my_meetings.drawio.png)
 
+### My meetings (list view)
+![My meetings list view](Pictures/Screen%20plans/my_meetings_list.drawio.png)
+
 ### Meeting page
 ![Meeting](Pictures/Screen%20plans/meeting.png)
 
