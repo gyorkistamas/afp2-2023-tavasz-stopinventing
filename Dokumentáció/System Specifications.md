@@ -141,18 +141,18 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 ## 6. Physical Environment
 
-### Purchased Softwarecomponents and other Third Party Softwares
+### Purchased Software components and other Third Party Softwares
 
 1. Laravel
 2. mySql
 
 ### Hardware Topology
 
-+ Server with website services functions and server database services.
++ Server with website services, functions and server database services.
 
 ### Development Tools
 
-1. Programing languages:
+1. Programming languages:
    1. PHP
    2. CSS
    3. HTML
@@ -160,12 +160,12 @@ The App is supported for all of the devices used nowadays with a properly workin
 2. Framework:
    1. Laravel
    2. BootStrap
-3. Developing enviroment:
-   1. VS Code
+3. Developing environment:
+   1. Visual Studio Code
    2. Notepad++
-   3. Linux nano and MidnightCommander
-4. Test enviroment
-   1. Web browsers
+   3. Linux nano and midnight commander
+4. Test environment
+    + Web browsers:
       1. Google Chrome
       2. Opera/Opera GX
       3. Mozila Firefox
@@ -178,7 +178,7 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 + Apache webserver
 + NGINX webserver
-+ Featured web server provided by Laravel
++ Developer webserver provided by Laravel
 
 ### Database System
 
@@ -186,7 +186,7 @@ The App is supported for all of the devices used nowadays with a properly workin
 
 ### Accessibility of the Program, Ease of Use
 
-+ Our application does not need to install, only needs a web browser.
++ Our application doesn't need to be installed, it only needs a web browser to run.
 
 ## 8. Database Plan
 

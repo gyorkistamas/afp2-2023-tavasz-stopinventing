@@ -59,8 +59,29 @@ Nowadays there are few capable websites or web applications for team management 
 
 ## 8. Screen plan
 
+### Sign Up
+![Sign Up](Pictures/Screen%20plans/sign_up.png)
+
+### Sign In
+![Sign In](Pictures/Screen%20plans/sign_in.png)
+
 ### My profile
 ![My profile](Pictures/Screen%20plans/my_profile.png)
+
+### My meetings (calendar view)
+![My meetings calendar view](Pictures/Screen%20plans/my_meetings.drawio.png)
+
+### My meetings (list view)
+![My meetings list view](Pictures/Screen%20plans/my_meetings_list.drawio.png)
+
+### Meeting invites
+![Meeting invites](Pictures/Screen%20plans/meeting_invites.drawio.png)
+
+### Manage meetings (in scrum master's point of view)
+![Manage meeting scrum master view](Pictures/Screen%20plans/manage_meetings_scrum_master_view.drawio.png)
+
+### Manage meetings (in admin's point of view)
+![Manage meeting admin view](Pictures/Screen%20plans/manage_meetings_admin_view.drawio.png)
 
 ### Meeting page
 ![Meeting](Pictures/Screen%20plans/meeting.png)
@@ -68,8 +89,20 @@ Nowadays there are few capable websites or web applications for team management 
 ### Users
 ![Users](Pictures/Screen%20plans/users.png)
 
-## Manage teams
+### Create team
+![Create team](Pictures/Screen%20plans/create_team.drawio.png)
+
+### Manage teams
 ![Manage teams](Pictures/Screen%20plans/manage%20teams.png)
+
+### Meeting reminder email
+![Meeting reminder](Pictures/Screen%20plans/meeting_reminder_email.drawio.png)
+
+### Invite received
+![Invite received](Pictures/Screen%20plans/invite_received.png)
+
+### Create meeting
+![Create meeting](Pictures/Screen%20plans/create_meeting.png)
 
 
 ## 9. Scenarios
