@@ -126,6 +126,7 @@ Nowadays there are few capable websites or web applications for team management 
 ## 10. Functionality
 
 | Id | Requirement | Functionality |
+| :---: | --- | --- | --- |
 | I1 | R1 | FR1 |
 | I2 | R1 | FR2 |
 | I3 | R1 | FR3 |
