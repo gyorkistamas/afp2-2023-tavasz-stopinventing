@@ -138,6 +138,14 @@ The App is supported for all of the devices used nowadays with a properly workin
   They have access to all meetings
 
 ### 5.2 Menu hierachies
+1. Main site
+2. My profile
+3. My meetings
+4. Manage teams
+5. Users
+6. Log In
+7. Sign Up
+8. Log Out
 
 ## 6. Physical Environment
 
