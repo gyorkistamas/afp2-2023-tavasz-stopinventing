@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
@@ -19,13 +20,18 @@ class Meeting extends Model
         'description'
     ];
 
-    public function attendants(): HasManyThrough
+    public function attendants(): BelongsToMany
     {
-        return $this->hasManyThrough(User::class, MeetingAttendant::class);
+        return $this->belongsToMany(User::class, 'meeting_attendants', 'meeting_id', 'user_id');
     }
 
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function attendance(): HasMany
+    {
+        return $this->hasMany(MeetingAttendant::class, 'meeting_id', 'id');
     }
 }
