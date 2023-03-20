@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Team extends Model
 {
@@ -16,8 +18,13 @@ class Team extends Model
         'scrum_master'
     ];
 
-    public function members(): HasManyThrough
+    public function scrumMaster(): HasOne
     {
-        return $this->hasManyThrough(User::class, TeamMember::class);
+        return $this->hasOne(User::class, 'id', 'scrum_master');
+    }
+
+    public function members(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'team_members', 'team_id', 'user_id');
     }
 }
