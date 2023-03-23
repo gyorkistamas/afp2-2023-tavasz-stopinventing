@@ -12,7 +12,7 @@
         <div class="text-white">
 
             <h1 class="mb-3">Sign In</h1>
-            <h5 class="mb-4">Sample text for basic information</h5>
+            <h5 class="mb-4">Start getting involved into a team working environment</h5>
 
           <form>
 
