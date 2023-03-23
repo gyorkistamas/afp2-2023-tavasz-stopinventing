@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [function () {
-    return view('template');
-}]);
+Route::get('/', function () {
+    return redirect(route('sign-in'));
+});
 
 Route::get('/sign-in', function() {
     return view('users.signin');
-});
+})->name('sign-in');
 
 Route::get('/sign-up', function() {
     return view('users.signup');
