@@ -12,7 +12,7 @@
         <div class="text-white">
 
             <h1 class="mb-3">Sign In</h1>
-            <h5 class="mb-4">Start getting involved into a team working environment</h5>
+            <h5 class="mb-4">Start getting involved in a team working environment</h5>
 
           <form>
 
@@ -29,7 +29,6 @@
             </div>
 
             <div class="d-flex justify-content-between align-items-center">
-                <!-- Checkbox -->
                 <div class="form-check mb-0">
                   <input class="form-check-input me-2" type="checkbox" value="" id="remember" />
                   <label class="form-check-label" for="remember">
