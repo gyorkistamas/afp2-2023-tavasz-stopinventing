@@ -22,16 +22,11 @@ class Meeting extends Model
 
     public function attendants(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'meeting_attendants', 'meeting_id', 'user_id');
+        return $this->belongsToMany(User::class, 'meeting_attendants', 'meeting_id', 'user_id')->withPivot('participate');
     }
 
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
-    }
-
-    public function attendance(): HasMany
-    {
-        return $this->hasMany(MeetingAttendant::class, 'meeting_id', 'id');
     }
 }
