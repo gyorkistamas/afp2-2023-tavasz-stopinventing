@@ -22,6 +22,5 @@ Route::get('/sign-in', [UserController::class, 'Login'])->name('sign-in');
 
 Route::post('/sign-in',[UserController::class, 'SignIn']);
 Route::get('/sign-out',[UserController::class,'LogOut']);
-Route::get('/sign-up', function() {
-    return view('users.signup');
-});
+Route::get('/sign-up', [UserController::class,'Register']);
+Route::post('/sign-up',[UserController::class, 'SignUp']);
