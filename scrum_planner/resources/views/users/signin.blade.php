@@ -22,11 +22,17 @@
             </label>
 
             <input
+                name="email"
                 type="email"
                 id="email"
                 class="form-control form-control-lg"
                 placeholder="Enter a valid email address"
+                required
             />
+
+            @error('email')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
 
         </div>
 
@@ -37,11 +43,17 @@
             </label>
 
             <input
+                name="password"
                 type="password"
                 id="password"
                 class="form-control form-control-lg"
                 placeholder="Enter password"
+                required
             />
+
+            @error('password')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
 
         </div>
 
@@ -50,6 +62,7 @@
             <div class="form-check mb-0">
 
                 <input
+                    name="remember"
                     class="form-check-input me-2"
                     type="checkbox"
                     id="remember"

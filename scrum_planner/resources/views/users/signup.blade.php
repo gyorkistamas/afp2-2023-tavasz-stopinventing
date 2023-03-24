@@ -14,8 +14,8 @@
         <h1 class="mb-3">Sign Up</h1>
         <h5 class="mb-4">Create your account and join meetings with various teams</h5>
 
-        <form enctype="multipart/form-data">
-
+        <form action="/sign-up" method="POST" enctype="multipart/form-data">
+        @csrf
             <div class="form-outline mb-4">
 
                 <label class="pe-3 fw-bold form-label" for="profilePic">
@@ -23,12 +23,14 @@
                 </label>
 
                 <img
+                    name="displayIMG"
                     id="displayIMG"
                     src="{{ asset('profile_pic_sample.png') }}"
                     style="width: 250px; height: 250px; display: block; margin-left: auto; margin-right: auto;"
                     alt="Not Found"
                     title="Profile Image"
                 />
+
               </div>
 
 
@@ -55,11 +57,17 @@
                 </label>
 
                 <input
+                    name="fullName"
                     type="text"
                     id="fullName"
                     class="form-control form-control-lg"
                     placeholder="Enter your full name"
+                    required
                 />
+
+                @error('fullName')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
 
             </div>
 
@@ -70,11 +78,17 @@
                 </label>
 
                 <input
+                    name="email"
                     type="email"
                     id="email"
                     class="form-control form-control-lg"
                     placeholder="Give a valid email address"
+                    required
                 />
+
+                @error('email')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
 
             </div>
 
@@ -85,11 +99,17 @@
                 </label>
 
                 <input
+                    name="password"
                     type="password"
                     id="password"
                     class="form-control form-control-lg"
                     placeholder="Enter password"
+                    required
                 />
+
+                @error('password')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
 
             </div>
 
@@ -100,11 +120,17 @@
                 </label>
 
                 <input
+                    name="passwordConfirm"
                     type="password"
                     id="passwordConfirm"
                     class="form-control form-control-lg"
                     placeholder="Confirm your password"
+                    required
                 />
+
+                @error('passwordConfirm')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
 
             </div>
 
