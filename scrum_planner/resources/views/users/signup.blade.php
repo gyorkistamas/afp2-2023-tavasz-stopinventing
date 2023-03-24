@@ -137,7 +137,7 @@
             <div class="text-center text-lg-start mt-4 pt-2">
 
                 <div class="text-center">
-                    <button type="button" class="btn btn-outline-light btn-lg m-2">
+                    <button type="submit" class="btn btn-outline-light btn-lg m-2">
                         Sign Up
                     </button>
                 </div>
