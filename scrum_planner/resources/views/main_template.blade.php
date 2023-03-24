@@ -54,7 +54,7 @@
               @if(Auth::check())
 
               <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn btn-danger w-100" href="#">Log out</a>
+                <a class="btn btn-danger w-100" href="{{url('/sign-out')}}">Log out</a>
               </li>
 
               @else
