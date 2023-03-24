@@ -14,7 +14,7 @@
         <h1 class="mb-3">Sign Up</h1>
         <h5 class="mb-4">Create your account and join meetings with various teams</h5>
 
-        <form action="/sign-up" method="POST" enctype="multipart/form-data">
+        <form action={{ url('/sign-up') }} method="POST" enctype="multipart/form-data">
         @csrf
             <div class="form-outline mb-4">
 

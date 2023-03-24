@@ -12,7 +12,7 @@
         <h1 class="mb-3">Sign In</h1>
         <h5 class="mb-4">Start getting involved in a team working environment</h5>
 
-        <form action="/sign-in" method="POST">
+        <form action={{ url('/sign-in') }} method="POST">
         @csrf
 
         <div class="form-outline mb-4">
