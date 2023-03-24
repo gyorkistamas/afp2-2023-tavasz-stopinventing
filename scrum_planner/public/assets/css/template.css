@@ -6,6 +6,14 @@
 	height: 35px;
 }
 
+.small-pic {
+	border-radius: 50%;
+	margin-right: 10px;
+	margin-bottom: 3px;
+	width: 35px;
+	height: 35px;
+}
+
 .navbar {
 	border-bottom: 1px solid black;
 }
@@ -17,4 +25,17 @@
 
 body {
 	background-image: url('/bg.png');
+}
+
+.bordered {
+	border: 3px solid white;
+}
+
+.comment {
+	border: 2px solid white;
+	border-radius: 10px;
+}
+
+.response-img {
+	max-width: 30px;
 }
