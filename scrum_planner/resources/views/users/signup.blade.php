@@ -57,7 +57,7 @@
                 </label>
 
                 <input
-                    name="fullName"
+                    name="full_name"
                     type="text"
                     id="fullName"
                     class="form-control form-control-lg"
@@ -65,7 +65,7 @@
                     required
                 />
 
-                @error('fullName')
+                @error('full_name')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
 
