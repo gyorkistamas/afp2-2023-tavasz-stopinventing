@@ -1,4 +1,4 @@
-@extends('template')
+@extends('main_template')
 
 @section('title')
 <title>Sign up</title>
