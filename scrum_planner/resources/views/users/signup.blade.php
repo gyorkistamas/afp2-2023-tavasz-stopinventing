@@ -120,15 +120,15 @@
                 </label>
 
                 <input
-                    name="passwordConfirm"
+                    name="password_confirmation"
                     type="password"
-                    id="passwordConfirm"
+                    id="password_confirmation"
                     class="form-control form-control-lg"
                     placeholder="Confirm your password"
                     required
                 />
 
-                @error('passwordConfirm')
+                @error('password_confirmation')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
 
