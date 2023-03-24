@@ -42,7 +42,7 @@
 
                 <input
                     type="file"
-                    name="profile_picture"
+                    name="picture"
                     id="profilePic"
                     accept="image/*"
                     class="form-control form-control-lg"
