@@ -12,7 +12,8 @@
         <h1 class="mb-3">Sign In</h1>
         <h5 class="mb-4">Start getting involved in a team working environment</h5>
 
-        <form>
+        <form action="/sign-in" method="POST">
+        @csrf
 
         <div class="form-outline mb-4">
 
@@ -69,7 +70,7 @@
         <div class="text-center text-lg-start mt-4 pt-2">
 
             <div class="text-center">
-                <button type="button" class="btn btn-outline-light btn-lg m-2">
+                <button type="submit" class="btn btn-outline-light btn-lg m-2">
                     Sign In
                 </button>
             </div>
