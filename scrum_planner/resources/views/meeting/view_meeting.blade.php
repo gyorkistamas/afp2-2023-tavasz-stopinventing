@@ -60,6 +60,10 @@
 					<h6>({{$meeting->attendants()->wherePivot('participate', '=', '0')->count()}} not responded, {{$meeting->attendants()->wherePivot('participate', '=', '1')->count()}} attends, {{$meeting->attendants()->wherePivot('participate', '=', '2')->count()}} cannot attend)</h6>
 				</div>
 
+				@if ($meeting->attendants()->count() == 0)
+					<h4>There aren't any participants yet!</h4>
+				@endif
+
 				<!-- A single participant template -->
 				@foreach ($meeting->attendants as $attendant)
 				<div class="row mt-2 bordered p-2 ms-1 me-1 mb-2">
