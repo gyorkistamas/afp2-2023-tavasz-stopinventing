@@ -10,7 +10,7 @@
 
 		<div class="row">
 			<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-start border-bottom">
-				<h1>The name of the meeting</h1>
+				<h1>{{$meeting->name}}</h1>
 			</div>
 			<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end mt-2 mt-lg-0">
 				<div class="">
@@ -30,31 +30,25 @@
 
 				<div class="row">
 					<div class="col-12 col-sm-3"><h3>Start time:</h3></div>
-					<div class="col-12 col-sm-9"><h3>2023.03.24, 10:00</h3></div>
+					<div class="col-12 col-sm-9"><h3>{{$meeting->start_time}}</h3></div>
 					<hr class="d-block d-sm-none">
 				</div>
 
 				<div class="row">
 					<div class="col-12 col-sm-3"><h3>End time:</h3></div>
-					<div class="col-12 col-sm-9"><h3>2023.03.24, 10:30</h3></div>
+					<div class="col-12 col-sm-9"><h3>{{$meeting->end_time}}</h3></div>
 					<hr class="d-block d-sm-none">
 				</div>
 
 				<div class="row">
 					<div class="col-12 col-sm-3"><h3>Organiser:</h3></div>
-					<div class="col-12 col-sm-9"><h3>Sample Person</h3></div>
-					<hr class="d-block d-sm-none">
-				</div>
-
-				<div class="row">
-					<div class="col-12 col-sm-3"><h3>Place or link:</h3></div>
-					<div class="col-12 col-sm-9"><h3>www.zoom.com/room-id-2004534545435</h3></div>
+					<div class="col-12 col-sm-9"><h3>{{$meeting->scrumMaster->full_name}}</h3></div>
 					<hr class="d-block d-sm-none">
 				</div>
 
 				<div class="row border-bottom">
 					<div class="col-12 col-sm-3"><h3>Description:</h3></div>
-					<div class="col-12 col-sm-9"><p class="ms-2">This is a short description to be filled!</p></div>
+					<div class="col-12 col-sm-9"><p class="ms-2">{{$meeting->description}}</p></div>
 					<hr class="d-block d-sm-none">
 				</div>
 
@@ -63,30 +57,43 @@
 				</div>
 
 				<div class="row mt-2">
-					<h6>(1 not responded, 1 attends, 1 cannot attend)</h6>
+					<h6>({{$meeting->attendants()->wherePivot('participate', '=', '0')->count()}} not responded, {{$meeting->attendants()->wherePivot('participate', '=', '1')->count()}} attends, {{$meeting->attendants()->wherePivot('participate', '=', '2')->count()}} cannot attend)</h6>
 				</div>
 
 				<!-- A single participant template -->
+				@foreach ($meeting->attendants as $attendant)
 				<div class="row mt-2 bordered p-2 ms-1 me-1 mb-2">
 
 					<div class="col-2 col-sm-1">
-						<img class="img small-pic" src="{{ url('/profile_pic_sample.png') }}">
+						<img class="img small-pic" src="{{ url($attendant->picture) }}">
 					</div>
 
 					<div class="col-10 col-sm-6">
-						<h6>Name of the participant</h6>
+						<h6>{{$attendant->full_name}}</h6>
 					</div>
 
+					
 					<div class="col-6 col-sm-1 mt-3 mt-sm-0">
-						<img src="{{ url('/no-response.png') }}" class="img-thumbnail response-img">
+						<img src="@switch($attendant->pivot->participate)
+						@case(0)
+							{{url('/no-response.png')}}
+							@break
+						@case(1)
+							{{url('/yes.png')}}
+							@break
+						@case(2)
+							{{url('/no.png')}}
+							@break
+							
+					@endswitch" class="img-thumbnail response-img">
 					</div>
 
 					<div class="col-6 col-sm-4 mt-3 mt-sm-0">
 						<form>
 							@csrf
 							<div style="display: none;">
-								<input type="number" value="1" name="meeting-id">
-								<input type="number" value="1" name="user-id">
+								<input type="number" value="{{$meeting->id}}" name="meeting_id">
+								<input type="number" value="{{$attendant->id}}" name="user_id">
 							</div>
 
 							<button type="submit" class="btn btn-danger">Remove from meeting</button>
@@ -95,6 +102,7 @@
 					</div>
 
 				</div>
+				@endforeach
 
 			</div>
 
@@ -105,15 +113,21 @@
 					<h2>Comments:</h2>
 				</div>
 
+				@if ($meeting->comments()->count() == 0)
+					<h3>There are no comments yet!</h3>
+				@endif
+
+				@foreach ($meeting->comments as $comment)
 				<div class="comment mt-3 p-3">
 					<div class="row">
-						<h5><img src="{{ url('/profile_pic_sample.png') }}" class="img-thumbnail small-pic">Name here</h5>
+						<h5><img src="{{ $comment->author->picture }}" class="img-thumbnail small-pic">{{$comment->author->full_name}}</h5>
 					</div>
 	
 					<div class="row">
-						<p>This is the mesage left by the user</p>
+						<p>{{$comment->comment}}</p>
 					</div>
 				</div>
+				@endforeach
 
 				<div class="comment mt-3 p-3">
 					<form>
