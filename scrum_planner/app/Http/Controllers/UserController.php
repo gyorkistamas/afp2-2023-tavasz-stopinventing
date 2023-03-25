@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -48,5 +49,24 @@ class UserController extends Controller
         $fields['privilage'] = 0;
         $user = User::create($fields);
         return redirect('/sign-in');
+    }
+
+    public function List() {
+
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+
+        $listOfUsers = User::select(
+            'id',
+            'full_name',
+            'email',
+            'created_at',
+            'privilage',
+            'picture'
+        )->paginate(6);
+
+        return view('users.list', ['Users' => $listOfUsers]);
+
     }
 }
