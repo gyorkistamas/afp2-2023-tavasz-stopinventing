@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,6 @@ Route::post('/sign-in',[UserController::class, 'SignIn']);
 Route::get('/sign-out',[UserController::class,'LogOut']);
 Route::get('/sign-up', [UserController::class,'Register']);
 Route::post('/sign-up',[UserController::class, 'SignUp']);
+
+
+Route::get('/meeting/show/{id}', [MeetingController::class, 'ShowMeeting']);
