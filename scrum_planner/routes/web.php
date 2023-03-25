@@ -27,4 +27,4 @@ Route::get('/sign-up', [UserController::class,'Register']);
 Route::post('/sign-up',[UserController::class, 'SignUp']);
 
 
-Route::get('/meeting/show/{id}', [MeetingController::class, 'ShowMeeting']);
+Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
