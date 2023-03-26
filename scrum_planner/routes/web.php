@@ -26,5 +26,8 @@ Route::get('/sign-out',[UserController::class,'LogOut']);
 Route::get('/sign-up', [UserController::class,'Register']);
 Route::post('/sign-up',[UserController::class, 'SignUp']);
 
+Route::get('/team/create', function () {
+    return view('teams.creating_team');
+});
 
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
