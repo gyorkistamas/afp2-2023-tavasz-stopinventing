@@ -4,6 +4,11 @@
 	<title>Creating team</title>
 @endsection
 
+@section('custom_css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+@endsection
+
 @section('content')
 
 <div class="container d-flex align-items-center justify-content-center text-center p-5">
@@ -11,7 +16,7 @@
 
         <h1 class="mb-3">Create new team</h1>
 
-        <form action={{ url('/sign-in') }} method="POST">
+        <form action={{ url('/team/create') }} method="POST">
         @csrf
 
         <div class="form-outline mb-4">
@@ -41,17 +46,12 @@
                 Team members
             </label>
 
-            <input
-                name="team_members"
-                type="text"
-                id="teamMembers"
-                class="form-control form-control-lg"
-                placeholder=""
-				aria-haspopup="listbox"
-				aria-multiselectable="true"
-                required
-            />
-
+            <select class="selectpicker" data-live-search="true">
+                <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+                <option data-tokens="mustard">Burger, Shake and a Smile</option>
+                <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+            </select>
+              
             @error('team_members')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
