@@ -64,7 +64,7 @@ class UserController extends Controller
             'created_at',
             'privilage',
             'picture'
-        )->paginate(6);
+        )->paginate(3);
 
         return view('users.list', ['Users' => $listOfUsers]);
 
