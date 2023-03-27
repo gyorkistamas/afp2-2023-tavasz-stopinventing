@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,5 @@ Route::get('/sign-up', [UserController::class,'Register']);
 Route::post('/sign-up', [UserController::class, 'SignUp']);
 
 Route::get('/users', [UserController::class, 'List'])->name('users');
+
+Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
