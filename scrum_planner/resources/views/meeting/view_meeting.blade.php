@@ -114,7 +114,7 @@
 			<!-- The comment side -->
 			<div class="col-12 col-lg-6 ps-1 ps-lg-5">
 				<div class="row border-bottom">
-					<h2>Comments:</h2>
+					<h2>Comments: @if(session()->has('created')) <span class="bg-success">Comment added successfully!</span>  @endif</h2>
 				</div>
 
 				@if ($meeting->comments()->count() == 0)
@@ -134,7 +134,7 @@
 				@endforeach
 
 				<div class="comment mt-3 p-3">
-					<form>
+					<form method="POST" action='/meeting/comment'>
 						@csrf
 						<div class="row">
 							<div style="display: none;">
