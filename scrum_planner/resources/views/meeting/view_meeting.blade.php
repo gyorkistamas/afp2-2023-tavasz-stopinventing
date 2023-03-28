@@ -121,10 +121,12 @@
 					<h3>There are no comments yet!</h3>
 				@endif
 
-				@foreach ($meeting->comments as $comment)
+				<div class="overflow-scroll overflow-x-hidden h-50">
+					@foreach ($meeting->comments->reverse() as $comment)
 				<div class="comment mt-3 p-3">
 					<div class="row">
 						<h5><img src="{{ $comment->author->picture }}" class="img-thumbnail small-pic">{{$comment->author->full_name}}</h5>
+						<h6>{{ $comment->created_at }}</h6>
 					</div>
 	
 					<div class="row">
@@ -132,6 +134,7 @@
 					</div>
 				</div>
 				@endforeach
+				</div>
 
 				<div class="comment mt-3 p-3">
 					<form method="POST" action='/meeting/comment'>
