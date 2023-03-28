@@ -121,7 +121,7 @@
 					<h3>There are no comments yet!</h3>
 				@endif
 
-				<div class="overflow-scroll overflow-x-hidden h-50">
+				<div class="overflow-auto h-50 mt-1 pe-1">
 					@foreach ($meeting->comments->reverse() as $comment)
 				<div class="comment mt-3 p-3">
 					<div class="row">
