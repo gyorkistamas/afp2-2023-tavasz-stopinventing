@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Meeting;
 use App\Models\MeetingAttendant;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,7 @@ class MeetingController extends Controller
 {
     //
 
-    public function ShowMeeting(Meeting $meeting) 
+    public function ShowMeeting(Meeting $meeting)
     {
         $attendant = false;
 
@@ -22,18 +23,32 @@ class MeetingController extends Controller
                 $attendant = true;
                 break;
             }
+
         }
+
+        $attendantIDs = array();
+
+        foreach ($meeting->attendants as $attendant)
+        {
+            $attendantIDs[] = $attendant->id;
+        }
+
+        $attendantIDs[] = $meeting->scrumMaster->id;
+
+
+
+        $allUsers = User::whereNotIn('id', $attendantIDs)->get();
 
         if(Auth::user()->id == $meeting->organiser || Auth::user()->privilage == 2 || $attendant)
         {
-            return view('meeting.view_meeting', ['meeting' => $meeting]);
+            return view('meeting.view_meeting', ['meeting' => $meeting, 'users' => $allUsers]);
         }
 
         return abort(401);
-        
+
     }
 
-    public function RecordComment(Request $request) 
+    public function RecordComment(Request $request)
     {
         $fields = $request->validate([
             'meeting_id' => ['required'],
@@ -55,7 +70,7 @@ class MeetingController extends Controller
         ]);
         $attendant = MeetingAttendant::where('meeting_id', $fields['meeting_id'])->
                                        where('user_id', $fields['user_id'])->first();
-        
+
         $attendant->delete();
 
         return redirect()->back()->with('user-removed', 'User removed from meeting');
