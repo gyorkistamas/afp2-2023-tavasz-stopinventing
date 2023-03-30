@@ -15,7 +15,7 @@
 			<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end mt-2 mt-lg-0">
 				<div class="">
 					<a class="btn btn-warning me-0 me-lg-2">Edit meeting</a>
-					<a class="btn btn-success">Add new participant(s)</a>
+					<a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new participant(s)</a>
 				</div>
 			</div>
 		</div>
@@ -164,5 +164,39 @@
 
 		</div>
 	</div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add new participants</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                <div class="modal-body">
+
+                    <select id="example-getting-started" multiple="multiple">
+                        <option value="cheese">Cheese</option>
+                        <option value="tomatoes">Tomatoes</option>
+                        <option value="mozarella">Mozzarella</option>
+                        <option value="mushrooms">Mushrooms</option>
+                        <option value="pepperoni">Pepperoni</option>
+                        <option value="onions">Onions</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Send invites</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 
 @endsection
