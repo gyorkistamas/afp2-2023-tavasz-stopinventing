@@ -4,6 +4,12 @@
 	<title>View meeting</title>
 @endsection
 
+@section('custom_css')
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@endsection
+
 @section('content')
 
 	<div class="container-fluid text-white mt-3">
@@ -166,7 +172,6 @@
 	</div>
 
 
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -175,17 +180,17 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add new participants</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
+                <form method="POST" action="">
                 <div class="modal-body">
 
-                    <select id="example-getting-started" multiple="multiple">
-                        <option value="cheese">Cheese</option>
-                        <option value="tomatoes">Tomatoes</option>
-                        <option value="mozarella">Mozzarella</option>
-                        <option value="mushrooms">Mushrooms</option>
-                        <option value="pepperoni">Pepperoni</option>
-                        <option value="onions">Onions</option>
-                    </select>
+                    <label>
+                        Start typing the participant's email address:
+                        <select id="participant-chooser" multiple="multiple" name="participants[]" style="width: 100%;">
+                            @foreach($users as $user)
+                                <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
+                            @endforeach
+                        </select>
+                    </label>
 
                 </div>
                 <div class="modal-footer">
@@ -197,6 +202,14 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(function() {
+            $('#participant-chooser').select2({
+                dropdownParent: $('#exampleModal'),
+                width: 'resolve'
+            });
+        });
 
+    </script>
 
 @endsection
