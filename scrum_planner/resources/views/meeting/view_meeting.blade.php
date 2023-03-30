@@ -59,7 +59,9 @@
 				</div>
 
 				<div class="row mt-2">
-					<h2>Participants: @if(session()->has('user-removed')) <span class="bg-success">User removed successfully!</span> @endif</h2>
+					<h2>Participants: @if(session()->has('user-removed')) <span class="bg-success">User removed successfully!</span> @endif
+                                     @if(session()->has('users_added')) <span class="bg-success">{{  session()->get('users_added') }}</span> @endif
+                    </h2>
 				</div>
 
 				<div class="row mt-2">
@@ -180,15 +182,17 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add new participants</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form method="POST" action="">
+                <form method="POST" action="/meeting/add-participants">
+                    @csrf
                 <div class="modal-body">
-
+                    <div style="display: none;"> <input type="number" name="meeting_id" value="{{$meeting->id}}"> </div>
                     <label>
                         Start typing the participant's email address:
                         <select id="participant-chooser" multiple="multiple" name="participants[]" style="width: 100%;">
                             @foreach($users as $user)
                                 <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
                             @endforeach
+                            <option value="3">SImple user</option>
                         </select>
                     </label>
 
