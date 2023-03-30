@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Meeting;
 use App\Models\MeetingAttendant;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,7 @@ class MeetingController extends Controller
 
         if(Auth::user()->id == $meeting->organiser || Auth::user()->privilage == 2 || $attendant)
         {
-            return view('meeting.view_meeting', ['meeting' => $meeting, 'users' => $allUsers]);
+            return view('meeting.view_meeting', ['meeting' => $meeting, 'users' => $allUsers, 'teams' => Team::all()]);
         }
 
         return abort(401);
@@ -81,13 +82,32 @@ class MeetingController extends Controller
         $addedCount = 0;
         $failed = 0;
 
-        foreach ($request->participants as $participant)
+        if (!empty($request->teams))
         {
-            try {
-                MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant, 'participate' => 0]);
-                $addedCount += 1;
+            foreach ($request->teams as $id)
+            {
+                $team = Team::find($id)->first();
+                foreach ($team->members as $participant)
+                {
+                    try {
+                        MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant->id, 'participate' => 0]);
+                        $addedCount += 1;
+                    }
+                    catch (\Exception) { $failed += 1; }
+                }
             }
-            catch (\Exception) { $failed += 1; }
+        }
+
+        if (!empty($request->participants))
+        {
+            foreach ($request->participants as $participant)
+            {
+                try {
+                    MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant, 'participate' => 0]);
+                    $addedCount += 1;
+                }
+                catch (\Exception) { $failed += 1; }
+            }
         }
 
         return redirect()->back()->with(['users_added' => $addedCount . ' user added, '. $failed . ' failed']);
