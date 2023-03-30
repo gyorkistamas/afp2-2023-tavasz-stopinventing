@@ -53,7 +53,7 @@
 				</div>
 
 				<div class="row mt-2">
-					<h2>Participants:</h2>
+					<h2>Participants: @if(session()->has('user-removed')) <span class="bg-success">User removed successfully!</span> @endif</h2>
 				</div>
 
 				<div class="row mt-2">
@@ -76,7 +76,7 @@
 						<h6>{{$attendant->full_name}}</h6>
 					</div>
 
-					
+
 					<div class="col-6 col-sm-1 mt-3 mt-sm-0">
 						<img src="@switch($attendant->pivot->participate)
 						@case(0)
@@ -88,12 +88,12 @@
 						@case(2)
 							{{url('/no.png')}}
 							@break
-							
+
 					@endswitch" class="img-thumbnail response-img">
 					</div>
 
 					<div class="col-6 col-sm-4 mt-3 mt-sm-0">
-						<form>
+						<form action="/meeting/remove-participant", method="POST">
 							@csrf
 							<div style="display: none;">
 								<input type="number" value="{{$meeting->id}}" name="meeting_id">
@@ -128,7 +128,7 @@
 						<h5><img src="{{ $comment->author->picture }}" class="img-thumbnail small-pic">{{$comment->author->full_name}}</h5>
 						<h6>{{ $comment->created_at }}</h6>
 					</div>
-	
+
 					<div class="row">
 						<p>{{$comment->comment}}</p>
 					</div>
