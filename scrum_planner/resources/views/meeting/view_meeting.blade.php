@@ -192,7 +192,15 @@
                             @foreach($users as $user)
                                 <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
                             @endforeach
-                            <option value="3">SImple user</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Or add a whole team:
+                        <select id="team-chooser" multiple="multiple" name="teams[]" style="width: 100%;">
+                            @foreach($teams as $team)
+                                <option value="{{  $team->id }}">{{  $team->team_name }}</option>
+                            @endforeach
                         </select>
                     </label>
 
@@ -212,8 +220,13 @@
                 dropdownParent: $('#exampleModal'),
                 width: 'resolve'
             });
-        });
 
+            $('#team-chooser').select2({
+                dropdownParent: $('#exampleModal'),
+                width: 'resolve'
+            });
+
+        });
     </script>
 
 @endsection
