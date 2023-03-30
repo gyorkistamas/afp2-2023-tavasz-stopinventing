@@ -114,17 +114,19 @@
 			<!-- The comment side -->
 			<div class="col-12 col-lg-6 ps-1 ps-lg-5">
 				<div class="row border-bottom">
-					<h2>Comments:</h2>
+					<h2>Comments: @if(session()->has('created')) <span class="bg-success">Comment added successfully!</span>  @endif</h2>
 				</div>
 
 				@if ($meeting->comments()->count() == 0)
 					<h3>There are no comments yet!</h3>
 				@endif
 
-				@foreach ($meeting->comments as $comment)
+				<div class="overflow-auto h-50 mt-1 pe-1">
+					@foreach ($meeting->comments->reverse() as $comment)
 				<div class="comment mt-3 p-3">
 					<div class="row">
 						<h5><img src="{{ $comment->author->picture }}" class="img-thumbnail small-pic">{{$comment->author->full_name}}</h5>
+						<h6>{{ $comment->created_at }}</h6>
 					</div>
 	
 					<div class="row">
@@ -132,9 +134,10 @@
 					</div>
 				</div>
 				@endforeach
+				</div>
 
 				<div class="comment mt-3 p-3">
-					<form>
+					<form method="POST" action='/meeting/comment'>
 						@csrf
 						<div class="row">
 							<div style="display: none;">
