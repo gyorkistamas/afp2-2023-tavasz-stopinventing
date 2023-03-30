@@ -19,6 +19,7 @@ return new class extends Migration
             $table->smallInteger('participate');
             $table->foreign('meeting_id')->references('id')->on('meetings');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unique(array('meeting_id', 'user_id'));
         });
     }
 
