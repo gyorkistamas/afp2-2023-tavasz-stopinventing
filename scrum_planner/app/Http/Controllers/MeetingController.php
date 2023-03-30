@@ -75,4 +75,21 @@ class MeetingController extends Controller
 
         return redirect()->back()->with('user-removed', 'User removed from meeting');
     }
+
+    public function AddParticipants(Request $request)
+    {
+        $addedCount = 0;
+        $failed = 0;
+
+        foreach ($request->participants as $participant)
+        {
+            try {
+                MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant, 'participate' => 0]);
+                $addedCount += 1;
+            }
+            catch (\Exception) { $failed += 1; }
+        }
+
+        return redirect()->back()->with(['users_added' => $addedCount . ' user added, '. $failed . ' failed']);
+    }
 }
