@@ -29,3 +29,4 @@ Route::post('/sign-up',[UserController::class, 'SignUp']);
 
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
+Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
