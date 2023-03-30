@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Meeting;
+use App\Models\MeetingAttendant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,5 +44,20 @@ class MeetingController extends Controller
         Comment::create($fields);
 
         return redirect()->back()->with(['created' => 'Comment successfully created!']);
+    }
+
+    public function RemoveParticipant(Request $request)
+    {
+
+        $fields = $request->validate([
+            'meeting_id' => ['required'],
+            'user_id' => ['required']
+        ]);
+        $attendant = MeetingAttendant::where('meeting_id', $fields['meeting_id'])->
+                                       where('user_id', $fields['user_id'])->first();
+        
+        $attendant->delete();
+
+        return redirect()->back()->with('user-removed', 'User removed from meeting');
     }
 }
