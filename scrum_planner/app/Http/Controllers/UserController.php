@@ -2,27 +2,48 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function Login(){
         return view('users.signin');
     }
+    
     public function SignIn(Request $request){
         $fields = $request->validate([
             'email'=>['required','email'],
             'password'=>['required']
         ]);
-        if(auth()->attempt($fields)){
-            return view('users.my_profile');
+
+
+        $email = $fields['email'];
+
+        $user = User::where('email', $email)->first();
+
+        if ($user) {
+            $isSuspended = $user->status == 1 ? true : false;
+        }
+
+        //dd($isSuspended);
+
+        if(auth()->attempt($fields)) {
+
+            if ($isSuspended) {
+                $request->session()->invalidate();
+                return back()->withErrors(['password' => 'This user has been suspended!'])->onlyInput('password');
+            }
+            return 'Sikeres bejelentkezés';
         }
         return redirect('/sign-in');
     }
+    
     public function LogOut(Request $request){
         auth()->logout();
-        $request ->session()->invalidate();
+        $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
     }
@@ -46,7 +67,72 @@ class UserController extends Controller
         }
         $fields['password'] = bcrypt($fields['password']);
         $fields['privilage'] = 0;
+        $fields['status'] = 0;
         $user = User::create($fields);
         return redirect('/sign-in');
+    }
+
+    public function Profile(){
+        return view('users.edit_profile');
+    }
+    public function EditProfile(Request $request){
+        $id = auth()->user();
+        $fields = $request->validate([
+            'full_name'=>['required'],
+            'email'=>['required','email'],
+            'password'=>['confirmed']
+        ]);
+        if($request->hasFile('picture')){
+            $fields['picture'] = $request->file('picture')->store('Images/Uploads/Users','public');
+            $fields['picture'] = '/storage/'.$fields['picture'];
+        }
+        else{
+            $fields['picture'] = '/profile_pic_sample.png';
+        }
+        
+        $user = auth()->user();
+        $user->full_name = $fields['full_name'];
+        $user->email = $fields['email'];
+        $user->picture = $fields['picture'];
+        if($request->has('password') && $request->get('password')!= ''){
+            $fields['password'] = bcrypt($fields['password']);
+            $user->password = $fields['password'];
+        }
+        $user->save();
+        return redirect('/edit-profile');
+    }
+
+    public function List() {
+
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+
+        $listOfUsers = User::select(
+            'id',
+            'full_name',
+            'email',
+            'created_at',
+            'privilage',
+            'status',
+            'picture'
+        )->paginate(3);
+
+        //dd($listOfUsers);
+
+        return view('users.list', ['Users' => $listOfUsers]);
+    }
+
+    public function ChangeStatus(User $user)
+    {
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+
+        //dd($user->id);
+
+        $user->update(['status' => $user->status == 0 ? 1 : 0 ]);
+
+        return redirect('/users');
     }
 }

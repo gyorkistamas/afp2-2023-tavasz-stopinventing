@@ -15,10 +15,10 @@
 <div class="container d-flex align-items-center justify-content-center text-center p-5">
     <div class="text-white">
 
+
         @if (session() -> has('success'))
             <h1 class="bg-success">{{session() -> get('success')}}</h1>
         @endif
-
         <h1 class="mb-3">Create new team</h1>
 
         <form action={{ url('/team/create') }} method="POST">
@@ -70,6 +70,7 @@
                     Create team
                 </button>
 
+
 				<a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
                     Cancel
                 </a>
@@ -81,6 +82,7 @@
 
     </div>
 </div>
+
 
 <script>
     $(document).ready(function() {
