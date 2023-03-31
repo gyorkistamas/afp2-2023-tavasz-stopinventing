@@ -34,14 +34,15 @@ class TeamController extends Controller
         }
 
         $newTeam = Team::create(['team_name' => $fields['team_name'], 'scrum_master' => Auth::user() -> id]);
+        $createError = 0;
         foreach ($fields['members'] as $member) {
             try {
                 TeamMember::create(['team_id' => $newTeam -> id, 'user_id' => $member]);
             } catch (\Throwable $th) {
-                //throw $th;
+                $createError += 1;
             }
         }
 
-        return redirect() -> back() -> with(['success' => 'Team has been created!']);
+        return redirect() -> back() -> with(['success' => 'Team has been created! ('.$createError.' could not be added!)']);
     }
 }
