@@ -25,9 +25,14 @@ Route::post('/sign-in',[UserController::class, 'SignIn']);
 Route::get('/sign-out',[UserController::class,'LogOut']);
 Route::get('/sign-up', [UserController::class,'Register']);
 Route::post('/sign-up',[UserController::class, 'SignUp']);
+
 Route::get('/edit-profile',[UserController::class,'Profile']);
 Route::post('/edit-profile',[UserController::class,'EditProfile']);
 Route::get('/team/create', function () {
     return view('teams.creating_team');
 });
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
+
+
+Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
+
