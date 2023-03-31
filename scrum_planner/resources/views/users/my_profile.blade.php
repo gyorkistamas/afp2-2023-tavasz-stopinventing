@@ -6,6 +6,4 @@
 
 @section('content')
 
-<h1>placeholder</h1>
-
 @endsection

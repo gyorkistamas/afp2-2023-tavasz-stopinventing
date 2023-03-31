@@ -20,7 +20,7 @@
     </div>
 
     <div class="row mt-3">
-        <form action={{ url('/team/create') }} method="POST">
+        <form action={{ url('/meeting/create') }} method="POST">
             @csrf
         <div class="col-12 col-lg-6">
             <input
@@ -31,6 +31,14 @@
                 placeholder="Title of the meeting"
                 required
             >
+
+            <p>Start time:</p>
+
+            <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+                <input placeholder="Select date" type="text" id="example" class="form-control">
+                <label for="example">Try me...</label>
+                <i class="fas fa-calendar input-prefix"></i>
+              </div>
         </div>
 
         <div class="col-12 col-lg-6">
@@ -50,6 +58,9 @@
         $('?').select2({
             width: 'resolve'
         });
+    });
+    $('.datepicker').datepicker({
+        inline: true
     });
 </script>
 
