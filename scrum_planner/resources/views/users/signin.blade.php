@@ -59,21 +59,6 @@
 
         <div class="d-flex justify-content-between align-items-center">
 
-            <div class="form-check mb-0">
-
-                <input
-                    name="remember"
-                    class="form-check-input me-2"
-                    type="checkbox"
-                    id="remember"
-                />
-
-                <label class="form-check-label" for="remember">
-                    Remember me
-                </label>
-
-            </div>
-
             <p class="small fw-bold mt-2 pt-1 mb-0">
                 <a href="#!" class="link-info">Forgot password?</a>
             </p>
