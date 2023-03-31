@@ -18,7 +18,7 @@ class UserController extends Controller
             'password'=>['required']
         ]);
         if(auth()->attempt($fields)){
-            return redirect('/edit-profile');
+            return view('users.my_profile');
         }
         return redirect('/sign-in');
     }
@@ -51,6 +51,7 @@ class UserController extends Controller
         $user = User::create($fields);
         return redirect('/sign-in');
     }
+
     public function Profile(){
         return view('users.edit_profile');
     }
@@ -79,5 +80,23 @@ class UserController extends Controller
         }
         $user->save();
         return redirect('/edit-profile');
+    }
+
+    public function List() {
+
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+
+        $listOfUsers = User::select(
+            'id',
+            'full_name',
+            'email',
+            'created_at',
+            'privilage',
+            'picture'
+        )->paginate(3);
+
+        return view('users.list', ['Users' => $listOfUsers]);
     }
 }

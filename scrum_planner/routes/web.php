@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\MeetingController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MeetingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,18 @@ Route::get('/', function () {
 
 Route::get('/sign-in', [UserController::class, 'Login'])->name('sign-in');
 
-Route::post('/sign-in',[UserController::class, 'SignIn']);
-Route::get('/sign-out',[UserController::class,'LogOut']);
+Route::post('/sign-in', [UserController::class, 'SignIn']);
+
+Route::get('/sign-out', [UserController::class,'LogOut']);
+
 Route::get('/sign-up', [UserController::class,'Register']);
-Route::post('/sign-up',[UserController::class, 'SignUp']);
+
+
+Route::post('/sign-up', [UserController::class, 'SignUp']);
+Route::get('/users', [UserController::class, 'List'])->name('users');
+
+Route::get('/team/create',[TeamController::class, 'CreateTeam']);
+Route::post('/team/create',[TeamController::class, 'Creation']);
 
 Route::get('/edit-profile',[UserController::class,'Profile']);
 Route::post('/edit-profile',[UserController::class,'EditProfile']);
@@ -33,6 +42,4 @@ Route::get('/team/create', function () {
 });
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
 
-
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
-
