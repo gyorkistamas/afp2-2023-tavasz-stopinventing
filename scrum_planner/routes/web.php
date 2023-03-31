@@ -29,8 +29,8 @@ Route::get('/sign-up', [UserController::class,'Register']);
 
 Route::post('/sign-up', [UserController::class, 'SignUp']);
 
+
 Route::get('/users', [UserController::class, 'List'])->name('users');
 
-Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
