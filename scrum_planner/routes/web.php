@@ -35,5 +35,4 @@ Route::get('/users', [UserController::class, 'List'])->name('users');
 Route::get('/users/change-status/{user}', [UserController::class, 'ChangeStatus']);
 
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
-Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
