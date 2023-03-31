@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Meeting;
@@ -55,7 +56,8 @@ class MeetingController extends Controller
             return abort(401);
         }
 
+        $teams = Team::all();
         $users = User::where('id','!=',Auth::user() -> id) -> get();
-        return view('meeting.create_meeting', ['users' => $users]);
+        return view('meeting.create_meeting', ['teams' => $teams, 'users' => $users]);
     }
 }
