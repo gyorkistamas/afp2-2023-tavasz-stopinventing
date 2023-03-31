@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Team;
 use App\Models\TeamMember;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class TeamController extends Controller
 {
     public function CreateTeam()
     {
+
         if(Auth::user()->privilage <= 1)
         {
             return abort(401);
@@ -19,6 +22,7 @@ class TeamController extends Controller
 
         $users = User::where('id','!=',Auth::user() -> id) -> get();
         return view('teams.creating_team', ['users' => $users]);
+
     }
 
     public function Creation(Request $request)

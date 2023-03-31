@@ -35,6 +35,11 @@ Route::get('/users', [UserController::class, 'List'])->name('users');
 Route::get('/team/create',[TeamController::class, 'CreateTeam']);
 Route::post('/team/create',[TeamController::class, 'Creation']);
 
-
+Route::get('/edit-profile',[UserController::class,'Profile']);
+Route::post('/edit-profile',[UserController::class,'EditProfile']);
+Route::get('/team/create', function () {
+    return view('teams.creating_team');
+});
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
+
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);

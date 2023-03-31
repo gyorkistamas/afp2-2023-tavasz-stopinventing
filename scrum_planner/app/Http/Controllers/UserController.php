@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,6 +52,36 @@ class UserController extends Controller
         return redirect('/sign-in');
     }
 
+    public function Profile(){
+        return view('users.edit_profile');
+    }
+    public function EditProfile(Request $request){
+        $id = auth()->user();
+        $fields = $request->validate([
+            'full_name'=>['required'],
+            'email'=>['required','email'],
+            'password'=>['confirmed']
+        ]);
+        if($request->hasFile('picture')){
+            $fields['picture'] = $request->file('picture')->store('Images/Uploads/Users','public');
+            $fields['picture'] = '/storage/'.$fields['picture'];
+        }
+        else{
+            $fields['picture'] = '/profile_pic_sample.png';
+        }
+        
+        $user = auth()->user();
+        $user->full_name = $fields['full_name'];
+        $user->email = $fields['email'];
+        $user->picture = $fields['picture'];
+        if($request->has('password') && $request->get('password')!= ''){
+            $fields['password'] = bcrypt($fields['password']);
+            $user->password = $fields['password'];
+        }
+        $user->save();
+        return redirect('/edit-profile');
+    }
+
     public function List() {
 
         if (!Auth::check() || Auth::User()->privilage != 2) {
@@ -67,6 +98,5 @@ class UserController extends Controller
         )->paginate(3);
 
         return view('users.list', ['Users' => $listOfUsers]);
-
     }
 }
