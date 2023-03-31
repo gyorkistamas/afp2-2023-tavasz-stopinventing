@@ -47,5 +47,5 @@ Route::get('/team/create', function () {
 });
 
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
-
+Route::get('/meeting/create', [MeetingController::class, 'CreateMeeting']);
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);

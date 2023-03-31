@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
+use App\Models\User;
 use App\Models\Comment;
 use App\Models\Meeting;
 use Illuminate\Http\Request;
@@ -43,5 +45,19 @@ class MeetingController extends Controller
         Comment::create($fields);
 
         return redirect()->back()->with(['created' => 'Comment successfully created!']);
+    }
+
+    //Creation Segment
+
+    public function CreateMeeting()
+    {
+        if(Auth::user()->privilage <= 1)
+        {
+            return abort(401);
+        }
+
+        $teams = Team::all();
+        $users = User::where('id','!=',Auth::user() -> id) -> get();
+        return view('meeting.create_meeting', ['teams' => $teams, 'users' => $users]);
     }
 }
