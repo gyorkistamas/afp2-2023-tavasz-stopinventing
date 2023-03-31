@@ -16,9 +16,9 @@ class UserController extends Controller
             'password'=>['required']
         ]);
         if(auth()->attempt($fields)){
-            return 'Sikeres bejelentkezés';
+            return view('users.my_profile');
         }
-        return 'Sikertelen bejelentkezés';
+        return redirect('/sign-in');
     }
     public function LogOut(Request $request){
         auth()->logout();
