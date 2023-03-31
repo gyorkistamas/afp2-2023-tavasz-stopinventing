@@ -31,7 +31,7 @@ class UserController extends Controller
 
             if ($isSuspended) {
                 $request->session()->invalidate();
-                return back()->withErrors(['password' => 'Ez a felhasználó fel lett függesztve!'])->onlyInput('password');
+                return back()->withErrors(['password' => 'This user has been suspended!'])->onlyInput('password');
             }
             return 'Sikeres bejelentkezés';
         }
