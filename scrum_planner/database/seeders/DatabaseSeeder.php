@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'adminuser@justacompany.com',
             'password' => Hash::make('password'),
             'privilage' => 2,
-            'picture' => '/profile_pic_sample.png'
+            'picture' => '/profile_pic_sample.png',
+            'status' => 0
         ]);
 
         User::create([
@@ -34,7 +35,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'scrummaster@justacompany.com',
             'password' => Hash::make('password'),
             'privilage' => 1,
-            'picture' => '/profile_pic_sample.png'
+            'picture' => '/profile_pic_sample.png',
+            'status' => 0
         ]);
 
         User::create([
@@ -42,7 +44,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'justauser@justacompany.com',
             'password' => Hash::make('password'),
             'privilage' => 0,
-            'picture' => '/profile_pic_sample.png'
+            'picture' => '/profile_pic_sample.png',
+            'status' => 0
         ]);
     }
 }
