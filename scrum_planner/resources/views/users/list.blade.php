@@ -51,7 +51,12 @@
                     </p>
 
                     <div class="card-footer d-flex justify-content-between">
-                        <a href="/users/suspend/{{ $user->id }}" class="btn btn-warning">Suspend</a>
+                        @if ($user->status == 0)
+                            <a href="/users/change-status/{{ $user->id }}" class="btn btn-warning">Suspend</a>
+                        @else
+                            <a href="/users/change-status/{{ $user->id }}" class="btn btn-primary">Activate</a>
+                        @endif
+
                         <a href="#" class="btn btn-success">Modify</a>
                     </div>
 
