@@ -12,19 +12,38 @@ class UserController extends Controller
     public function Login(){
         return view('users.signin');
     }
+    
     public function SignIn(Request $request){
         $fields = $request->validate([
             'email'=>['required','email'],
             'password'=>['required']
         ]);
-        if(auth()->attempt($fields)){
-            return view('users.my_profile');
+
+
+        $email = $fields['email'];
+
+        $user = User::where('email', $email)->first();
+
+        if ($user) {
+            $isSuspended = $user->status == 1 ? true : false;
+        }
+
+        //dd($isSuspended);
+
+        if(auth()->attempt($fields)) {
+
+            if ($isSuspended) {
+                $request->session()->invalidate();
+                return back()->withErrors(['password' => 'This user has been suspended!'])->onlyInput('password');
+            }
+            return 'Sikeres bejelentkezés';
         }
         return redirect('/sign-in');
     }
+    
     public function LogOut(Request $request){
         auth()->logout();
-        $request ->session()->invalidate();
+        $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
     }
@@ -48,6 +67,7 @@ class UserController extends Controller
         }
         $fields['password'] = bcrypt($fields['password']);
         $fields['privilage'] = 0;
+        $fields['status'] = 0;
         $user = User::create($fields);
         return redirect('/sign-in');
     }
@@ -94,9 +114,25 @@ class UserController extends Controller
             'email',
             'created_at',
             'privilage',
+            'status',
             'picture'
         )->paginate(3);
 
+        //dd($listOfUsers);
+
         return view('users.list', ['Users' => $listOfUsers]);
+    }
+
+    public function ChangeStatus(User $user)
+    {
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+
+        //dd($user->id);
+
+        $user->update(['status' => $user->status == 0 ? 1 : 0 ]);
+
+        return redirect('/users');
     }
 }
