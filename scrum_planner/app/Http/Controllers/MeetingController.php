@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MeetingAttendant;
 use App\Models\Team;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Meeting;
 use Illuminate\Http\Request;
+use App\Mail\NotificationEmail;
+use App\Models\MeetingAttendant;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class MeetingController extends Controller
 {
@@ -110,6 +112,11 @@ class MeetingController extends Controller
                     $createError += 1;
                 }
             }
+        }
+
+        foreach ($newMeeting->attendants as $attendant) {
+            Mail::to($attendant->email) -> send(new NotificationEmail());
+
         }
 
         return redirect() -> back() -> with(['success' => 'Meeting has been created!']);
