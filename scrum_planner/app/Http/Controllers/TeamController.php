@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
-    public function CreateTeam()
+    public function CreateTeamSite()
     {
 
         if(Auth::user()->privilage <= 1)
@@ -25,7 +25,7 @@ class TeamController extends Controller
 
     }
 
-    public function Creation(Request $request)
+    public function TeamCreation(Request $request)
     {
         $fields = $request -> validate([
             'team_name' => ['required'],

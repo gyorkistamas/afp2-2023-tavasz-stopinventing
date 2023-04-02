@@ -20,65 +20,83 @@
             <div class="row">
                 <h1>Meeting Creation</h1>
             </div>
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <input 
+
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <input 
                         type="text" 
                         name="name" 
                         id="meetingName" 
                         class="form-control form-control-lg" 
                         placeholder="Title of the meeting" 
                         required
-                        >
+                    >
 
-                        @error('name')
-                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                        @enderror
-                    </div>
+                    @error('name')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Starting Date:</label>
-                        <input type="datetime-local" class="form-control form-control-lg" name="start_date" id="startDate" required>
-                        @error('start_date')
-                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                        @enderror
-                    </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Starting Date:</label>
+
+                    <input 
+                        type="datetime-local" 
+                        class="form-control form-control-lg" 
+                        name="start_time" 
+                        id="startTime" 
+                        required
+                    >
+
+                    @error('start_time')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">End Date:</label>
-                        <input type="datetime-local" class="form-control form-control-lg" name="end_date" id="endDate" required>
-                        @error('end_date')
-                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                        @enderror
-                    </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">End Date:</label>
+
+                    <input 
+                        type="datetime-local" 
+                        class="form-control form-control-lg" 
+                        name="end_time" 
+                        id="endTime" 
+                        required
+                    >
+
+                    @error('end_time')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <label class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Description:</label>
-                        <textarea 
-                            name="description" 
-                            id="description" 
-                            class="form-control form-control-lg" 
-                            placeholder="Description of meeting"></textarea>    
-                    </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <label class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Description:</label>
+                    
+                    <textarea 
+                        name="description" 
+                        id="description" 
+                        class="form-control form-control-lg" 
+                        placeholder="Description of meeting"></textarea>    
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="text-center col-12 col-lg-6">
-                        <button type="submit" class="btn btn-outline-light btn-success btn-lg m-2">
-                            Create team
-                        </button>
+            <div class="row">
+                <div class="text-center col-12 col-lg-6">
+                    <button type="submit" class="btn btn-outline-light btn-success btn-lg m-2">
+                        Create team
+                    </button>
         
-                        <a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
-                            Cancel
-                        </a>
-                    </div>
+                    <a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
+                        Cancel
+                    </a>
                 </div>
+            </div>
         </div>
 
         <div class="col-12 col-lg-6">
@@ -99,6 +117,7 @@
                     @enderror
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <h2 class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label">

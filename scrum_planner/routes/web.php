@@ -37,15 +37,13 @@ Route::get('/users', [UserController::class, 'List'])->name('users');
 
 Route::get('/users/change-status/{user}', [UserController::class, 'ChangeStatus']);
 
-Route::get('/team/create',[TeamController::class, 'CreateTeam']);
-Route::post('/team/create',[TeamController::class, 'Creation']);
+Route::get('/team/create',[TeamController::class, 'CreateTeamSite']);
+Route::post('/team/create',[TeamController::class, 'TeamCreation']);
 
 Route::get('/edit-profile',[UserController::class,'Profile']);
 Route::post('/edit-profile',[UserController::class,'EditProfile']);
-Route::get('/team/create', function () {
-    return view('teams.creating_team');
-});
 
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
-Route::get('/meeting/create', [MeetingController::class, 'CreateMeeting']);
+Route::get('/meeting/create', [MeetingController::class, 'CreateMeetingSite']);
+Route::post('/meeting/create', [MeetingController::class, 'MeetingCreation']);
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
