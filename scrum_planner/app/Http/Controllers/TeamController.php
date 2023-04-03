@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Team;
-use App\Models\TeamMember;
 use App\Models\User;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
+use App\Mail\TeamNotification;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 
 class TeamController extends Controller
@@ -47,6 +49,11 @@ class TeamController extends Controller
             }
         }
 
-        return redirect() -> back() -> with(['success' => 'Team has been created! ('.$createError.' could not be added!)']);
+        foreach ($newTeam->members as $member) {
+            Mail::to($member->email)->send(new TeamNotification($newTeam, $member));
+
+        }
+
+        return redirect() -> back() -> with(['success' => 'Team has been created!']);
     }
 }
