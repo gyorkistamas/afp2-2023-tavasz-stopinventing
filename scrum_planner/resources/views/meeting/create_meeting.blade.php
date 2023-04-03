@@ -135,6 +135,14 @@
                     @enderror
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    @if (session() -> has('success'))
+                        <h1 class="bg-success">{{session() -> get('success')}}</h1>
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
     </form>
