@@ -148,4 +148,13 @@ class UserController extends Controller
         $user->update(['privilage' => $user->privilage = $priv]);
         return redirect('/users');
     }
+    public function ChangePassword(User $user){
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+        $pwd = "changeme";
+        $newpasswd = bcrypt($pwd);
+        $user->update(['password'=>$user->password=$newpasswd]);
+        return redirect('/users');
+    }
 }
