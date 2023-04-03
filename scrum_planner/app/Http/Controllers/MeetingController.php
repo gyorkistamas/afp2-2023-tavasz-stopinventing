@@ -115,7 +115,7 @@ class MeetingController extends Controller
         }
 
         foreach ($newMeeting->attendants as $attendant) {
-            Mail::to($attendant->email) -> send(new NotificationEmail($newMeeting, $attendant));
+            Mail::to($attendant->email)->send(new NotificationEmail($newMeeting, $attendant));
 
         }
 

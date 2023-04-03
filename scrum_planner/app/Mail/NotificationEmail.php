@@ -14,8 +14,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class NotificationEmail extends Mailable
 {
-    protected Meeting $meeting;
-    protected User $attendant;
+    public Meeting $meeting;
+    public User $attendant;
     use Queueable, SerializesModels;
 
     /**
@@ -51,10 +51,10 @@ class NotificationEmail extends Mailable
                 'meetingName' => $this->meeting->name,
                 'startTime' => $this->meeting->start_time,
                 'endTime' => $this->meeting->end_time,
-                'organiser' => $this->meeting->organiser,
+                'organiser' => $this->meeting->scrumMaster->full_name,
                 'description' => $this->meeting->description,
                 'siteName' => env('APP_NAME'),
-                'userName' => $this->attendant->user_id
+                'userName' => $this->attendant->full_name
             ]
         );
     }
