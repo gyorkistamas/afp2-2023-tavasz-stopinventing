@@ -27,7 +27,7 @@
                 <a class="btn {{Request::is('my-meetings') ? 'btn-success' : 'btn-secondary'}} w-100" href="#">My meetings</a>
               </li>
               <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn {{Request::is('my-profile') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{url('/edit-profile')}}">My profile</a>
+                <a class="btn {{Request::is('edit-profile') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{url('/edit-profile')}}">Edit profile</a>
               </li>
 
               @endif
@@ -46,7 +46,7 @@
               @if(Auth::check() && Auth::User()->privilage == 2)
 
               <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn {{Request::is('users') ? 'btn-success' : 'btn-secondary'}} w-100" href="#">Users</a>
+                <a class="btn {{Request::is('users') ? 'btn-success' : 'btn-secondary'}} w-100" href="/users">Users</a>
               </li>
 
               @endif

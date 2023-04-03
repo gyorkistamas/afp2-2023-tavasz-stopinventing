@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +35,7 @@ class UserController extends Controller
                 $request->session()->invalidate();
                 return back()->withErrors(['password' => 'This user has been suspended!'])->onlyInput('password');
             }
-            return 'Sikeres bejelentkezés';
+            return redirect('/edit-profile');
         }
         return redirect('/sign-in');
     }
@@ -76,7 +75,6 @@ class UserController extends Controller
         return view('users.edit_profile');
     }
     public function EditProfile(Request $request){
-        $id = auth()->user();
         $fields = $request->validate([
             'full_name'=>['required'],
             'email'=>['required','email'],
@@ -133,6 +131,30 @@ class UserController extends Controller
 
         $user->update(['status' => $user->status == 0 ? 1 : 0 ]);
 
+        return redirect('/users');
+    }
+
+    // modify (popup window) / reset password
+
+    public function ChangeRole(User $user, Request $request){
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+        $priv = $request->input('privilage');
+        if($priv == -1){
+            echo "Error while trying to change role";
+            return redirect('/users');
+        }
+        $user->update(['privilage' => $user->privilage = $priv]);
+        return redirect('/users');
+    }
+    public function ChangePassword(User $user){
+        if (!Auth::check() || Auth::User()->privilage != 2) {
+            return abort(401);
+        }
+        $pwd = "changeme";
+        $newpasswd = bcrypt($pwd);
+        $user->update(['password'=>$user->password=$newpasswd]);
         return redirect('/users');
     }
 }
