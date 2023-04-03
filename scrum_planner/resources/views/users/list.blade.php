@@ -68,11 +68,12 @@
                                 </div>
                                 <div class="modal-body">
                                     <select class="form-select" aria-label="Default select example" name="privilage">
-                                        <option value="-1">Select the action</option>
+                                        <option value=-1>Select the action</option>
                                         <option value=0>User</option>
                                         <option value=1>Scrum master</option>
                                         <option value=2>Admin</option>
                                       </select>
+                                    <a href="/users/changepasswd/{{$user->id}}" class="text-warning">Change password for user</a>
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
