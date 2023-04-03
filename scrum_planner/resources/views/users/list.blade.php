@@ -54,12 +54,11 @@
                         @else
                             <a href="/users/change-status/{{ $user->id }}" class="btn btn-primary">Activate</a>
                         @endif
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeRole">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeRole{{$user->id}}">
                             Modify
                         </button>
                         <form method="GET" action="/users/change-role/{{$user->id}}">
-                        @csrf
-                        <div class="modal fade" id="changeRole" tabindex="-1" aria-labelledby="changeRole" aria-hidden="true">
+                        <div class="modal fade" id="changeRole{{$user->id}}" tabindex="-1" aria-labelledby="changeRole" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
