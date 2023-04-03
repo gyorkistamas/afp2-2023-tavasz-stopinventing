@@ -6,9 +6,9 @@ use App\Models\Team;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Meeting;
+use App\Models\MeetingAttendant;
 use Illuminate\Http\Request;
 use App\Mail\NotificationEmail;
-use App\Models\MeetingAttendant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,7 +16,7 @@ class MeetingController extends Controller
 {
     //
 
-    public function ShowMeeting(Meeting $meeting) 
+    public function ShowMeeting(Meeting $meeting)
     {
         $attendant = false;
 
@@ -26,18 +26,32 @@ class MeetingController extends Controller
                 $attendant = true;
                 break;
             }
+
         }
+
+        $attendantIDs = array();
+
+        foreach ($meeting->attendants as $attendant)
+        {
+            $attendantIDs[] = $attendant->id;
+        }
+
+        $attendantIDs[] = $meeting->scrumMaster->id;
+
+
+
+        $allUsers = User::whereNotIn('id', $attendantIDs)->get();
 
         if(Auth::user()->id == $meeting->organiser || Auth::user()->privilage == 2 || $attendant)
         {
-            return view('meeting.view_meeting', ['meeting' => $meeting]);
+            return view('meeting.view_meeting', ['meeting' => $meeting, 'users' => $allUsers, 'teams' => Team::all()]);
         }
 
         return abort(401);
-        
+
     }
 
-    public function RecordComment(Request $request) 
+    public function RecordComment(Request $request)
     {
         $fields = $request->validate([
             'meeting_id' => ['required'],
@@ -48,6 +62,57 @@ class MeetingController extends Controller
         Comment::create($fields);
 
         return redirect()->back()->with(['created' => 'Comment successfully created!']);
+    }
+
+    public function RemoveParticipant(Request $request)
+    {
+
+        $fields = $request->validate([
+            'meeting_id' => ['required'],
+            'user_id' => ['required']
+        ]);
+        $attendant = MeetingAttendant::where('meeting_id', $fields['meeting_id'])->
+                                       where('user_id', $fields['user_id'])->first();
+
+        $attendant->delete();
+
+        return redirect()->back()->with('user-removed', 'User removed from meeting');
+    }
+
+    public function AddParticipants(Request $request)
+    {
+        $addedCount = 0;
+        $failed = 0;
+
+        if (!empty($request->teams))
+        {
+            foreach ($request->teams as $id)
+            {
+                $team = Team::find($id)->first();
+                foreach ($team->members as $participant)
+                {
+                    try {
+                        MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant->id, 'participate' => 0]);
+                        $addedCount += 1;
+                    }
+                    catch (\Exception) { $failed += 1; }
+                }
+            }
+        }
+
+        if (!empty($request->participants))
+        {
+            foreach ($request->participants as $participant)
+            {
+                try {
+                    MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant, 'participate' => 0]);
+                    $addedCount += 1;
+                }
+                catch (\Exception) { $failed += 1; }
+            }
+        }
+
+        return redirect()->back()->with(['users_added' => $addedCount . ' user added, '. $failed . ' failed']);
     }
 
     //Creation Segment
@@ -97,7 +162,7 @@ class MeetingController extends Controller
                     try {
                         MeetingAttendant::create(['meeting_id' => $newMeeting -> id, 'user_id' => $participant->id, 'participate' => 0]);
                     }
-                    catch (\Throwable $th) { 
+                    catch (\Throwable $th) {
                         $createError += 1;
                     }
                 }

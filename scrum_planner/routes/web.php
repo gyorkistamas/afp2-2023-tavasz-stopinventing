@@ -50,3 +50,5 @@ Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])
 Route::get('/meeting/create', [MeetingController::class, 'CreateMeetingSite']);
 Route::post('/meeting/create', [MeetingController::class, 'MeetingCreation']);
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
+Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
+Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticipants']);
