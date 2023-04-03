@@ -149,8 +149,8 @@
 						@csrf
 						<div class="row">
 							<div style="display: none;">
-								<input type="number" name="meeting_id" value="1">
-								<input type="number" name="user_id" value="1">
+								<input type="number" name="meeting_id" value="{{$meeting->id}}">
+								<input type="number" name="user_id" value="{{Auth::user()->id}}">
 							</div>
 						</div>
 						<div class="row">

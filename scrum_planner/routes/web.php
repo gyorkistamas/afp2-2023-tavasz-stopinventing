@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Mail\NotificationEmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
@@ -36,18 +37,18 @@ Route::get('/users', [UserController::class, 'List'])->name('users');
 
 
 Route::get('/users/change-status/{user}', [UserController::class, 'ChangeStatus']);
+Route::get('/users/change-role/{user}',[UserController::class, 'ChangeRole']);
+Route::get('/users/changepasswd/{user}',[UserController::class,'ChangePassword']);
+Route::get('/team/create',[TeamController::class, 'CreateTeamSite']);
 
-Route::get('/team/create',[TeamController::class, 'CreateTeam']);
-Route::post('/team/create',[TeamController::class, 'Creation']);
+Route::post('/team/create',[TeamController::class, 'TeamCreation']);
 
 Route::get('/edit-profile',[UserController::class,'Profile']);
 Route::post('/edit-profile',[UserController::class,'EditProfile']);
-Route::get('/team/create', function () {
-    return view('teams.creating_team');
-});
 
 Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
-
+Route::get('/meeting/create', [MeetingController::class, 'CreateMeetingSite']);
+Route::post('/meeting/create', [MeetingController::class, 'MeetingCreation']);
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
 Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
 Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticipants']);
