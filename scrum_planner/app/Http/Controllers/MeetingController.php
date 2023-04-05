@@ -217,11 +217,10 @@ class MeetingController extends Controller
             }
         }
 
-        dd($meetingsToDaysArray);
-
 
         return view('meeting.my_meetings')->with(['date' => $request->date,
-                                                        'rowNum' => $numberOfRows]);
+                                                        'rowNum' => $numberOfRows,
+                                                        'meetings' => $meetingsToDaysArray]);
     }
 
     private function DayToNumber($day) {
@@ -242,5 +241,12 @@ class MeetingController extends Controller
             case 'Sunday':
                 return 6;
         }
+    }
+
+    public function MyMeetingsThisWeek(Request $request)
+    {
+        $thisMonday = date("Y-m-d", strtotime('monday this week'));
+
+        return redirect('my-meetings/' . $thisMonday);
     }
 }
