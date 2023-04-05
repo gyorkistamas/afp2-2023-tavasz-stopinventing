@@ -52,3 +52,8 @@ Route::post('/meeting/create', [MeetingController::class, 'MeetingCreation']);
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
 Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
 Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticipants']);
+
+Route::get('/my-meetings', function(){
+    return view('meeting.my_meetings')->with(['date' => date("Y-m-d", mktime(0, 0, 0, 4, 3, 2023))]);
+});
+Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings']);
