@@ -63,6 +63,49 @@
                 @for($i = 1; $i <= $rowNum; $i++)
                     <tr>
                         <td><h2>{{ $i }}.</h2></td>
+
+                        @if(array_key_exists($i - 1, $meetings[0]))
+                            <td><a href="/meeting/show/{{$meetings[0][$i - 1]->id}}">{{  $meetings[0][$i - 1]->name }}</a></td>
+                        @else
+                            <td><h1> - </h1></td>
+                        @endif
+
+                        @if(array_key_exists($i - 1, $meetings[1]))
+                            <td>{{  $meetings[1][$i - 1]->name }}</td>
+                        @else
+                            <td><h1> - </h1></td>
+                        @endif
+
+                        @if(array_key_exists($i - 1, $meetings[2]))
+                            <td>{{  $meetings[2][$i - 1]->name }}</td>
+                        @else
+                            <td><h1> - </h1></td>
+                        @endif
+
+                        @if(array_key_exists($i - 1, $meetings[3]))
+                            <td>{{  $meetings[3][$i - 1]->name }}</td>
+                        @else
+                            <td><h1> - </h1></td>
+                        @endif
+
+                        @if(array_key_exists($i - 1, $meetings[4]))
+                            <td>{{  $meetings[4][$i - 1]->name }}</td>
+                        @else
+                            <td><h1> - </h1></td>
+                        @endif
+
+                        @if(array_key_exists($i - 1, $meetings[5]))
+                            <td>{{  $meetings[5][$i - 1]->name }}</td>
+                        @else
+                            <td><h1> - </h1></td>
+                        @endif
+
+                        @if(array_key_exists($i - 1, $meetings[6]))
+                            <td>{{  $meetings[6][$i - 1]->name }}</td>
+                        @else
+                            <td><h1> - </h1></td>
+                        @endif
+
                     </tr>
                 @endfor
             </tbody>
