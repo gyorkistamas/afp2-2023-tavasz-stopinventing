@@ -20,7 +20,7 @@ use App\Http\Controllers\MeetingController;
 */
 
 Route::get('/', function () {
-    return redirect(route('sign-in'));
+    return redirect(route('my-meetings'));
 });
 
 Route::get('/sign-in', [UserController::class, 'Login'])->name('sign-in');
@@ -53,7 +53,5 @@ Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
 Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
 Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticipants']);
 
-Route::get('/my-meetings', function(){
-    return view('meeting.my_meetings')->with(['date' => date("Y-m-d", mktime(0, 0, 0, 4, 3, 2023))]);
-});
-Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings']);
+Route::get('/my-meetings', [MeetingController::class, 'MyMeetingsThisWeek'])->middleware('auth')->name('my-meetings');
+Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings'])->middleware('auth');
