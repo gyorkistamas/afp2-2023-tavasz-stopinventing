@@ -8,6 +8,12 @@
 
     <div class="container text-white mt-5">
 
+        <a class="btn btn-success mb-2" href="/my-meetings/{{ ((new DateTime($date))->modify('-7 day'))->format('Y-m-d') }}"> <-- Last week</a>
+
+        <a class="btn btn-success mb-2" href="/my-meetings/{{ ((new DateTime($date))->modify('+7 day'))->format('Y-m-d') }}">Next week --> </a>
+
+        <a class="btn btn-danger mb-2 float-end"><h3>My invites</h3></a>
+
         <table class="table table-dark table-striped table-hover">
             <thead>
                 <tr>
