@@ -66,7 +66,8 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="GET" action="/users/change-role/{{$user->id}}">
+                                    <form method="POST" action="/users/change-role/{{$user->id}}">
+                                    @csrf
                                     <select class="form-select" aria-label="Default select example" name="privilage">
                                         <option value=-1>Select the action</option>
                                         <option value=0>User</option>
@@ -76,7 +77,8 @@
                                       <button type="submit" class="btn btn-primary">Change Role</button>
                                     </form>
                                     <h6 class="text-dark">New generated password:</h6>
-                                    <form method="GET" action="/users/changepasswd/{{$user->id}}">
+                                    <form method="POST" action="/users/changepasswd/{{$user->id}}">
+                                        @csrf
                                         <input
                                         type="text" 
                                         id="newPwd{{$user->id}}"
