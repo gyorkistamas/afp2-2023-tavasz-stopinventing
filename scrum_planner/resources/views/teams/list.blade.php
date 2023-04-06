@@ -17,7 +17,7 @@
 
         @else
             <div class="col-6 text-start">
-                <form action="{{ url('/manage-teams/*') }}" method="GET">
+                <form action="{{ url('/manage-teams') }}" method="GET">
                     <div class="input-group">
 
                         <div id="search-autocomplete" class="form-outline">
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-6 text-end">
-                <a href="#" class="btn btn-primary">Create new Team</a>
+                <a href="{{ url('/team/create') }}" class="btn btn-primary">Create new Team</a>
             </div>
     </div>
 
