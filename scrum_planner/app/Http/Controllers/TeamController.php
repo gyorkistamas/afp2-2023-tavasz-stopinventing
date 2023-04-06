@@ -17,7 +17,7 @@ class TeamController extends Controller
     public function CreateTeamSite()
     {
 
-        if(Auth::user()->privilage <= 1)
+        if(Auth::user()->privilage < 1)
         {
             return abort(401);
         }
@@ -34,7 +34,7 @@ class TeamController extends Controller
             'members' => ['required']
         ]);
 
-        if(Auth::user()->privilage <= 1)
+        if(Auth::user()->privilage < 1)
         {
             return abort(401);
         }
@@ -76,14 +76,14 @@ class TeamController extends Controller
                 // WHERE teams.scrum_master = 5
                 // GROUP BY teams.id, teams.team_name;
 
+                // dd($request->search == true);
 
-                $listOfTeams = $request->search ?  Team::where(
-                    ['scrum_master', '=', Auth::User()->id],
-                    ['team_name', 'LIKE', $request->search]
-                )->paginate(8) :
-
-                Team::where(['scrum_master', '=', Auth::User()->id])
+                $listOfTeams = $request->search ? Team::where('scrum_master', '=', Auth::User()->id)
+                ->where('team_name', 'LIKE', '%'.$request->search.'%')
+                ->paginate(8) :
+                Team::where('scrum_master', '=', Auth::User()->id)
                 ->paginate(8);
+
                 break;
 
             case 2:
@@ -97,7 +97,7 @@ class TeamController extends Controller
 
         }
 
-        // dd($listOfTeams);
+
 
         // $listOfTeams = null;
         return view('teams.list', ['Teams' => $listOfTeams]);
