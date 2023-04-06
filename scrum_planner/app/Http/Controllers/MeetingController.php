@@ -191,6 +191,11 @@ class MeetingController extends Controller
 
     public function MyMeetings(Request $request)
     {
+        if(date('D', strtotime($request->date)) != 'Mon')
+        {
+            return abort(404);
+        }
+
         $from = date('Y-m-d H:i:s', strtotime($request->date));
         $to = (new DateTime($from))->modify('+6 day')->format('Y-m-d H:i:s');
         $meetings = Auth::user()->meetings->whereBetween('start_time', [$from, $to]);
