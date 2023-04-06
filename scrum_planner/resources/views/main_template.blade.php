@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{url('assets/css/template.css')}}">
     <script src="{{ url('assets/js/bootstrap.js') }}"></script>
+    <script src="{{ url('assets/js/randompwd.js')}}"></script>
     @yield('custom_css')
     @yield('title')
 </head>
