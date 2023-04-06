@@ -198,7 +198,7 @@ class MeetingController extends Controller
 
         $from = date('Y-m-d H:i:s', strtotime($request->date));
         $to = (new DateTime($from))->modify('+6 day')->format('Y-m-d H:i:s');
-        $meetings = Auth::user()->meetings->whereBetween('start_time', [$from, $to]);
+        $meetings = Auth::user()->meetings->whereBetween('start_time', [$from, $to])->merge(Meeting::where('organiser', Auth::user()->id)->whereBetween('start_time', [$from, $to])->get())->sortBy('start_time');
 
         $numberOfRows = $meetings->groupBy(function($date) {
             return Carbon::parse($date->start_time)->format('Y.m.d');
