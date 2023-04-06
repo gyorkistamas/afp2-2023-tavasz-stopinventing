@@ -43,7 +43,7 @@ Route::get('/team/create',[TeamController::class, 'CreateTeamSite']);
 
 Route::post('/team/create',[TeamController::class, 'TeamCreation']);
 
-Route::get('/manage-teams/{user}', [TeamController::class, 'ListTeams']);
+Route::get('/manage-teams', [TeamController::class, 'ListTeams']);
 
 Route::get('/edit-profile',[UserController::class,'Profile']);
 Route::post('/edit-profile',[UserController::class,'EditProfile']);
