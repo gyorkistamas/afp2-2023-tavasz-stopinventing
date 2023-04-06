@@ -56,4 +56,50 @@ class TeamController extends Controller
 
         return redirect() -> back() -> with(['success' => 'Team has been created!']);
     }
+
+    public function ListTeams(Request $request) {
+
+        $listOfTeams = null;
+
+
+        if (!Auth::check() || Auth::User()->privilage < 1) {
+            return abort(401);
+        }
+
+        switch (Auth::User()->privilage) {
+            case 1:
+                //Scrum Master
+
+                // SELECT teams.id, teams.team_name, COUNT(team_members.user_id)
+                // FROM teams
+                // INNER JOIN team_members ON team_members.team_id = teams.id
+                // WHERE teams.scrum_master = 5
+                // GROUP BY teams.id, teams.team_name;
+
+
+                $listOfTeams = $request->search ?  Team::where(
+                    ['scrum_master', '=', Auth::User()->id],
+                    ['team_name', 'LIKE', $request->search]
+                )->paginate(8) :
+
+                Team::where(['scrum_master', '=', Auth::User()->id])
+                ->paginate(8);
+                break;
+
+            case 2:
+                //Admin
+
+                $listOfTeams = $request->search ? Team::where(
+                    'team_name', 'LIKE', '%'.$request->search.'%'
+                )->paginate(8) :
+                Team::paginate(8);
+                break;
+
+        }
+
+        // dd($listOfTeams);
+
+        // $listOfTeams = null;
+        return view('teams.list', ['Teams' => $listOfTeams]);
+    }
 }
