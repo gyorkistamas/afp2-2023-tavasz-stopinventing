@@ -8,7 +8,7 @@
 
     <div class="container text-white mt-5">
 
-        <table class="table table-dark table-striped table-hover text-white">
+        <table class="table table-dark table-striped table-hover">
             <thead>
                 <tr>
                     <th>
@@ -65,43 +65,134 @@
                         <td><h2>{{ $i }}.</h2></td>
 
                         @if(array_key_exists($i - 1, $meetings[0]))
-                            <td><a href="/meeting/show/{{$meetings[0][$i - 1]->id}}">{{  $meetings[0][$i - 1]->name }}</a></td>
+                            <td>
+                               <div class="card text-bg-light text-dark">
+                                   <div class="card-body">
+                                     <h5 class="card-title">{{ $meetings[0][$i - 1]->name }}</h5>
+                                     <hr>
+                                     <h6 class="card-subtitle mb-2 text-body-secondary">Organiser: {{ $meetings[0][$i - 1]->scrumMaster->full_name }}</h6>
+                                     <hr>
+                                     <h6 class="card-subtitle mb-2 text-body-secondary">Start: {{ date('H:i', strtotime($meetings[0][$i - 1]->start_time)) }}</h6>
+                                     <h6 class="card-subtitle mb-2 text-body-secondary">End: {{ date('H:i', strtotime($meetings[0][$i - 1]->end_time)) }}</h6>
+                                     <hr>
+                                     <a href="/meeting/show/{{$meetings[0][$i - 1]->id}}" class="card-link">View meeting</a>
+                                   </div>
+                               </div>
+                            </td>
                         @else
                             <td><h1> - </h1></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[1]))
-                            <td>{{  $meetings[1][$i - 1]->name }}</td>
+                            <td>
+                                <div class="card text-bg-light text-dark">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ $meetings[1][$i - 1]->name }}</h5>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Organiser: {{ $meetings[1][$i - 1]->scrumMaster->full_name }}</h6>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Start: {{ date('H:i', strtotime($meetings[1][$i - 1]->start_time)) }}</h6>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">End: {{ date('H:i', strtotime($meetings[1][$i - 1]->end_time)) }}</h6>
+                                      <hr>
+                                      <a href="/meeting/show/{{$meetings[1][$i - 1]->id}}" class="card-link">View meeting</a>
+                                    </div>
+                                </div>
+                            </td>
                         @else
                             <td><h1> - </h1></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[2]))
-                            <td>{{  $meetings[2][$i - 1]->name }}</td>
+                            <td>
+                                <div class="card text-bg-light text-dark">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ $meetings[2][$i - 1]->name }}</h5>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Organiser: {{ $meetings[2][$i - 1]->scrumMaster->full_name }}</h6>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Start: {{ date('H:i', strtotime($meetings[2][$i - 1]->start_time)) }}</h6>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">End: {{ date('H:i', strtotime($meetings[2][$i - 1]->end_time)) }}</h6>
+                                      <hr>
+                                      <a href="/meeting/show/{{$meetings[2][$i - 1]->id}}" class="card-link">View meeting</a>
+                                    </div>
+                                </div>
+                            </td>
                         @else
                             <td><h1> - </h1></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[3]))
-                            <td>{{  $meetings[3][$i - 1]->name }}</td>
+                            <td>
+                                <div class="card text-bg-light text-dark">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ $meetings[3][$i - 1]->name }}</h5>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Organiser: {{ $meetings[3][$i - 1]->scrumMaster->full_name }}</h6>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Start: {{ date('H:i', strtotime($meetings[3][$i - 1]->start_time)) }}</h6>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">End: {{ date('H:i', strtotime($meetings[3][$i - 1]->end_time)) }}</h6>
+                                      <hr>
+                                      <a href="/meeting/show/{{$meetings[3][$i - 1]->id}}" class="card-link">View meeting</a>
+                                    </div>
+                                </div>
+                            </td>
                         @else
                             <td><h1> - </h1></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[4]))
-                            <td>{{  $meetings[4][$i - 1]->name }}</td>
+                            <td>
+                                <div class="card text-bg-light text-dark">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ $meetings[4][$i - 1]->name }}</h5>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Organiser: {{ $meetings[4][$i - 1]->scrumMaster->full_name }}</h6>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Start: {{ date('H:i', strtotime($meetings[4][$i - 1]->start_time)) }}</h6>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">End: {{ date('H:i', strtotime($meetings[4][$i - 1]->end_time)) }}</h6>
+                                      <hr>
+                                      <a href="/meeting/show/{{$meetings[4][$i - 1]->id}}" class="card-link">View meeting</a>
+                                    </div>
+                                </div>
+                            </td>
                         @else
                             <td><h1> - </h1></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[5]))
-                            <td>{{  $meetings[5][$i - 1]->name }}</td>
+                            <td>
+                                <div class="card text-bg-light text-dark">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ $meetings[5][$i - 1]->name }}</h5>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Organiser: {{ $meetings[5][$i - 1]->scrumMaster->full_name }}</h6>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Start: {{ date('H:i', strtotime($meetings[5][$i - 1]->start_time)) }}</h6>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">End: {{ date('H:i', strtotime($meetings[5][$i - 1]->end_time)) }}</h6>
+                                      <hr>
+                                      <a href="/meeting/show/{{$meetings[5][$i - 1]->id}}" class="card-link">View meeting</a>
+                                    </div>
+                                </div>
+                            </td>
                         @else
                             <td><h1> - </h1></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[6]))
-                            <td>{{  $meetings[6][$i - 1]->name }}</td>
+                            <td>
+                                <div class="card text-bg-light text-dark">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ $meetings[6][$i - 1]->name }}</h5>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Organiser: {{ $meetings[6][$i - 1]->scrumMaster->full_name }}</h6>
+                                      <hr>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Start: {{ date('H:i', strtotime($meetings[6][$i - 1]->start_time)) }}</h6>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">End: {{ date('H:i', strtotime($meetings[6][$i - 1]->end_time)) }}</h6>
+                                      <hr>
+                                      <a href="/meeting/show/{{$meetings[6][$i - 1]->id}}" class="card-link">View meeting</a>
+                                    </div>
+                                </div>
+                            </td>
                         @else
                             <td><h1> - </h1></td>
                         @endif
