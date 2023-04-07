@@ -11,7 +11,7 @@ class UserController extends Controller
     public function Login(){
         return view('users.signin');
     }
-    
+
     public function SignIn(Request $request){
         $fields = $request->validate([
             'email'=>['required','email'],
@@ -39,7 +39,7 @@ class UserController extends Controller
         }
         return redirect('/sign-in');
     }
-    
+
     public function LogOut(Request $request){
         auth()->logout();
         $request->session()->invalidate();
@@ -87,7 +87,7 @@ class UserController extends Controller
         else{
             $fields['picture'] = '/profile_pic_sample.png';
         }
-        
+
         $user = auth()->user();
         $user->full_name = $fields['full_name'];
         $user->email = $fields['email'];
