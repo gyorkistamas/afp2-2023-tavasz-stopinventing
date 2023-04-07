@@ -7,7 +7,7 @@
 @section('content')
 
 
-    <div class="container text-white mt-5">
+    <div class="container text-white mt-5 bg-dark p-4 rounded-3">
 
         <div class="row mb-5">
             <div class="col-12 col-lg-9">@if(session()->has('success')) <h1> <span class="bg-success">Response recorded</span> </h1> @endif</div>
@@ -19,12 +19,13 @@
 
                 <div class="col-0 col-lg-2"></div>
 
-                <div class=" col-11 col-lg-5">
+                <div class=" col-10 col-lg-4">
                     <h3><a href="/meeting/show/{{$meeting->id}}" class="link-light">{{  $meeting->name }}</a></h3>
                     <h6> {{  $meeting->start_time }} </h6>
                 </div>
 
-                <div class="col-1 col-lg-1">
+                <div class="col-2 col-lg-2">
+                    Status:
                     <img src="@switch($meeting->pivot->participate)
 						@case(0)
 							{{url('/no-response.png')}}
