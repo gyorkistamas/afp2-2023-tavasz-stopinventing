@@ -35,7 +35,7 @@ class UserController extends Controller
                 $request->session()->invalidate();
                 return back()->withErrors(['password' => 'This user has been suspended!'])->onlyInput('password');
             }
-            return redirect('/edit-profile');
+            return redirect('/my-meetings');
         }
         return redirect('/sign-in');
     }

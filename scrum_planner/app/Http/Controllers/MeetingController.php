@@ -7,10 +7,12 @@ use App\Models\User;
 use App\Models\Comment;
 use App\Models\Meeting;
 use App\Models\MeetingAttendant;
+use DateTime;
 use Illuminate\Http\Request;
 use App\Mail\NotificationEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class MeetingController extends Controller
 {
@@ -185,5 +187,68 @@ class MeetingController extends Controller
         }
 
         return redirect() -> back() -> with(['success' => 'Meeting has been created!']);
+    }
+
+    public function MyMeetings(Request $request)
+    {
+        if(date('D', strtotime($request->date)) != 'Mon')
+        {
+            return abort(404);
+        }
+
+        $from = date('Y-m-d H:i:s', strtotime($request->date));
+        $to = (new DateTime($from))->modify('+6 day')->format('Y-m-d H:i:s');
+        $meetings = Auth::user()->meetings->whereBetween('start_time', [$from, $to])
+                    ->merge(Meeting::where('organiser', Auth::user()->id)
+                        ->whereBetween('start_time', [$from, $to])
+                        ->get())
+                    ->sortBy('start_time');
+
+        $numberOfRows = $meetings->groupBy(function($date) {
+            return Carbon::parse($date->start_time)->format('Y.m.d');
+        })
+            ->map
+            ->count()
+            ->max();
+
+        $meetingsToDaysArray = [];
+
+        for ($i = 0; $i < 7; $i++)
+        {
+            $meetingsToDaysArray[$i] = array();
+
+            foreach ($meetings as $meeting)
+            {
+                if ($this->DayToNumber(date('l', strtotime($meeting->start_time))) == $i)
+                {
+                    array_push($meetingsToDaysArray[$i], $meeting);
+                }
+            }
+        }
+
+
+        return view('meeting.my_meetings')->with(['date' => $request->date,
+                                                        'rowNum' => $numberOfRows,
+                                                        'meetings' => $meetingsToDaysArray]);
+    }
+
+    private function DayToNumber($day) {
+        switch ($day)
+        {
+            case 'Monday': return 0;
+            case 'Tuesday': return 1;
+            case 'Wednesday': return 2;
+            case 'Thursday': return 3;
+            case  'Friday': return 4;
+            case 'Saturday': return 5;
+            case 'Sunday': return 6;
+        }
+    }
+
+    public function MyMeetingsThisWeek(Request $request)
+    {
+        $thisMonday = date("Y-m-d", strtotime('monday this week'));
+
+        return redirect('my-meetings/' . $thisMonday);
     }
 }

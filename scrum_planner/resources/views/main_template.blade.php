@@ -24,7 +24,7 @@
               @if(Auth::check())
 
               <li class="nav-item me-3 mb-3 mb-md-0 mt-3 mt-md-0">
-                <a class="btn {{Request::is('my-meetings') ? 'btn-success' : 'btn-secondary'}} w-100" href="#">My meetings</a>
+                <a class="btn {{Request::is('my-meetings/*') ? 'btn-success' : 'btn-secondary'}} w-100" href="/my-meetings">My meetings</a>
               </li>
               <li class="nav-item me-3 mb-3 mb-md-0">
                 <a class="btn {{Request::is('edit-profile') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{url('/edit-profile')}}">Edit profile</a>

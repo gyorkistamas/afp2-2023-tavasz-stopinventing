@@ -23,12 +23,12 @@
 
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <input 
-                        type="text" 
-                        name="name" 
-                        id="meetingName" 
-                        class="form-control form-control-lg" 
-                        placeholder="Title of the meeting" 
+                    <input
+                        type="text"
+                        name="name"
+                        id="meetingName"
+                        class="form-control form-control-lg"
+                        placeholder="Title of the meeting"
                         required
                     >
 
@@ -42,11 +42,11 @@
                 <div class="col-12 col-lg-6">
                     <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Starting Date:</label>
 
-                    <input 
-                        type="datetime-local" 
-                        class="form-control form-control-lg" 
-                        name="start_time" 
-                        id="startTime" 
+                    <input
+                        type="datetime-local"
+                        class="form-control form-control-lg"
+                        name="start_time"
+                        id="startTime"
                         required
                     >
 
@@ -60,11 +60,11 @@
                 <div class="col-12 col-lg-6">
                     <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">End Date:</label>
 
-                    <input 
-                        type="datetime-local" 
-                        class="form-control form-control-lg" 
-                        name="end_time" 
-                        id="endTime" 
+                    <input
+                        type="datetime-local"
+                        class="form-control form-control-lg"
+                        name="end_time"
+                        id="endTime"
                         required
                     >
 
@@ -77,21 +77,21 @@
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <label class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Description:</label>
-                    
-                    <textarea 
-                        name="description" 
-                        id="description" 
-                        class="form-control form-control-lg" 
-                        placeholder="Description of meeting"></textarea>    
+
+                    <textarea
+                        name="description"
+                        id="description"
+                        class="form-control form-control-lg"
+                        placeholder="Description of meeting"></textarea>
                 </div>
             </div>
 
             <div class="row">
                 <div class="text-center col-12 col-lg-6">
                     <button type="submit" class="btn btn-outline-light btn-success btn-lg m-2">
-                        Create team
+                        Create meeting
                     </button>
-        
+
                     <a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
                         Cancel
                     </a>
@@ -105,13 +105,13 @@
                     <h2 class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label">
                         Invite teams:
                     </h2>
-        
+
                     <select id="team_chooser" multiple="multiple" name="teams[]" style="width: 100%;">
                         @foreach($teams as $team)
                             <option value="{{  $team->id }}">{{  $team->team_name }}</option>
                         @endforeach
                     </select>
-                    
+
                     @error('teams[]')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -123,13 +123,13 @@
                     <h2 class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label">
                         Invite individuals:
                     </h2>
-        
+
                     <select id="individuals_chooser" multiple="multiple" name="individuals[]" style="width: 100%;">
                         @foreach($users as $user)
                             <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
                         @endforeach
                     </select>
-                    
+
                     @error('individuals[]')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -160,7 +160,7 @@
             width: 'resolve'
         });
     });
-    
+
 </script>
 
 @endsection
