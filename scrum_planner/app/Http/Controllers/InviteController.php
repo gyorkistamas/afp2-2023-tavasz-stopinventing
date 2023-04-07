@@ -15,7 +15,8 @@ class InviteController extends Controller
     public function invites()
     {
         $meetings = Auth::user()->meetings
-                                ->where('start_time', '>=', Carbon::now()->toDateTimeString());
+                                ->where('start_time', '>=', Carbon::now()->toDateTimeString())
+                                ->sortBy('pivot.participate');
 
         return view('meeting.my_invites')->with(['meetings' => $meetings]);
     }
