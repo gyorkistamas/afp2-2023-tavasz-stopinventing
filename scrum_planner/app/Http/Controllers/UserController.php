@@ -134,8 +134,6 @@ class UserController extends Controller
         return redirect('/users');
     }
 
-    // modify (popup window) / reset password
-
     public function ChangeRole(User $user, Request $request){
         if (!Auth::check() || Auth::User()->privilage != 2) {
             return abort(401);
@@ -148,11 +146,11 @@ class UserController extends Controller
         $user->update(['privilage' => $user->privilage = $priv]);
         return redirect('/users');
     }
-    public function ChangePassword(User $user){
+    public function ChangePassword(User $user, Request $request){
         if (!Auth::check() || Auth::User()->privilage != 2) {
             return abort(401);
         }
-        $pwd = "changeme";
+        $pwd = $request->input('NewPassword');
         $newpasswd = bcrypt($pwd);
         $user->update(['password'=>$user->password=$newpasswd]);
         return redirect('/users');
