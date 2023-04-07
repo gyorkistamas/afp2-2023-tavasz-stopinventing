@@ -54,10 +54,10 @@
                         @else
                             <a href="/users/change-status/{{ $user->id }}" class="btn btn-primary">Activate</a>
                         @endif
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeRole{{$user->id}}">
+                        <button type="button" onclick="GenerateRndPasswd({{$user->id}})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeRole{{$user->id}}">
                             Modify
                         </button>
-                        <form method="GET" action="/users/change-role/{{$user->id}}">
+                        
                         <div class="modal fade" id="changeRole{{$user->id}}" tabindex="-1" aria-labelledby="changeRole" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
@@ -66,22 +66,35 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <form method="POST" action="/users/change-role/{{$user->id}}">
+                                    @csrf
                                     <select class="form-select" aria-label="Default select example" name="privilage">
                                         <option value=-1>Select the action</option>
                                         <option value=0>User</option>
                                         <option value=1>Scrum master</option>
                                         <option value=2>Admin</option>
                                       </select>
-                                    <a href="/users/changepasswd/{{$user->id}}" class="text-warning">Change password for user</a>
+                                      <button type="submit" class="btn btn-primary">Change Role</button>
+                                    </form>
+                                    <h6 class="text-dark">New generated password:</h6>
+                                    <form method="POST" action="/users/changepasswd/{{$user->id}}">
+                                        @csrf
+                                        <input
+                                        type="text" 
+                                        id="newPwd{{$user->id}}"
+                                        name="NewPassword"
+                                        readonly
+                                        />
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Change password for {{$user->full_name}}</button>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Change Role</button>
                                 </div>
                             </div>
                             </div>
                         </div>
-                    </form>
                     </div>
 
                 </div>

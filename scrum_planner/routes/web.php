@@ -1,6 +1,7 @@
 <?php
 
 
+
 use App\Mail\NotificationEmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -37,8 +38,8 @@ Route::get('/users', [UserController::class, 'List'])->name('users');
 
 
 Route::get('/users/change-status/{user}', [UserController::class, 'ChangeStatus']);
-Route::get('/users/change-role/{user}',[UserController::class, 'ChangeRole']);
-Route::get('/users/changepasswd/{user}',[UserController::class,'ChangePassword']);
+Route::post('/users/change-role/{user}',[UserController::class, 'ChangeRole']);
+Route::post('/users/changepasswd/{user}',[UserController::class,'ChangePassword']);
 Route::get('/team/create',[TeamController::class, 'CreateTeamSite']);
 
 Route::post('/team/create',[TeamController::class, 'TeamCreation']);
