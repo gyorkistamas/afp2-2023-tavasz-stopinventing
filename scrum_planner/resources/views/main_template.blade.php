@@ -25,7 +25,7 @@
               @if(Auth::check())
 
               <li class="nav-item me-3 mb-3 mb-md-0 mt-3 mt-md-0">
-                <a class="btn {{Request::is('my-meetings') ? 'btn-success' : 'btn-secondary'}} w-100" href="#">My meetings</a>
+                <a class="btn {{Request::is('my-meetings/*') ? 'btn-success' : 'btn-secondary'}} w-100" href="/my-meetings">My meetings</a>
               </li>
               <li class="nav-item me-3 mb-3 mb-md-0">
                 <a class="btn {{Request::is('edit-profile') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{url('/edit-profile')}}">Edit profile</a>
@@ -39,11 +39,11 @@
                 <a class="btn {{Request::is('manage-meetings') ? 'btn-success' : 'btn-secondary'}} w-100" href="#">Manage meetings</a>
               </li>
               <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn {{Request::is('manage-teams') ? 'btn-success' : 'btn-secondary'}} w-100" href="#">Manage teams</a>
+                <a class="btn {{Request::is('manage-teams') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{ url('/manage-teams') }}">Manage teams</a>
               </li>
 
               @endif
-              
+
               @if(Auth::check() && Auth::User()->privilage == 2)
 
               <li class="nav-item me-3 mb-3 mb-md-0">
@@ -59,7 +59,7 @@
               </li>
 
               @else
-              
+
               <li class="nav-item me-3 mb-3 mb-md-0 mt-3 mt-md-0">
                 <a class="btn {{Request::is('sign-in') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{url('/sign-in')}}">Sign In</a>
               </li>
