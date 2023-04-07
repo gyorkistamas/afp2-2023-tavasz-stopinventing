@@ -1,7 +1,7 @@
 <?php
 
 
-
+use App\Http\Controllers\InviteController;
 use App\Mail\NotificationEmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -58,3 +58,6 @@ Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticip
 
 Route::get('/my-meetings', [MeetingController::class, 'MyMeetingsThisWeek'])->middleware('auth')->name('my-meetings');
 Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings'])->middleware('auth');
+
+Route::get('my-invites', [InviteController::class, 'invites'])->middleware('auth');
+Route::post('/set-attendance', [InviteController::class, 'SetAttendance'])->middleware('auth');
