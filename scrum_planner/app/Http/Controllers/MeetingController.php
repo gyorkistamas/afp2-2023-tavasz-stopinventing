@@ -198,7 +198,11 @@ class MeetingController extends Controller
 
         $from = date('Y-m-d H:i:s', strtotime($request->date));
         $to = (new DateTime($from))->modify('+6 day')->format('Y-m-d H:i:s');
-        $meetings = Auth::user()->meetings->whereBetween('start_time', [$from, $to])->merge(Meeting::where('organiser', Auth::user()->id)->whereBetween('start_time', [$from, $to])->get())->sortBy('start_time');
+        $meetings = Auth::user()->meetings->whereBetween('start_time', [$from, $to])
+                    ->merge(Meeting::where('organiser', Auth::user()->id)
+                        ->whereBetween('start_time', [$from, $to])
+                        ->get())
+                    ->sortBy('start_time');
 
         $numberOfRows = $meetings->groupBy(function($date) {
             return Carbon::parse($date->start_time)->format('Y.m.d');
@@ -231,20 +235,13 @@ class MeetingController extends Controller
     private function DayToNumber($day) {
         switch ($day)
         {
-            case 'Monday':
-                return 0;
-            case 'Tuesday':
-                return 1;
-            case 'Wednesday':
-                return 2;
-            case 'Thursday':
-                return 3;
-            case  'Friday':
-                return 4;
-            case 'Saturday':
-                return 5;
-            case 'Sunday':
-                return 6;
+            case 'Monday': return 0;
+            case 'Tuesday': return 1;
+            case 'Wednesday': return 2;
+            case 'Thursday': return 3;
+            case  'Friday': return 4;
+            case 'Saturday': return 5;
+            case 'Sunday': return 6;
         }
     }
 
