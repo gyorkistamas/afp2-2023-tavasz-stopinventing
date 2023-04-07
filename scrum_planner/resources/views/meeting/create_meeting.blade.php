@@ -106,11 +106,13 @@
                         Invite teams:
                     </h2>
 
-                    <select id="team_chooser" multiple="multiple" name="teams[]" style="width: 100%;">
-                        @foreach($teams as $team)
-                            <option value="{{  $team->id }}">{{  $team->team_name }}</option>
-                        @endforeach
-                    </select>
+                    <div class="text-dark">
+                        <select id="team_chooser" multiple="multiple" name="teams[]" style="width: 100%;">
+                            @foreach($teams as $team)
+                                <option value="{{  $team->id }}">{{  $team->team_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     @error('teams[]')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -124,11 +126,13 @@
                         Invite individuals:
                     </h2>
 
-                    <select id="individuals_chooser" multiple="multiple" name="individuals[]" style="width: 100%;">
-                        @foreach($users as $user)
-                            <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
-                        @endforeach
-                    </select>
+                    <div class="text-dark">
+                        <select id="individuals_chooser" multiple="multiple" name="individuals[]" style="width: 100%;">
+                            @foreach($users as $user)
+                                <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     @error('individuals[]')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
