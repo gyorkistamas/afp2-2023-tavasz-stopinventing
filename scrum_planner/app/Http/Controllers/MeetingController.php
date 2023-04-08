@@ -213,6 +213,10 @@ class MeetingController extends Controller
 
         $meetingsToDaysArray = [];
 
+        $invitesToBeRespondedTo = Auth::user()->meetings->where('pivot.participate', '0')
+                                                        ->where('start_time', '>=', Carbon::now()->toDateTimeString())
+                                                        ->count();
+
         for ($i = 0; $i < 7; $i++)
         {
             $meetingsToDaysArray[$i] = array();
@@ -229,7 +233,8 @@ class MeetingController extends Controller
 
         return view('meeting.my_meetings')->with(['date' => $request->date,
                                                         'rowNum' => $numberOfRows,
-                                                        'meetings' => $meetingsToDaysArray]);
+                                                        'meetings' => $meetingsToDaysArray,
+                                                        'inviteNumber' => $invitesToBeRespondedTo]);
     }
 
     private function DayToNumber($day) {

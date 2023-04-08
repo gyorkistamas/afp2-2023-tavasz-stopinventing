@@ -51,12 +51,14 @@
                 Team members
             </label>
 
-            <select id="member-chooser" multiple="multiple" name="members[]" style="width: 600px;">
-                @foreach($users as $user)
-                    <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
-                @endforeach
-            </select>
-              
+            <div class="text-dark">
+                <select id="member-chooser" multiple="multiple" name="members[]" style="width: 600px;">
+                    @foreach($users as $user)
+                        <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
+                    @endforeach
+                </select>
+            </div>
+
             @error('members[]')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror

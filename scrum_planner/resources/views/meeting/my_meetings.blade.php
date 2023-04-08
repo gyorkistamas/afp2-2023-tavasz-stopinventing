@@ -12,7 +12,7 @@
 
         <a class="btn btn-success mb-2" href="/my-meetings/{{ ((new DateTime($date))->modify('+7 day'))->format('Y-m-d') }}">Next week --> </a>
 
-        <a class="btn btn-danger mb-2 float-end"><h3>My invites</h3></a>
+        <a class="btn btn-primary mb-2 float-end position-relative" href="/my-invites"><h3>My invites</h3>@if($inviteNumber > 0) <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger d-flex justify-content-center align-items-center" style="font-size: 1.3rem; width: 39px; height: 39px;">@if($inviteNumber <= 9) {{$inviteNumber}} @else 9+ @endif</span> @endif</a>
 
         <table class="table table-dark table-striped table-hover">
             <thead>
@@ -86,7 +86,7 @@
                                </div>
                             </td>
                         @else
-                            <td><h1> - </h1></td>
+                            <td></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[1]))
@@ -105,7 +105,7 @@
                                 </div>
                             </td>
                         @else
-                            <td><h1> - </h1></td>
+                            <td></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[2]))
@@ -124,7 +124,7 @@
                                 </div>
                             </td>
                         @else
-                            <td><h1> - </h1></td>
+                            <td></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[3]))
@@ -143,7 +143,7 @@
                                 </div>
                             </td>
                         @else
-                            <td><h1> - </h1></td>
+                            <td></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[4]))
@@ -162,7 +162,7 @@
                                 </div>
                             </td>
                         @else
-                            <td><h1> - </h1></td>
+                            <td></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[5]))
@@ -181,7 +181,7 @@
                                 </div>
                             </td>
                         @else
-                            <td><h1> - </h1></td>
+                            <td></td>
                         @endif
 
                         @if(array_key_exists($i - 1, $meetings[6]))
@@ -200,7 +200,7 @@
                                 </div>
                             </td>
                         @else
-                            <td><h1> - </h1></td>
+                            <td></td>
                         @endif
 
                     </tr>
