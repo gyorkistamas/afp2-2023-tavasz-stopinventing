@@ -20,7 +20,7 @@
 			</div>
 			<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end mt-2 mt-lg-0">
 				<div class="">
-					<a class="btn btn-warning me-0 me-lg-2">Edit meeting</a>
+					<a class="btn btn-warning me-0 me-lg-2" href="/meeting/edit/{{$meeting->id}}">Edit meeting</a>
 					<a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new participant(s)</a>
 				</div>
 			</div>
