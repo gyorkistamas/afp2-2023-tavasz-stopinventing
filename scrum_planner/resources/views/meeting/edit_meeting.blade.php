@@ -96,7 +96,9 @@
                                 Edit meeting
                             </button>
 
-                            <a href="/meeting/show/{{$meeting->id}}" class="btn btn-outline-light btn-danger btn-lg m-2">
+                            <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete meeting</button>
+
+                            <a href="/meeting/show/{{$meeting->id}}" class="btn btn-outline-light btn-warning btn-lg m-2">
                                 Cancel
                             </a>
                         </div>
@@ -105,4 +107,25 @@
             </div>
         </form>
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Meeting</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>Are you sure you want to delete the meeting?</h2>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-danger" href="/meeting/delete/{{$meeting->id}}">Confirm</a>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
