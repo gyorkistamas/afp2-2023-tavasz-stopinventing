@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Mail\MeetingChangedEmail;
+use App\Mail\MeetingDeletedEmail;
 use App\Mail\NotificationEmail;
 use App\Models\Meeting;
 use App\Models\MeetingAttendant;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -63,6 +65,8 @@ class EditMeetingController extends Controller
 
         foreach ($attendants as $attendant)
         {
+            $user = User::find($attendant->user_id);
+            Mail::to($user->email)->send(new MeetingDeletedEmail($user, $meeting));
             $attendant->delete();
         }
 
