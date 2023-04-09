@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\MeetingChangedEmail;
 use App\Mail\NotificationEmail;
 use App\Models\Meeting;
+use App\Models\MeetingAttendant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -50,4 +51,24 @@ class EditMeetingController extends Controller
         return redirect('/meeting/show/' . $meeting->id);
 
     }
+
+    public function DeleteMeeting(Meeting $meeting)
+    {
+        if (Auth::user()->privilage != 2 && Auth::user()->id != $meeting->scrumMaster->id)
+        {
+            return abort(401);
+        }
+
+        $attendants = MeetingAttendant::where('meeting_id', $meeting->id)->get();
+
+        foreach ($attendants as $attendant)
+        {
+            $attendant->delete();
+        }
+
+        $meeting->delete();
+
+        return redirect('/');
+    }
+
 }
