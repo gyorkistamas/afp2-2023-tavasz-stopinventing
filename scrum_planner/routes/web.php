@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\EditMeetingController;
 use App\Http\Controllers\InviteController;
 use App\Mail\NotificationEmail;
 use App\Models\User;
@@ -55,6 +56,9 @@ Route::post('/meeting/create', [MeetingController::class, 'MeetingCreation']);
 Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
 Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
 Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticipants']);
+
+Route::get('/meeting/edit/{meeting}', [EditMeetingController::class, 'ShowEditForm'])->middleware('auth');
+Route::post('/meeting/edit/{meeting}', [EditMeetingController::class, 'EditMeeting'])->middleware('auth');
 
 Route::get('/my-meetings', [MeetingController::class, 'MyMeetingsThisWeek'])->middleware('auth')->name('my-meetings');
 Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings'])->middleware('auth');
