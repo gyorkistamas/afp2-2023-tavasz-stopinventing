@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MeetingChangedEmail;
+use App\Mail\NotificationEmail;
 use App\Models\Meeting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class EditMeetingController extends Controller
 {
@@ -38,6 +41,11 @@ class EditMeetingController extends Controller
         $meeting->description = $fields['description'];
 
         $meeting->save();
+
+        foreach ($meeting->attendants as $attendant)
+        {
+            Mail::to($attendant->email)->send(new MeetingChangedEmail($attendant, $meeting));
+        }
 
         return redirect('/meeting/show/' . $meeting->id);
 
