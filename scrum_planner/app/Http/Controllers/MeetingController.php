@@ -121,7 +121,7 @@ class MeetingController extends Controller
 
     public function CreateMeetingSite()
     {
-        if(Auth::user()->privilage <= 1)
+        if(Auth::user()->privilage < 1)
         {
             return abort(401);
         }
@@ -133,7 +133,7 @@ class MeetingController extends Controller
 
     public function MeetingCreation(Request $request)
     {
-        if(Auth::user()->privilage <= 1)
+        if(Auth::user()->privilage < 1)
         {
             return abort(401);
         }
