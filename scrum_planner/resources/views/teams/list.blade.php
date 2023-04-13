@@ -55,7 +55,9 @@
                             <span class="badge bg-light text-dark"> Members Count: {{ $team->members->count() }}</span>
                         </p>
 
-                        <a href="#" class="btn btn-success">Edit Team</a>
+                        <a href="{{ url('/team/edit/'. $team->id) }}" class="btn btn-success">Edit Team</a>
+
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete team</button>
 
                     </div>
 
@@ -70,6 +72,25 @@
 
         @endif
 
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Team</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2>Are you sure you want to delete the team?</h2>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-danger" href="#">Confirm</a>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
