@@ -139,7 +139,7 @@ class MeetingController extends Controller
         }
 
         $fields = $request -> validate([
-            'name' => ['required'],
+            'name' => ['required', 'min:3'],
             'start_time' => ['required'],
             'end_time' => ['required'],
             'description' => [],
