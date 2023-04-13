@@ -229,8 +229,7 @@ class MeetingController extends Controller
                 }
             }
         }
-
-
+        
         return view('meeting.my_meetings')->with(['date' => $request->date,
                                                         'rowNum' => $numberOfRows,
                                                         'meetings' => $meetingsToDaysArray,
