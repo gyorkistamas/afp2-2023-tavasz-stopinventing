@@ -45,6 +45,8 @@ class EditTeamController extends Controller
                 }
             }
         }
+
+        //Email
         
         $team->save();
 
@@ -60,8 +62,30 @@ class EditTeamController extends Controller
 
         $member = TeamMember::where('team_id', $fields['team_id'])->where('user_id', $fields['user_id'])->first();
 
+        //Email
+
         $member->delete();
 
         return redirect()->back()->with('member-removed', '1 Member removed from the team');
+    }
+
+    public function DeleteTeam(Team $team)
+    {
+        if (Auth::user()->privilage != 2 && Auth::user()->id != $team->scrumMaster->id)
+        {
+            return abort(401);
+        }
+
+        $members = TeamMember::where('team_id', $team->id)->get();
+
+        //Eamil
+
+        foreach ($members as $member) {
+            $member->delete();
+        }
+
+        $team->delete();
+
+        return redirect('/manage-teams');
     }
 }

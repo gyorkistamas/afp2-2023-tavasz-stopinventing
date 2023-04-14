@@ -39,7 +39,7 @@
 
     <div class="row justify-content-center gap-3">
             @foreach ($Teams as $team)
-                <div class="card bg-dark text-center" style="width: 19rem;">
+                <div class="card bg-dark text-center border-primary border-1" style="width: 19rem;">
 
                     <div class="card-body">
 
@@ -56,11 +56,7 @@
                         </p>
 
                         <a href="{{ url('/team/edit/'. $team->id) }}" class="btn btn-success">Edit Team</a>
-
-                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete team</button>
-
                     </div>
-
                 </div>
             @endforeach
 
@@ -72,25 +68,6 @@
 
         @endif
 
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Team</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h2>Are you sure you want to delete the team?</h2>
-            </div>
-            <div class="modal-footer">
-                <a type="button" class="btn btn-danger" href="#">Confirm</a>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
-            </div>
-        </div>
     </div>
 </div>
 @endsection
