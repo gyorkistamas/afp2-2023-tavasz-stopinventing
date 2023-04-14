@@ -90,11 +90,12 @@ class MeetingController extends Controller
         {
             foreach ($request->teams as $id)
             {
-                $team = Team::find($id)->first();
+                $team = Team::find($id);
                 foreach ($team->members as $participant)
                 {
                     try {
                         MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant->id, 'participate' => 0]);
+                        Mail::to($participant->email)->send(new NotificationEmail(Meeting::find($request->meeting_id), $participant));
                         $addedCount += 1;
                     }
                     catch (\Exception) { $failed += 1; }
@@ -108,6 +109,8 @@ class MeetingController extends Controller
             {
                 try {
                     MeetingAttendant::create(['meeting_id' => $request->meeting_id, 'user_id' => $participant, 'participate' => 0]);
+                    $user = User::find($participant);
+                    Mail::to($user->email)->send(new NotificationEmail(Meeting::find($request->meeting_id), $user));
                     $addedCount += 1;
                 }
                 catch (\Exception) { $failed += 1; }
@@ -139,7 +142,7 @@ class MeetingController extends Controller
         }
 
         $fields = $request -> validate([
-            'name' => ['required'],
+            'name' => ['required', 'min:3'],
             'start_time' => ['required'],
             'end_time' => ['required'],
             'description' => [],
@@ -255,5 +258,34 @@ class MeetingController extends Controller
         $thisMonday = date("Y-m-d", strtotime('monday this week'));
 
         return redirect('my-meetings/' . $thisMonday);
+    }
+
+    public function ListMeetings(Request $request) {
+
+        $listOfMeetings = null;
+
+        if (Auth::User()->privilage < 1) {
+            return abort(401);
+        }
+
+        switch (Auth::User()->privilage) {
+
+            case 1:
+
+                $listOfMeetings = Meeting::where('organiser', '=', Auth::User()->id)
+                ->paginate(8);
+
+                break;
+
+
+            case 2:
+
+                $listOfMeetings = Meeting::paginate(8);
+
+                break;
+        }
+
+        return view('meeting.list', ['Meetings' => $listOfMeetings]);
+
     }
 }

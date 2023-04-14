@@ -13,8 +13,8 @@
         </div>
         <div class="card-body">
           <h3 class="card-title">Oops! You have no access to visit this site!</h3>
-          <h5 class="card-text">Please, report this problem to the Administrator!</h5>
-          <button onclick="window.location.reload();" class="btn btn-danger">Or try reloading this page</button>
+          <h5 class="card-text">Go back to the last visited site!</h5>
+          <button onclick="window.history.back(1);" class="btn btn-danger">Go back</button>
         </div>
     </div>
 

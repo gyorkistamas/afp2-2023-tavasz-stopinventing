@@ -64,6 +64,8 @@ Route::get('/meeting/edit/{meeting}', [EditMeetingController::class, 'ShowEditFo
 Route::post('/meeting/edit/{meeting}', [EditMeetingController::class, 'EditMeeting'])->middleware('auth');
 Route::get('/meeting/delete/{meeting}', [EditMeetingController::class, 'DeleteMeeting'])->middleware('auth');
 
+Route::get('/manage-meetings', [MeetingController::class, 'ListMeetings'])->middleware('auth');
+
 Route::get('/my-meetings', [MeetingController::class, 'MyMeetingsThisWeek'])->middleware('auth')->name('my-meetings');
 Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings'])->middleware('auth');
 
