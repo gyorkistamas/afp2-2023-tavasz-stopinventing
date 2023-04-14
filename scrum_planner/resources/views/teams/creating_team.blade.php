@@ -19,68 +19,75 @@
         @if (session() -> has('success'))
             <h1 class="bg-success">{{session() -> get('success')}}</h1>
         @endif
-        <h1 class="mb-3">Create new team</h1>
 
-        <form action={{ url('/team/create') }} method="POST">
-        @csrf
+        <div class="card text-center bg-dark border-primary border-4">
+            <div class="card-body">
+                <div class="card-header bg-primary mb-3"><h1>Create new team</h1></div>
 
-        <div class="form-outline mb-4">
+                <form action={{ url('/team/create') }} method="POST">
+                @csrf
+        
+                <div class="form-outline mb-4">
 
-            <label class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label" for="teamName">
-                Team Name
-            </label>
+                    <label class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label" for="teamName">
+                        Team Name
+                    </label>
 
-            <input
-                name="team_name"
-                type="text"
-                id="teamName"
-                class="form-control form-control-lg"
-                placeholder="Enter a team name"
-                required
-            />
+                    <input
+                        name="team_name"
+                        type="text"
+                        id="teamName"
+                        class="form-control form-control-lg"
+                        placeholder="Enter a team name"
+                        value="{{ old("team_name") }}"
+                        required
+                    />
 
-            @error('team_name')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-            @enderror
+                    @error('team_name')
+                        <p class="text-warning text-xs mt-1">{{$message}}</p>
+                    @enderror
 
-        </div>
+                </div>
+            
+                <div class="form-outline mb-3">
+                
+                    <label class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label" for="teamMembers">
+                        Team members
+                    </label>
+                
+                    <div class="text-dark">
+                        <select id="member-chooser" multiple="multiple" name="members[]" style="width: 600px;">
+                            @foreach($users as $user)
+                                <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-        <div class="form-outline mb-3">
+                    @error('members[]')
+                        <p class="text-warning text-xs mt-1">{{$message}}</p>
+                    @enderror
 
-            <label class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label" for="teamMembers">
-                Team members
-            </label>
+                </div>
+        
+                <div class="text-center text-lg-start mt-4 pt-2">
 
-            <div class="text-dark">
-                <select id="member-chooser" multiple="multiple" name="members[]" style="width: 600px;">
-                    @foreach($users as $user)
-                        <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
-                    @endforeach
-                </select>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-outline-light btn-success btn-lg m-2">
+                            Create team
+                        </button>
+
+
+        				<a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
+                            Cancel
+                        </a>
+                    </div>
+
+                </div>
+
+                </form>
             </div>
-
-            @error('members[]')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-            @enderror
-
         </div>
-
-        <div class="text-center text-lg-start mt-4 pt-2">
-
-            <div class="text-center">
-                <button type="submit" class="btn btn-outline-light btn-success btn-lg m-2">
-                    Create team
-                </button>
-
-
-				<a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
-                    Cancel
-                </a>
-            </div>
-
-        </div>
-
-        </form>
+        
 
     </div>
 </div>

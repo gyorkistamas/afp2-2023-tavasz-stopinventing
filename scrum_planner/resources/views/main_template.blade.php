@@ -36,7 +36,7 @@
                     Meetings
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Manage meetings</a></li>
+                    <li><a class="dropdown-item" href="{{ url('/manage-meetings') }}">Manage meetings</a></li>
                     <li><a class="dropdown-item" href="/meeting/create">Create new meeting</a></li>
                   </ul>
               </li>

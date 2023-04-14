@@ -17,95 +17,91 @@
         @csrf
     <div class="row">
         <div class="col-12 col-lg-6">
-            <div class="row">
-                <h1>Meeting Creation</h1>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <input
-                        type="text"
-                        name="name"
-                        id="meetingName"
-                        class="form-control form-control-lg"
-                        placeholder="Title of the meeting"
-                        required
-                    >
-
-                    @error('name')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
+            <div class="card text-center bg-dark border-primary border-4 mb-3 mt-lg-2">
+                <div class="card-header bg-primary">
+                    <h1>Meeting Creation</h1>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Starting Date:</label>
-
-                    <input
-                        type="datetime-local"
-                        class="form-control form-control-lg"
-                        name="start_time"
-                        id="startTime"
-                        required
-                    >
-
-                    @error('start_time')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">End Date:</label>
-
-                    <input
-                        type="datetime-local"
-                        class="form-control form-control-lg"
-                        name="end_time"
-                        id="endTime"
-                        required
-                    >
-
-                    @error('end_time')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <label class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Description:</label>
-
-                    <textarea
-                        name="description"
-                        id="description"
-                        class="form-control form-control-lg"
-                        placeholder="Description of meeting"></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="text-center col-12 col-lg-6">
-                    <button type="submit" class="btn btn-outline-light btn-success btn-lg m-2">
-                        Create meeting
-                    </button>
-
-                    <a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
-                        Cancel
-                    </a>
+                <div class="card-body">
+                    <div class="row">
+                        <div>
+                            <input
+                                type="text"
+                                name="name"
+                                id="meetingName"
+                                class="form-control form-control-lg"
+                                placeholder="Title of the meeting"
+                                value="{{ old("name") }}"
+                                required
+                            >
+        
+                            @error('name')
+                                <p class="text-warning text-xs mt-1">{{$message}}</p>
+                            @enderror
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div>
+                            <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Starting Date:</label>
+        
+                            <input
+                                type="datetime-local"
+                                class="form-control form-control-lg"
+                                name="start_time"
+                                id="startTime"
+                                value="{{ old("start_time") }}"
+                                required
+                            >
+        
+                            @error('start_time')
+                                <p class="text-warning text-xs mt-1">{{$message}}</p>
+                            @enderror
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div>
+                            <label for="date" class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">End Date:</label>
+        
+                            <input
+                                type="datetime-local"
+                                class="form-control form-control-lg"
+                                name="end_time"
+                                id="endTime"
+                                value="{{ old("end_time") }}"
+                                required
+                            >
+        
+                            @error('end_time')
+                                <p class="text-warning text-xs mt-1">{{$message}}</p>
+                            @enderror
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div>
+                            <label class="-flex justify-content-start align-items-start pe-3 fw-bold form-label">Description:</label>
+        
+                            <textarea
+                                name="description"
+                                id="description"
+                                class="form-control form-control-lg"
+                                placeholder="Description of meeting">{{ old("description") }}</textarea>
+                        </div>
+                    </div>
+        
                 </div>
             </div>
         </div>
 
         <div class="col-12 col-lg-6">
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <h2 class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label">
+            <div class="card text-center bg-dark border-primary border-4 mb-3 mt-lg-2">
+                <div class="card-header bg-primary">
+                    <h2>
                         Invite teams:
-                    </h2>
-
+                    </h2> 
+                </div>
+                <div class="card-body">
                     <div class="text-dark">
                         <select id="team_chooser" multiple="multiple" name="teams[]" style="width: 100%;">
                             @foreach($teams as $team)
@@ -115,37 +111,52 @@
                     </div>
 
                     @error('teams[]')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        <p class="text-warning text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
             </div>
-
+            
             <div class="row">
-                <div class="col-12 col-lg-6">
-                    <h2 class="d-flex justify-content-start align-items-start pe-3 fw-bold form-label">
-                        Invite individuals:
-                    </h2>
-
-                    <div class="text-dark">
-                        <select id="individuals_chooser" multiple="multiple" name="individuals[]" style="width: 100%;">
-                            @foreach($users as $user)
-                                <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
-                            @endforeach
-                        </select>
+                <div>
+                    <div class="card text-center bg-dark border-primary border-4 mb-3 mt-lg-2">
+                        <div class="card-header bg-primary">
+                            <h2>
+                                Invite individuals:
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-dark">
+                                <select id="individuals_chooser" multiple="multiple" name="individuals[]" style="width: 100%;">
+                                    @foreach($users as $user)
+                                        <option value="{{  $user->id }}">{{  $user->full_name }} ({{ $user->email  }})</option>
+                                    @endforeach
+                                </select>
+                            </div>
+        
+                            @error('individuals[]')
+                                <p class="text-warning text-xs mt-1">{{$message}}</p>
+                            @enderror
+                        </div>
                     </div>
-
-                    @error('individuals[]')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-12 col-lg-6">
+                <div class="card bg-transparent">
                     @if (session() -> has('success'))
                         <h1 class="bg-success">{{session() -> get('success')}}</h1>
                     @endif
                 </div>
+            </div>
+
+            <div class="d-flex">
+                <button type="submit" class="btn btn-outline-light btn-success btn-lg me-auto">
+                    Create meeting
+                </button>
+            
+                <a href="/" class="btn btn-outline-light btn-danger btn-lg ms-auto">
+                    Cancel
+                </a>
             </div>
         </div>
     </div>

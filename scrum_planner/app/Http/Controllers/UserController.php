@@ -15,7 +15,7 @@ class UserController extends Controller
     public function SignIn(Request $request){
         $fields = $request->validate([
             'email'=>['required','email'],
-            'password'=>['required']
+            'password'=>['required','min:8']
         ]);
 
 
@@ -35,9 +35,13 @@ class UserController extends Controller
                 $request->session()->invalidate();
                 return back()->withErrors(['password' => 'This user has been suspended!'])->onlyInput('password');
             }
-            return redirect('/my-meetings');
+            else{
+                return redirect('/my-meetings');
+            }
+            
+           
         }
-        return redirect('/sign-in');
+        return redirect('/sign-in')->withErrors(['password' => 'Invalid credentials!'])->onlyInput('password');
     }
 
     public function LogOut(Request $request){
@@ -55,7 +59,7 @@ class UserController extends Controller
         $fields = $request->validate([
             'full_name'=>['required'],
             'email'=>['required','email'],
-            'password'=>['required','confirmed']
+            'password'=>['required','confirmed','min:8']
         ]);
         if($request->hasFile('picture')){
             $fields['picture'] = $request->file('picture')->store('Images/Uploads/Users','public');

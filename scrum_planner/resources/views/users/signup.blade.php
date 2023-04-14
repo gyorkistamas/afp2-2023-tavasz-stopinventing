@@ -127,7 +127,9 @@
                     placeholder="Confirm your password"
                     required
                 />
-
+                @error('password')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
                 @error('password_confirmation')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
