@@ -36,7 +36,7 @@
               @if(Auth::check() && Auth::User()->privilage > 0)
 
               <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn {{Request::is('manage-meetings') ? 'btn-success' : 'btn-secondary'}} w-100" href="#">Manage meetings</a>
+                <a class="btn {{Request::is('manage-meetings') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{ url('/manage-meetings') }}">Manage meetings</a>
               </li>
               <li class="nav-item me-3 mb-3 mb-md-0">
                 <a class="btn {{Request::is('manage-teams') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{ url('/manage-teams') }}">Manage teams</a>
