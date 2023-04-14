@@ -256,4 +256,33 @@ class MeetingController extends Controller
 
         return redirect('my-meetings/' . $thisMonday);
     }
+
+    public function ListMeetings(Request $request) {
+
+        $listOfMeetings = null;
+
+        if (Auth::User()->privilage < 1) {
+            return abort(401);
+        }
+
+        switch (Auth::User()->privilage) {
+
+            case 1:
+
+                $listOfMeetings = Meeting::where('organiser', '=', Auth::User()->id)
+                ->paginate(8);
+
+                break;
+
+
+            case 2:
+
+                $listOfMeetings = Meeting::paginate(8);
+
+                break;
+        }
+
+        return view('meeting.list', ['Meetings' => $listOfMeetings]);
+
+    }
 }
