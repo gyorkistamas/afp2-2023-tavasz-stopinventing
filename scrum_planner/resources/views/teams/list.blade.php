@@ -39,7 +39,7 @@
 
     <div class="row justify-content-center gap-3">
             @foreach ($Teams as $team)
-                <div class="card bg-dark text-center" style="width: 19rem;">
+                <div class="card bg-dark text-center border-primary border-1" style="width: 19rem;">
 
                     <div class="card-body">
 
@@ -55,10 +55,8 @@
                             <span class="badge bg-light text-dark"> Members Count: {{ $team->members->count() }}</span>
                         </p>
 
-                        <a href="#" class="btn btn-success">Edit Team</a>
-
+                        <a href="{{ url('/team/edit/'. $team->id) }}" class="btn btn-success">Edit Team</a>
                     </div>
-
                 </div>
             @endforeach
 

@@ -77,7 +77,7 @@
                         </button>
 
 
-        				<a href="/" class="btn btn-outline-light btn-danger btn-lg m-2">
+        				<a href="/manage-teams" class="btn btn-outline-light btn-danger btn-lg m-2">
                             Cancel
                         </a>
                     </div>
@@ -87,8 +87,6 @@
                 </form>
             </div>
         </div>
-        
-
     </div>
 </div>
 
