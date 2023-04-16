@@ -119,6 +119,9 @@
             @if (session() -> has('failed'))
                 <h1 class="bg-danger">{{session() -> get('failed')}}</h1>
             @endif
+            @if (session() -> has('member-removed'))
+                <h1 class="bg-warning">{{session() -> get('member-removed')}}</h1>
+            @endif
         </div>
     </div>
 </div>
