@@ -12,18 +12,23 @@
 
 @section('content')
 
-	<div class="container-fluid text-white mt-3">
+	<div class="container text-white mt-2 bg-dark p-5 rounded-3 border border-secondary border-3">
 
 		<div class="row">
-			<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-start border-bottom">
+			<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">
 				<h1>{{$meeting->name}}</h1>
 			</div>
-			<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end mt-2 mt-lg-0">
-				<div class="">
-					<a class="btn btn-warning me-0 me-lg-2" href="/meeting/edit/{{$meeting->id}}">Edit meeting</a>
-					<a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new participant(s)</a>
-				</div>
-			</div>
+
+            <div class="col-0 col-lg-1"></div>
+
+            <div class="col-12 col-lg-2 d-flex justify-content-center mb-3 mb-lg-0 mt-2 mt-lg-0 p-0 p-lg-2">
+                <a class="btn btn-warning me-2" href="/meeting/edit/{{$meeting->id}}">Edit meeting</a>
+            </div>
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center p-0 p-lg-2">
+                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new participant(s)</a>
+            </div>
+
 		</div>
 
 		<div class="row mt-3">
@@ -55,7 +60,6 @@
 				<div class="row border-bottom">
 					<div class="col-12 col-sm-3"><h3>Description:</h3></div>
 					<div class="col-12 col-sm-9"><p class="ms-2">{{$meeting->description}}</p></div>
-					<hr class="d-block d-sm-none">
 				</div>
 
 				<div class="row mt-2">
@@ -122,14 +126,14 @@
 			<!-- The comment side -->
 			<div class="col-12 col-lg-6 ps-1 ps-lg-5">
 				<div class="row border-bottom">
-					<h2>Comments: @if(session()->has('created')) <span class="bg-success">Comment added successfully!</span>  @endif</h2>
+					<h2>Comments: @if(session()->has('created')) <span class="bg-success">Comment added!</span>  @endif</h2>
 				</div>
 
 				@if ($meeting->comments()->count() == 0)
 					<h3>There are no comments yet!</h3>
 				@endif
 
-				<div class="overflow-auto h-50 mt-1 pe-1">
+				<div class="overflow-auto mt-1 pe-1 max" style="height: 250px;">
 					@foreach ($meeting->comments->reverse() as $comment)
 				<div class="comment mt-3 p-3">
 					<div class="row">
@@ -153,17 +157,12 @@
 								<input type="number" name="user_id" value="{{Auth::user()->id}}">
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-12 col-sm-10">
+						<div class="row px-1 d-flex justify-content-center">
 								<div class="form-floating text-dark">
 									<input type="text" class="form-control" id="floatingInput" placeholder="example" name="comment" required>
-									<label for="floatingInput">Your message</label>
+									<label for="floatingInput" class="ms-1">Your message</label>
 								</div>
-							</div>
-
-							<div class="col-12 col-sm-2 mt-2 mt-sm-1">
-								<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-							</div>
+								<button type="submit" class="btn btn-primary btn-lg mt-2 w-50">Submit</button>
 						</div>
 					</form>
 				</div>
