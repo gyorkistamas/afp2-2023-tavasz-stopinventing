@@ -9,7 +9,7 @@
 <script src="{{ url('assets/js/registration.profilepic.js') }}"></script>
 
 <div class="container d-flex align-items-center justify-content-center text-center p-5">
-    <div class="text-white">
+    <div class="text-white bg-dark border border-3 border-secondary rounded-lg p-5">
 
         <h1 class="mb-3">Sign Up</h1>
         <h5 class="mb-4">Create your account and join meetings with various teams</h5>
