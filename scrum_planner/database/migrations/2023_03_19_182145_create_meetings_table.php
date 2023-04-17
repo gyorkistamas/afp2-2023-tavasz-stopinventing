@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('start_time');
             $table->dateTime('end_time');
             $table->unsignedBigInteger('organiser');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->foreign('organiser')->references('id')->on('users');
         });
     }

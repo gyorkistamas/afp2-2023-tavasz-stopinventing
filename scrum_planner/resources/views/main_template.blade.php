@@ -27,19 +27,28 @@
               <li class="nav-item me-3 mb-3 mb-md-0 mt-3 mt-md-0">
                 <a class="btn {{Request::is('my-meetings/*') ? 'btn-success' : 'btn-secondary'}} w-100" href="/my-meetings">My meetings</a>
               </li>
-              <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn {{Request::is('edit-profile') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{url('/edit-profile')}}">Edit profile</a>
-              </li>
-
               @endif
 
               @if(Auth::check() && Auth::User()->privilage > 0)
 
-              <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn {{Request::is('manage-meetings') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{ url('/manage-meetings') }}">Manage meetings</a>
+              <li class="nav-item dropdown me-3 mb-3 mb-md-0">
+                  <a class="btn btn-secondary dropdown-toggle w-100 {{Request::is('manage-meetings') || Request::is('meeting/create') ? 'btn-success' : 'btn-secondary'}}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Meetings
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ url('/manage-meetings') }}">Manage meetings</a></li>
+                    <li><a class="dropdown-item" href="/meeting/create">Create new meeting</a></li>
+                  </ul>
               </li>
-              <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn {{Request::is('manage-teams') ? 'btn-success' : 'btn-secondary'}} w-100" href="{{ url('/manage-teams') }}">Manage teams</a>
+
+              <li class="nav-item dropdown me-3 mb-3 mb-md-0">
+                <a class="btn btn-secondary dropdown-toggle w-100 {{Request::is('manage-teams') || Request::is('team/create') ? 'btn-success' : 'btn-secondary'}}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Teams
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ url('/manage-teams') }}">Manage teams</a></li>
+                  <li><a class="dropdown-item" href="{{url('/team/create')}}">Create new team</a></li>
+                </ul>
               </li>
 
               @endif
@@ -54,8 +63,14 @@
 
               @if(Auth::check())
 
-              <li class="nav-item me-3 mb-3 mb-md-0">
-                <a class="btn btn-danger w-100" href="{{url('/sign-out')}}">Log out</a>
+              <li class="nav-item dropdown  me-3 mb-3 mb-md-0">
+                <a class="btn {{Request::is('edit-profile') ? 'btn-success' : 'btn-secondary'}} dropdown-toggle w-100 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{Auth::user()->full_name}}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="{{ url('/edit-profile') }}">Edit profile</a></li>
+                  <li><a class="dropdown-item text-danger" href="{{url('/sign-out')}}">Logout</a></li>
+                </ul>
               </li>
 
               @else
