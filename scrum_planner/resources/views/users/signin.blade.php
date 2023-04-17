@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="container d-flex align-items-center justify-content-center text-center p-5">
-    <div class="text-white">
+    <div class="text-white bg-dark p-5 border border-3 border-secondary rounded-lg">
 
         <h1 class="mb-3">Sign In</h1>
         <h5 class="mb-4">Start getting involved in a team working environment</h5>
@@ -60,7 +60,7 @@
         <div class="d-flex justify-content-between align-items-center">
 
             <p class="small fw-bold mt-2 pt-1 mb-0">
-                <a href="#!" class="link-info">Forgot password?</a>
+                <a href="{{ url('/request-password') }}" class="link-info">Forgot password?</a>
             </p>
 
         </div>
