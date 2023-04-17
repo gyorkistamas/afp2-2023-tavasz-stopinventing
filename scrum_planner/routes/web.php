@@ -26,6 +26,7 @@ Route::get('/', function () {
     return redirect(route('my-meetings'));
 });
 
+Route::get('/request-password', [UserController::class, 'RequestNewPassword']);
 Route::get('/sign-in', [UserController::class, 'Login'])->name('sign-in');
 
 Route::post('/sign-in', [UserController::class, 'SignIn']);
