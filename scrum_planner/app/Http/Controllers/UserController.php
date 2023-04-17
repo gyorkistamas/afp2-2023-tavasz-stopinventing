@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function RequestNewPassword() {
+        return view('users.request_password');
+    }
+
     public function Login(){
         return view('users.signin');
     }
@@ -38,8 +43,8 @@ class UserController extends Controller
             else{
                 return redirect('/my-meetings');
             }
-            
-           
+
+
         }
         return redirect('/sign-in')->withErrors(['password' => 'Invalid credentials!'])->onlyInput('password');
     }
