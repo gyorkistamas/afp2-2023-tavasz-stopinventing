@@ -22,7 +22,6 @@
 
                         <div class="col-4 col-lg-1">
                         </div>
-                        
                         <div class="col">
                             <h1>Edit meeting</h1>
                         </div>
