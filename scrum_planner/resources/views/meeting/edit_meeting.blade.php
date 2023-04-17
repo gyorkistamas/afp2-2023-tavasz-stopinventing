@@ -12,14 +12,20 @@
 
 @section('content')
 
-    <div class="container-fluid text-white mt-3">
+    <div class="container text-white mt-3 border border-secondary border-3 bg-dark rounded-3">
         <form action="{{url('/meeting/edit/'. $meeting->id)}}" method="POST">
             @csrf
             <div class="row">
                 <div class="col-0 col-lg-4"></div>
                 <div class="col-12 col-lg-8">
                     <div class="row">
-                        <h1>Edit meeting</h1>
+
+                        <div class="col-4 col-lg-1">
+                        </div>
+                        
+                        <div class="col">
+                            <h1>Edit meeting</h1>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -92,13 +98,13 @@
 
                     <div class="row">
                         <div class="text-center col-12 col-lg-6">
-                            <button type="submit" class="btn btn-outline-light btn-success btn-lg m-2">
+                            <button type="submit" class="btn btn-outline-light btn-success m-2">
                                 Edit meeting
                             </button>
 
                             <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete meeting</button>
 
-                            <a href="/meeting/show/{{$meeting->id}}" class="btn btn-outline-light btn-warning btn-lg m-2">
+                            <a href="/meeting/show/{{$meeting->id}}" class="btn btn-outline-light btn-warning m-2">
                                 Cancel
                             </a>
                         </div>
