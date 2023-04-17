@@ -11,20 +11,22 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class TeamNotification extends Mailable
+class Team_deleted extends Mailable
 {
-    private Team $team;
-    private User $member;
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
+
+    private Team $team;
+    private User $member;
     public function __construct(Team $team, User $member)
     {
         $this->team = $team;
         $this->member = $member;
     }
+
 
     /**
      * Get the message envelope.
@@ -32,7 +34,7 @@ class TeamNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Team Notification',
+            subject: 'Team Deleted',
         );
     }
 
@@ -42,7 +44,7 @@ class TeamNotification extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.added_to_a_team',
+            view: 'mail.team_deleted',
             with: [
                 'userName' => $this->member->full_name,
                 'teamName' => $this->team->team_name,
