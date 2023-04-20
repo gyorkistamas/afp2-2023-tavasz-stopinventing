@@ -19,7 +19,8 @@
 				<h1>{{$meeting->name}}</h1>
 			</div>
 
-            <div class="col-0 col-lg-1"></div>
+            @if(Auth::user()->id == $meeting->user_id || Auth::user()->privilage == 2)
+			<div class="col-0 col-lg-1"></div>
 
             <div class="col-12 col-lg-2 d-flex justify-content-center mb-3 mb-lg-0 mt-2 mt-lg-0 p-0 p-lg-2">
                 <a class="btn btn-warning me-2" href="/meeting/edit/{{$meeting->id}}">Edit meeting</a>
@@ -28,6 +29,7 @@
             <div class="col-12 col-lg-3 d-flex justify-content-center p-0 p-lg-2">
                 <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new participant(s)</a>
             </div>
+			@endif
 
 		</div>
 
