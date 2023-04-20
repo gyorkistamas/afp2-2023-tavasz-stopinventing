@@ -106,6 +106,7 @@
 					@endswitch" class="img-thumbnail response-img">
 					</div>
 
+					@if(Auth::user()->id == $meeting->organiser || Auth::user()->privilage == 2)
 					<div class="col-6 col-sm-4 mt-3 mt-sm-0">
 						<form action="/meeting/remove-participant", method="POST">
 							@csrf
@@ -118,6 +119,7 @@
 						</form>
 
 					</div>
+					@endif
 
 				</div>
 				@endforeach
