@@ -7,6 +7,7 @@
 /vendor
 .env
 .env.backup
+.env.cypress
 .env.production
 .phpunit.result.cache
 Homestead.json
