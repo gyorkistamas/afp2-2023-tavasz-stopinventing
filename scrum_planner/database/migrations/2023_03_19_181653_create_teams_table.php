@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->string('team_name');
+            $table->string('team_name')->unique();
             $table->unsignedBigInteger('scrum_master');
             $table->foreign('scrum_master')->references('id')->on('users');
             $table->timestamps();
