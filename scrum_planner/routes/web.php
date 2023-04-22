@@ -44,7 +44,7 @@ Route::get('/users/change-status/{user}', [UserController::class, 'ChangeStatus'
 Route::post('/users/change-role/{user}',[UserController::class, 'ChangeRole']);
 Route::post('/users/changepasswd/{user}',[UserController::class,'ChangePassword']);
 
-Route::get('/team/create',[TeamController::class, 'CreateTeamSite']);
+Route::get('/team/create',[TeamController::class, 'CreateTeamSite'])->middleware('auth');
 Route::post('/team/create',[TeamController::class, 'TeamCreation']);
 Route::get('/manage-teams', [TeamController::class, 'ListTeams']);
 Route::post('/team/edit/{team}', [EditTeamController::class, 'RemoveMember']);
