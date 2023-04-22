@@ -30,7 +30,7 @@ class TeamController extends Controller
     public function TeamCreation(Request $request)
     {
         $fields = $request -> validate([
-            'team_name' => ['required', 'min:3'],
+            'team_name' => ['required', 'min:3', 'unique:teams'],
             'members' => ['required']
         ]);
 
