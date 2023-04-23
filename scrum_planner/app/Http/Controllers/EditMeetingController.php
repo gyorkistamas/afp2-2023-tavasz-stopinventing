@@ -70,6 +70,11 @@ class EditMeetingController extends Controller
             $attendant->delete();
         }
 
+        foreach ($meeting->comments as $comment)
+        {
+            $comment->delete();
+        }
+
         $meeting->delete();
 
         return redirect('/');
