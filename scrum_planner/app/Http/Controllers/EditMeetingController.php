@@ -35,7 +35,7 @@ class EditMeetingController extends Controller
             'name' => ['required'],
             'start_time' => ['required'],
             'end_time' => ['required'],
-            'description' => ['required']
+            'description' => ''
         ]);
 
         $meeting->name = $fields['name'];
@@ -68,6 +68,11 @@ class EditMeetingController extends Controller
             $user = User::find($attendant->user_id);
             Mail::to($user->email)->send(new MeetingDeletedEmail($user, $meeting));
             $attendant->delete();
+        }
+
+        foreach ($meeting->comments as $comment)
+        {
+            $comment->delete();
         }
 
         $meeting->delete();
