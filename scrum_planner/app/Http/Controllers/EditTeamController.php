@@ -68,13 +68,14 @@ class EditTeamController extends Controller
         ]);
 
         $theTeam = Team::where('id', $fields['team_id'])->first();
-        $member = TeamMember::where('team_id', $fields['team_id'])->where('user_id', $fields['user_id'])->first();
+        $memberId = TeamMember::where('team_id', $fields['team_id'])->where('user_id', $fields['user_id'])->first();
+        $member = User::where('id', $memberId['user_id'])->first();
 
         Mail::to($member->email)->send(new Team_member_removed($theTeam, $member));
 
-        $member->delete();
+        $memberId->delete();
 
-        return redirect()->back()->with('member-removed', '1 Member removed from the team');
+        return redirect()->back()->with(['member-removed' => '1 Member removed from the team']);
     }
 
     public function DeleteTeam(Team $team)

@@ -102,7 +102,7 @@
                             </div>
     
                             <div class="col-6 col-sm-4 mt-3 mt-sm-0">
-                                <form action={{ url('/team/edit/'. $team->id) }}, method="POST">
+                                <form action={{ url('/team/removemember/'.$team->id) }} method="POST">
                                     @csrf
                                     <div style="display: none;">
                                         <input type="number" value="{{$team->id}}" name="team_id">
