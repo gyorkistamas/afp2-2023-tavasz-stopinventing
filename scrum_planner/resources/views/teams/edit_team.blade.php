@@ -83,6 +83,15 @@
                     </form>
                 </div>
             </div>
+            @if (session() -> has('failed'))
+            <h1 class="bg-danger">{{session() -> get('failed')}}</h1>
+            @endif
+            @if (session() -> has('member-removed'))
+                <h1 class="bg-warning">{{session() -> get('member-removed')}}</h1>
+            @endif
+            @if (session() -> has('added'))
+                <h1 class="bg-success">{{session() -> get('added')}}</h1>
+            @endif
         </div>
 
         <div class="col-lg">
@@ -116,12 +125,6 @@
                     @endforeach
                 </div>
             </div>
-            @if (session() -> has('failed'))
-                <h1 class="bg-danger">{{session() -> get('failed')}}</h1>
-            @endif
-            @if (session() -> has('member-removed'))
-                <h1 class="bg-warning">{{session() -> get('member-removed')}}</h1>
-            @endif
         </div>
     </div>
 </div>

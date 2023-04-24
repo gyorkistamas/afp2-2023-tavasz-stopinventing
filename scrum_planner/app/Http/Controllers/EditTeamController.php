@@ -44,8 +44,9 @@ class EditTeamController extends Controller
         if (!empty($request->members)) {
             foreach ($request->members as $member) {
                 try {
+                    $user = User::where('id', $member)->first();
                     TeamMember::create(['team_id' => $team -> id, 'user_id' => $member]);
-                    Mail::to($member->email)->send(new TeamNotification($team, $member));
+                    Mail::to($user->email)->send(new TeamNotification($team, $user));
                 } catch (\Throwable $th) {
                     return redirect() -> back() -> with(['failed' => 'Team cant be modified!']);
                 }
@@ -57,7 +58,7 @@ class EditTeamController extends Controller
             Mail::to($member->email)->send(new Team_modified($team, $member));
         }
 
-        return redirect('/manage-teams');
+        return redirect() -> back() -> with(['added' => 'Team member(s) Successfully added to the team.']);
     }
 
     public function RemoveMember(Team $team, Request $request)
