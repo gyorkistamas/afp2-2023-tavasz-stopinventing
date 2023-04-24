@@ -35,7 +35,7 @@ class EditMeetingController extends Controller
             'name' => ['required'],
             'start_time' => ['required'],
             'end_time' => ['required'],
-            'description' => ['required']
+            'description' => ''
         ]);
 
         $meeting->name = $fields['name'];
