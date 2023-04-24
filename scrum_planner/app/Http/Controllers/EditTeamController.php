@@ -86,11 +86,10 @@ class EditTeamController extends Controller
             return abort(401);
         }
 
-        $members = TeamMember::where('team_id', $team->id)->get();
-
-        foreach ($members as $member) {
+        foreach ($team->members as $member) {
             Mail::to($member->email)->send(new Team_deleted($team, $member));
-            $member->delete();
+            $user = TeamMember::where('team_id', $team->id)->first();
+            $user->delete();
         }
 
         $team->delete();
