@@ -80,11 +80,12 @@
                                     <form method="POST" action="/users/changepasswd/{{$user->id}}">
                                         @csrf
                                         <input
-                                        type="text" 
+                                        type="password" 
                                         id="newPwd{{$user->id}}"
                                         name="NewPassword"
                                         readonly
                                         />
+                                        <button class="btn btn-danger" type="button" onmousedown="pwd2text({{$user->id}})" onmouseup="back({{$user->id}})">Show pwd</button>
                                         <br>
                                         <button type="submit" class="btn btn-primary">Change password for {{$user->full_name}}</button>
                                     </form>
