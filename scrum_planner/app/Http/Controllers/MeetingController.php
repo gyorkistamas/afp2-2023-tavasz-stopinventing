@@ -150,6 +150,10 @@ class MeetingController extends Controller
             'individuals' => []
         ]);
 
+        if ($fields['start_time'] >= $fields['end_time']) {
+            return redirect() -> back() -> with(['invalidTime' => 'Starting date should not be higher than or equal to End date'])->withInput();
+        }
+
         $createError = 0;
 
         $newMeeting = Meeting::create([
@@ -186,7 +190,6 @@ class MeetingController extends Controller
 
         foreach ($newMeeting->attendants as $attendant) {
             Mail::to($attendant->email)->send(new NotificationEmail($newMeeting, $attendant));
-
         }
 
         return redirect() -> back() -> with(['success' => 'Meeting has been created!']);

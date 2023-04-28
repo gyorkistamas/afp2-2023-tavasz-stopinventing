@@ -83,6 +83,15 @@
                     </form>
                 </div>
             </div>
+            @if (session() -> has('failed'))
+            <h1 class="bg-danger">{{session() -> get('failed')}}</h1>
+            @endif
+            @if (session() -> has('member-removed'))
+                <h1 class="bg-warning">{{session() -> get('member-removed')}}</h1>
+            @endif
+            @if (session() -> has('added'))
+                <h1 class="bg-success">{{session() -> get('added')}}</h1>
+            @endif
         </div>
 
         <div class="col-lg">
@@ -102,7 +111,7 @@
                             </div>
     
                             <div class="col-6 col-sm-4 mt-3 mt-sm-0">
-                                <form action={{ url('/team/edit/'. $team->id) }}, method="POST">
+                                <form action={{ url('/team/removemember/'.$team->id) }} method="POST">
                                     @csrf
                                     <div style="display: none;">
                                         <input type="number" value="{{$team->id}}" name="team_id">
@@ -116,12 +125,6 @@
                     @endforeach
                 </div>
             </div>
-            @if (session() -> has('failed'))
-                <h1 class="bg-danger">{{session() -> get('failed')}}</h1>
-            @endif
-            @if (session() -> has('member-removed'))
-                <h1 class="bg-warning">{{session() -> get('member-removed')}}</h1>
-            @endif
         </div>
     </div>
 </div>

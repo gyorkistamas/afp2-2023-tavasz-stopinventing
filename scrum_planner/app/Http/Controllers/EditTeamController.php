@@ -44,8 +44,9 @@ class EditTeamController extends Controller
         if (!empty($request->members)) {
             foreach ($request->members as $member) {
                 try {
+                    $user = User::where('id', $member)->first();
                     TeamMember::create(['team_id' => $team -> id, 'user_id' => $member]);
-                    Mail::to($member->email)->send(new TeamNotification($team, $member));
+                    Mail::to($user->email)->send(new TeamNotification($team, $user));
                 } catch (\Throwable $th) {
                     return redirect() -> back() -> with(['failed' => 'Team cant be modified!']);
                 }
@@ -57,7 +58,7 @@ class EditTeamController extends Controller
             Mail::to($member->email)->send(new Team_modified($team, $member));
         }
 
-        return redirect('/manage-teams');
+        return redirect() -> back() -> with(['added' => 'Team member(s) Successfully added to the team.']);
     }
 
     public function RemoveMember(Team $team, Request $request)
@@ -68,13 +69,14 @@ class EditTeamController extends Controller
         ]);
 
         $theTeam = Team::where('id', $fields['team_id'])->first();
-        $member = TeamMember::where('team_id', $fields['team_id'])->where('user_id', $fields['user_id'])->first();
+        $memberId = TeamMember::where('team_id', $fields['team_id'])->where('user_id', $fields['user_id'])->first();
+        $member = User::where('id', $memberId['user_id'])->first();
 
         Mail::to($member->email)->send(new Team_member_removed($theTeam, $member));
 
-        $member->delete();
+        $memberId->delete();
 
-        return redirect()->back()->with('member-removed', '1 Member removed from the team');
+        return redirect()->back()->with(['member-removed' => '1 Member removed from the team']);
     }
 
     public function DeleteTeam(Team $team)
@@ -84,11 +86,10 @@ class EditTeamController extends Controller
             return abort(401);
         }
 
-        $members = TeamMember::where('team_id', $team->id)->get();
-
-        foreach ($members as $member) {
+        foreach ($team->members as $member) {
             Mail::to($member->email)->send(new Team_deleted($team, $member));
-            $member->delete();
+            $user = TeamMember::where('team_id', $team->id)->first();
+            $user->delete();
         }
 
         $team->delete();

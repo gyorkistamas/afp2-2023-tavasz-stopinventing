@@ -47,7 +47,7 @@ Route::post('/users/changepasswd/{user}',[UserController::class,'ChangePassword'
 Route::get('/team/create',[TeamController::class, 'CreateTeamSite'])->middleware('auth');
 Route::post('/team/create',[TeamController::class, 'TeamCreation']);
 Route::get('/manage-teams', [TeamController::class, 'ListTeams']);
-Route::post('/team/edit/{team}', [EditTeamController::class, 'RemoveMember']);
+Route::post('/team/removemember/{team}', [EditTeamController::class, 'RemoveMember']);
 Route::get('/team/edit/{team}', [EditTeamController::class, 'EditForm'])->middleware('auth');
 Route::post('/team/edit/{team}', [EditTeamController::class, 'EditTeam'])->middleware('auth');
 Route::get('/team/delete/{team}', [EditTeamController::class, 'DeleteTeam'])->middleware('auth');
