@@ -124,11 +124,6 @@ class MeetingController extends Controller
 
     public function CreateMeetingSite()
     {
-        if(Auth::user()->privilage < 1)
-        {
-            return abort(401);
-        }
-
         $teams = Team::all();
         $users = User::where('id','!=',Auth::user() -> id) -> get();
         return view('meeting.create_meeting', ['teams' => $teams, 'users' => $users]);
@@ -235,7 +230,7 @@ class MeetingController extends Controller
                 }
             }
         }
-        
+
         return view('meeting.my_meetings')->with(['date' => $request->date,
                                                         'rowNum' => $numberOfRows,
                                                         'meetings' => $meetingsToDaysArray,
