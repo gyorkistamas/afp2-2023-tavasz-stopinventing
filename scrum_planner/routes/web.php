@@ -26,50 +26,75 @@ Route::get('/', function () {
     return redirect(route('my-meetings'));
 });
 
-Route::get('/request-password', [UserController::class, 'RequestNewPassword']);
-Route::get('/sign-in', [UserController::class, 'Login'])->name('sign-in');
 
-Route::post('/sign-in', [UserController::class, 'SignIn']);
+// User authentication
+Route::middleware('guest')->group(function (){
+    Route::get('/request-password', [UserController::class, 'RequestNewPassword']);
+    Route::get('/sign-in', [UserController::class, 'Login'])->name('sign-in');
+    Route::post('/sign-in', [UserController::class, 'SignIn']);
+    Route::get('/sign-up', [UserController::class,'Register']);
+    Route::post('/sign-up', [UserController::class, 'SignUp']);
+});
 
-Route::get('/sign-out', [UserController::class,'LogOut']);
+//Sign out
+Route::get('/sign-out', [UserController::class,'LogOut'])->middleware('auth');
 
-Route::get('/sign-up', [UserController::class,'Register']);
+// Admin routes for users
+Route::middleware(['auth', 'admin'])->group(function (){
+    Route::get('/users', [UserController::class, 'List'])->name('users');
+
+    Route::get('/users/change-status/{user}', [UserController::class, 'ChangeStatus']);
+    Route::post('/users/change-role/{user}',[UserController::class, 'ChangeRole']);
+    Route::post('/users/changepasswd/{user}',[UserController::class,'ChangePassword']);
+});
 
 
-Route::post('/sign-up', [UserController::class, 'SignUp']);
-Route::get('/users', [UserController::class, 'List'])->name('users');
+//Team modification and creation
+Route::middleware(['auth', 'scrum'])->group(function (){
+    Route::get('/team/create',[TeamController::class, 'CreateTeamSite']);
+    Route::post('/team/create',[TeamController::class, 'TeamCreation']);
+    Route::get('/manage-teams', [TeamController::class, 'ListTeams']);
+    Route::post('/team/removemember/{team}', [EditTeamController::class, 'RemoveMember']);
+    Route::get('/team/edit/{team}', [EditTeamController::class, 'EditForm']);
+    Route::post('/team/edit/{team}', [EditTeamController::class, 'EditTeam']);
+    Route::get('/team/delete/{team}', [EditTeamController::class, 'DeleteTeam']);
+});
 
 
-Route::get('/users/change-status/{user}', [UserController::class, 'ChangeStatus']);
-Route::post('/users/change-role/{user}',[UserController::class, 'ChangeRole']);
-Route::post('/users/changepasswd/{user}',[UserController::class,'ChangePassword']);
+//Edit profile
+Route::middleware('auth')->group(function () {
+    Route::get('/edit-profile',[UserController::class,'Profile']);
+    Route::post('/edit-profile',[UserController::class,'EditProfile']);
+});
 
-Route::get('/team/create',[TeamController::class, 'CreateTeamSite'])->middleware('auth');
-Route::post('/team/create',[TeamController::class, 'TeamCreation']);
-Route::get('/manage-teams', [TeamController::class, 'ListTeams']);
-Route::post('/team/removemember/{team}', [EditTeamController::class, 'RemoveMember']);
-Route::get('/team/edit/{team}', [EditTeamController::class, 'EditForm'])->middleware('auth');
-Route::post('/team/edit/{team}', [EditTeamController::class, 'EditTeam'])->middleware('auth');
-Route::get('/team/delete/{team}', [EditTeamController::class, 'DeleteTeam'])->middleware('auth');
+//Meeting related routes
+Route::middleware(['auth', 'scrum'])->group(function () {
+    Route::get('/meeting/create', [MeetingController::class, 'CreateMeetingSite']);
+    Route::post('/meeting/create', [MeetingController::class, 'MeetingCreation']);
+    Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
+    Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticipants']);
 
-Route::get('/edit-profile',[UserController::class,'Profile']);
-Route::post('/edit-profile',[UserController::class,'EditProfile']);
+    Route::get('/meeting/edit/{meeting}', [EditMeetingController::class, 'ShowEditForm']);
+    Route::post('/meeting/edit/{meeting}', [EditMeetingController::class, 'EditMeeting']);
+    Route::get('/meeting/delete/{meeting}', [EditMeetingController::class, 'DeleteMeeting']);
+});
 
-Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting'])->middleware('auth');
-Route::get('/meeting/create', [MeetingController::class, 'CreateMeetingSite']);
-Route::post('/meeting/create', [MeetingController::class, 'MeetingCreation']);
-Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
-Route::post('/meeting/remove-participant', [MeetingController::class, 'RemoveParticipant']);
-Route::post('/meeting/add-participants', [MeetingController::class, 'AddParticipants']);
+// Meeting routes for all users
+Route::middleware('auth')->group(function () {
+    Route::get('/meeting/show/{meeting}', [MeetingController::class, 'ShowMeeting']);
+    Route::post('/meeting/comment', [MeetingController::class, 'RecordComment']);
 
-Route::get('/meeting/edit/{meeting}', [EditMeetingController::class, 'ShowEditForm'])->middleware('auth');
-Route::post('/meeting/edit/{meeting}', [EditMeetingController::class, 'EditMeeting'])->middleware('auth');
-Route::get('/meeting/delete/{meeting}', [EditMeetingController::class, 'DeleteMeeting'])->middleware('auth');
+    Route::get('/my-meetings', [MeetingController::class, 'MyMeetingsThisWeek'])->name('my-meetings');
+    Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings']);
+
+    Route::get('my-invites', [InviteController::class, 'invites']);
+    Route::post('/set-attendance', [InviteController::class, 'SetAttendance']);
+});
+
+
 
 Route::get('/manage-meetings', [MeetingController::class, 'ListMeetings'])->middleware('auth');
 
-Route::get('/my-meetings', [MeetingController::class, 'MyMeetingsThisWeek'])->middleware('auth')->name('my-meetings');
-Route::get('/my-meetings/{date}', [MeetingController::class, 'MyMeetings'])->middleware('auth');
 
-Route::get('my-invites', [InviteController::class, 'invites'])->middleware('auth');
-Route::post('/set-attendance', [InviteController::class, 'SetAttendance'])->middleware('auth');
+
+
