@@ -146,6 +146,9 @@
                     @if (session() -> has('success'))
                         <h1 class="bg-success">{{session() -> get('success')}}</h1>
                     @endif
+                    @if (session() -> has('invalidTime'))
+                        <h1 class="bg-warning">{{session() -> get('invalidTime')}}</h1>
+                    @endif
                 </div>
             </div>
 
