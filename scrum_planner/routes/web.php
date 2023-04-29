@@ -91,10 +91,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/set-attendance', [InviteController::class, 'SetAttendance']);
 });
 
-
-
-Route::get('/manage-meetings', [MeetingController::class, 'ListMeetings'])->middleware('auth');
-
-
-
-
+Route::get('/manage-meetings', [MeetingController::class, 'ListMeetings'])->middleware(['auth', 'scrum']);
