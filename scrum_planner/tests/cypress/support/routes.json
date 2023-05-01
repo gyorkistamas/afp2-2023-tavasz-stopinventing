@@ -113,10 +113,11 @@
   "": {
     "name": null,
     "domain": null,
-    "action": "App\\Http\\Controllers\\InviteController@SetAttendance",
-    "uri": "set-attendance",
+    "action": "App\\Http\\Controllers\\MeetingController@ListMeetings",
+    "uri": "manage-meetings",
     "method": [
-      "POST"
+      "GET",
+      "HEAD"
     ]
   },
   "sign-in": {
