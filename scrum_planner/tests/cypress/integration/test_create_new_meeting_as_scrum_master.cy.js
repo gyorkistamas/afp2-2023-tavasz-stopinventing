@@ -15,7 +15,7 @@ describe('Test create new meeting as scrum master', () => {
         cy.get(':nth-child(2) > .dropdown-menu > :nth-child(2) > .dropdown-item').click();
     });
 
-    it('Checking team creation process with incorrect input datas as scrum master', () => {
+    it('checks team creation process with incorrect input datas as scrum master', () => {
 
         cy.AccessCreateNewMeeting('scrummaster@justacompany.com', 'password');
 
@@ -26,7 +26,7 @@ describe('Test create new meeting as scrum master', () => {
         });
     });
 
-    it('Checking team creation process with filled title, startTime, endTime, description input fields as scrum master', () => {
+    it('checks team creation process with filled title, startTime, endTime, description input fields as scrum master', () => {
 
         cy.AccessCreateNewMeeting('scrummaster@justacompany.com', 'password');
 
@@ -46,7 +46,7 @@ describe('Test create new meeting as scrum master', () => {
 
     });
 
-    it('Checking whether team creation process fails if given title is less than 3 character as scrum master', () => {
+    it('checks whether team creation process fails if given title is less than 3 character as scrum master', () => {
 
         cy.AccessCreateNewMeeting('scrummaster@justacompany.com', 'password');
 
@@ -66,7 +66,7 @@ describe('Test create new meeting as scrum master', () => {
 
     });
 
-    it('Checking whether team creation process fails if endTime is less than startTime as scrum master', () => {
+    it('checks whether team creation process fails if endTime is less than startTime as scrum master', () => {
 
         cy.AccessCreateNewMeeting('scrummaster@justacompany.com', 'password');
 
@@ -86,7 +86,7 @@ describe('Test create new meeting as scrum master', () => {
 
     });
 
-    it('Checking whether team creation process fails if endTime is equal to startTime as scrum master', () => {
+    it('checks whether team creation process fails if endTime is equal to startTime as scrum master', () => {
 
         cy.AccessCreateNewMeeting('scrummaster@justacompany.com', 'password');
 
