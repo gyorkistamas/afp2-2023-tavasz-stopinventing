@@ -20,6 +20,10 @@
             <h1 class="bg-success">{{session() -> get('success')}}</h1>
         @endif
 
+        @if (session() -> has('failed'))
+            <h1 class="bg-warning">{{session() -> get('failed')}}</h1>
+        @endif
+
         <div class="card text-center bg-dark border-primary border-4">
             <div class="card-body">
                 <div class="card-header bg-primary mb-3"><h1>Create new team</h1></div>
