@@ -14,7 +14,7 @@ describe('Test create new meeting as admin', () => {
         cy.get(':nth-child(2) > .dropdown-menu > :nth-child(2) > .dropdown-item').click();
     });
 
-    it('Checking team creation process with incorrect input datas as admin', () => {
+    it('checks meeting creation process with incorrect input datas as admin', () => {
 
         cy.AccessCreateNewMeeting('adminuser@justacompany.com', 'password');
 
@@ -26,7 +26,7 @@ describe('Test create new meeting as admin', () => {
     });
 
 
-    it('checks team creation process with filled title, startTime, endTime, description input fields as admin', () => {
+    it('checks meeting creation process with filled title, startTime, endTime, description input fields as admin', () => {
 
         cy.AccessCreateNewMeeting('adminuser@justacompany.com', 'password');
 
@@ -46,7 +46,7 @@ describe('Test create new meeting as admin', () => {
 
     });
 
-    it('checks whether team creation process fails if given title is less than 3 character as admin', () => {
+    it('checks whether meeting creation process fails if given title is less than 3 character as admin', () => {
 
         cy.AccessCreateNewMeeting('adminuser@justacompany.com', 'password');
 
@@ -66,7 +66,7 @@ describe('Test create new meeting as admin', () => {
 
     });
 
-    it('checks whether team creation process fails if endTime is less than startTime as admin', () => {
+    it('checks whether meeting creation process fails if endTime is less than startTime as admin', () => {
 
         cy.AccessCreateNewMeeting('adminuser@justacompany.com', 'password');
 
@@ -86,7 +86,7 @@ describe('Test create new meeting as admin', () => {
 
     });
 
-    it('checks whether team creation process fails if endTime is equal to startTime as admin', () => {
+    it('checks whether meeting creation process fails if endTime is equal to startTime as admin', () => {
 
         cy.AccessCreateNewMeeting('adminuser@justacompany.com', 'password');
 

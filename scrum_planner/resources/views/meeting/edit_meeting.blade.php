@@ -94,7 +94,13 @@
                                 placeholder="Description of meeting">{{$meeting->description}}</textarea>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="card bg-transparent col-12 col-lg-6">
+                            @if (session() -> has('invalidTime'))
+                                <h1 class="bg-warning">{{session() -> get('invalidTime')}}</h1>
+                            @endif
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="text-center col-12 col-lg-6">
                             <button type="submit" class="btn btn-outline-light btn-success m-2">

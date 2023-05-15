@@ -37,7 +37,9 @@ class EditMeetingController extends Controller
             'end_time' => ['required'],
             'description' => ''
         ]);
-
+        if ($fields['start_time'] >= $fields['end_time']) {
+            return redirect() -> back() -> with(['invalidTime' => 'Starting date should not be higher than or equal to End date'])->withInput();
+        }
         $meeting->name = $fields['name'];
         $meeting->start_time = $fields['start_time'];
         $meeting->end_time = $fields['end_time'];
