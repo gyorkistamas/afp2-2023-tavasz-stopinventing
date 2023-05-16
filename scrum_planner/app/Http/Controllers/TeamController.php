@@ -40,18 +40,21 @@ class TeamController extends Controller
         }
 
         $newTeam = Team::create(['team_name' => $fields['team_name'], 'scrum_master' => Auth::user() -> id]);
-        $createError = 0;
-        foreach ($fields['members'] as $member) {
-            try {
-                TeamMember::create(['team_id' => $newTeam -> id, 'user_id' => $member]);
-            } catch (\Throwable $th) {
-                $createError += 1;
+        if (empty($request->members)) {
+            return redirect() -> back() -> with(['failed' => 'Team members field is empty!']);
+        }
+        else {
+            foreach ($fields['members'] as $member) {
+                try {
+                    TeamMember::create(['team_id' => $newTeam -> id, 'user_id' => $member]);
+                } catch (\Throwable $th) {
+                    return redirect() -> back() -> with(['failed' => 'Team members field is empty!']);
+                }
             }
         }
 
         foreach ($newTeam->members as $member) {
             Mail::to($member->email)->send(new TeamNotification($newTeam, $member));
-
         }
 
         return redirect() -> back() -> with(['success' => 'Team has been created!']);
